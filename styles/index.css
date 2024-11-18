@@ -1,0 +1,63 @@
+ body * {
+  animation: appear 1s linear;
+}
+
+/* Definición de la animación de aparición */
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  background: rgb(85, 88, 211);
+  background: -moz-radial-gradient(circle, rgba(85, 88, 211, 1) 0%, rgba(33, 34, 101, 1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(85, 88, 211, 1) 0%, rgba(33, 34, 101, 1) 100%);
+  background: radial-gradient(circle, rgba(85, 88, 211, 1) 0%, rgba(33, 34, 101, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5558d3", endColorstr="#212265", GradientType=1);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+}
+
+header {
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & img {
+    width: 250px;
+    height: 250px;
+    animation: neonSign 1.5s linear infinite;
+  }
+
+  h1,
+    h2 {
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+}
+
+@keyframes neonSign {
+
+  0%, 100% {
+    filter: brightness(1.5) saturate(2) drop-shadow(0 0 10px #9d00ff) drop-shadow(0 0 20px #FF00FB);
+}
+50% {
+    filter: brightness(0.8) saturate(1.5) drop-shadow(0 0 5px #9d00ff) drop-shadow(0 0 10px #FF00FB);
+}
+
+
+}
