@@ -119,6 +119,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 20px;
   
   #texto {
     display: flex;
@@ -127,20 +128,15 @@ header {
     justify-content: center;
     gap: 10px;
 
-    h3 {
+    h2 {
       text-shadow: 0 0 10px red;
-      color: white;
-      font-family: sans-serif;
-      font-weight: 200px;
-      font-size: 20px;
-      text-align: center;
     }
 
     svg {
       filter: drop-shadow(0 0 5px red);
       width: 30px;
       height: 30px;
-      
+
     }
   }
 
@@ -174,5 +170,5 @@ footer {
     width: 100%;
     text-align: center;
   }
-  
+
 }
