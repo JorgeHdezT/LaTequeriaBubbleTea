@@ -1,0 +1,16 @@
+.carousel {
+  img {
+    border-radius: 20px;
+  }
+}
+
+#imagenes {
+  h2 {
+    font-size: 160%;
+  }
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

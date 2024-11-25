@@ -27,8 +27,10 @@
 
   }
 
-  
+
 }
+
+
 
 @keyframes shineButton {
 
@@ -146,4 +148,53 @@ details>table {
     /* Borde izquierdo en segunda columna */
   }
 
+}
+
+#tablaSirope {
+
+  .opcion-sirope {
+    transition: all .2s;
+    cursor: pointer;
+
+    animation: neon alternate infinite 1.5s;
+  }
+
+
+
+  td {
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+
+  td:first-child,
+  th:first-child {
+    width: 50%;
+    border-right: 4px solid white;
+    /* Borde derecho en primera columna */
+  }
+
+  td:last-child,
+  th:last-child {
+    width: 50%;
+    border-left: 4px solid white;
+    /* Borde izquierdo en segunda columna */
+  }
+
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
+@keyframes neon {
+  from {
+    text-shadow:
+      none;
+  }
+
+  to {
+    text-shadow:
+      0 0 5px currentColor,
+      0 0 5px currentColor;
+  }
 }
