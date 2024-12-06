@@ -44,6 +44,22 @@
   <section id="tablaPrecios">
 
     <h2 class="titulo">NUESTRA CARTA</h2>
+
+    <!-- Botón de Información -->
+    <button id="infoButton">🛈 ¿Cómo funciona? 🛈</button>
+
+    <!-- Modal de Información -->
+    <div id="infoModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Bienvenido/a a nuestra Carta Interactiva</h2>
+        <p>Esta carta interactiva te permite organizar tu pedido de forma rápida y sencilla. <b>Puedes hacer clic en cada opción (tamaño, bebida, sirope, topping) para ver cómo se arma tu ticket virtual.</b></p>
+        <p>Recuerda, esta herramienta no sirve para pedidos online, sino solo para ayudarte a decidir y agilizar el proceso cuando pidas en la barra.</p>
+        <p>¡Haz clic en las opciones para empezar a personalizar tu bebida y organizar tu pedido!</p>
+      </div>
+    </div>
+    
+
     <details>
       <summary>PASO 1: ELIGE TAMAÑO</summary>
       <table id="tablaTamaño">
@@ -123,12 +139,82 @@
             <td class="opcion-sirope" data-sirope="Cereza" style="color: #DC143C;">Cereza</td>
           </tr>
           <tr>
-            <td class="opcion-sirope" data-sirope="Arándanos" style="color: #b668ff;">Arándanos</td>
+            <td class="opcion-sirope" data-sirope="Arándanos" style="color: #b969ff;">Arándanos</td>
             <td></td>
           </tr>
         </tbody>
       </table>
     </details>
+
+    <details>
+      <summary>PASO 4: ELIGE TOPPING</summary>
+      <table id="tablaTopping">
+        <tbody>
+          <tr>
+            <td class="opcion-topping" data-topping="Mango" style="color: #FF8C00;">Mango</td>
+            <td><span class="circle" style="background-color: #FF8C00;"></span></td>
+            <td class="opcion-topping" data-topping="Arándanos" style="color: #b969ff;">Arándanos</td>
+            <td><span class="circle" style="background-color: #b969ff;"></span></td>
+          </tr>
+          <tr>
+            <td class="opcion-topping" data-topping="Cereza" style="color: #DC143C;">Cereza</td>
+            <td><span class="circle" style="background-color: #DC143C;"></span></td>
+            <td class="opcion-topping" data-topping="Maracuyá" style="color: #FF7F00;">Maracuyá</td>
+            <td><span class="circle" style="background-color: #FF7F00;"></span></td>
+          </tr>
+          <tr>
+            <td class="opcion-topping" data-topping="Granada" style="color: #E30022;">Granada</td>
+            <td><span class="circle" style="background-color: #E30022;"></span></td>
+            <td class="opcion-topping" data-topping="Manzana Verde" style="color: #32CD32;">Manzana Verde</td>
+            <td><span class="circle" style="background-color: #32CD32;"></span></td>
+          </tr>
+          <tr>
+            <td class="opcion-topping" data-topping="Fresa" style="color: #FF0000;">Fresa</td>
+            <td><span class="circle" style="background-color: #FF0000;"></span></td>
+            <td class="opcion-topping" data-topping="Melocotón" style="color: #FFA07A;">Melocotón</td>
+            <td><span class="circle" style="background-color: #FFA07A;"></span></td>
+          </tr>
+          <tr>
+            <td class="opcion-topping" data-topping="Lichi" style="color: #FF1493;">Lichi</td>
+            <td><span class="circle" style="background-color: #FF1493;"></span></td>
+            <td class="opcion-topping" data-topping="Sandía" style="color: #FF6347;">Sandía</td>
+            <td><span class="circle" style="background-color: #FF6347;"></span></td>
+          </tr>
+          <tr>
+            <td class="opcion-topping" data-topping="Melón Dulce" style="color: #FFD700;">Melón Dulce</td>
+            <td><span class="circle" style="background-color: #FFD700;"></span></td>
+            <td class="opcion-topping" data-topping="Limón" style="color: #FFFF00;">Limón</td>
+            <td><span class="circle" style="background-color: #FFFF00;"></span></td>
+          </tr>
+          <tr>
+            <td class="opcion-topping" data-topping="Coco" style="color: #ffff;">Coco</td>
+            <td><span class="circle" style="background-color: #ffff;"></span></td>
+            <td class="opcion-topping" data-topping="Perlas de Cristal" style="color: #FFFFFF;">Perlas de Cristal</td>
+            <td><span class="circle" style="background-color: #FFFFFF; border: 1px solid #000;"></span></td>
+          </tr>
+          <tr>
+            <td class="opcion-topping" data-topping="Perlas Brown Sugar" style="color: #ca7105;">Perlas Brown Sugar</td>
+            <td><span class="circle" style="background-color: #ca7105;"></span></td>
+            <td class="opcion-topping" data-topping="Jelly (Mango)" style="color: #FF8C00;">Jelly (Mango)</td>
+            <td><span class="circle" style="background-color: #FF8C00;"></span></td>
+          </tr>
+          <tr>
+            <td class="opcion-topping" data-topping="Jelly (Lichi)" style="color: #FF1493;">Jelly (Lichi)</td>
+            <td><span class="circle" style="background-color: #FF1493;"></span></td>
+            <td class="opcion-topping" data-topping="Jelly (Arcoiris)" style="color: #FF00FF;">Jelly (Arcoiris)</td>
+            <td><span class="circle" style="background-color: #FF00FF;"></span></td>
+          </tr>
+          <tr>
+            <td class="opcion-topping" data-topping="Tapioca Negra" style="color: #000000;">Tapioca Negra</td>
+            <td><span class="circle" style="background-color: #000000;"></span></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </details>
+
+
 
 
 
@@ -143,7 +229,7 @@
 
       <i>Saca una captura de pantalla a esto y muestralo en la barra cuando vayas a hacer tu pedido.</i>
 
-      <h4>Tus Selecciones:</h4>
+      <h3>Tus Selecciones:</h3>
 
       <table>
         <tr>
@@ -157,6 +243,10 @@
         <tr>
           <td>Sirope: </td>
           <td id="ticketSirope"></td>
+        </tr>
+        <tr>
+          <td>Topping: </td>
+          <td id="ticketTopping"></td>
         </tr>
       </table>
 
@@ -174,40 +264,40 @@
     <h2 class="titulo">DEGUSTA LA EXPERIENCIA</h2>
 
 
-  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="images/1.jpg" class="d-block w-100" alt="...">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/3.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/4.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/5.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/6.jpg" class="d-block w-100" alt="...">
+        </div>
       </div>
-      <div class="carousel-item">
-        <img src="images/2.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="images/3.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="images/4.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="images/5.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="images/6.jpg" class="d-block w-100" alt="...">
-      </div>
+
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-      data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-      data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
   </section>
 
 
@@ -243,6 +333,7 @@
   </footer>
 
   <script src="scripts/ticketCreator.js"></script>
+  <script src="scripts/infoButton.js"></script>
 </body>
 
 </html>

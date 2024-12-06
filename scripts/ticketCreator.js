@@ -60,11 +60,23 @@ const seleccionarSirope = (e) => {
   mostrarTicket();
 };
 
+// Función para registrar la selección del topping
+const seleccionarTopping = (e) => {
+  resetearResaltado('.opcion-topping');
+  e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+
+  const toppingSeleccionado = e.target.getAttribute('data-topping');
+  ticket.topping = toppingSeleccionado;
+
+  mostrarTicket();
+};
+
 // Función para mostrar el ticket actualizado
 const mostrarTicket = () => {
   const ticketTamaño = document.querySelector("#ticketTamaño");
   const ticketBebida = document.querySelector("#ticketBebida");
   const ticketSirope = document.querySelector("#ticketSirope"); // Nueva sección del ticket
+  const ticketTopping = document.querySelector("#ticketTopping"); // Nueva sección del ticket
   const totalPedido = document.querySelector("#checkout");
 
   if (ticket.tamaño) {
@@ -75,6 +87,9 @@ const mostrarTicket = () => {
   }
   if (ticket.sirope) {
     ticketSirope.textContent = ticket.sirope;
+  }
+  if (ticket.topping) {
+    ticketTopping.textContent = ticket.topping;
   }
   if (totalPedido) {
     totalPedido.textContent = "Total: " + ticket.tamaño.precio;
@@ -119,3 +134,10 @@ const opcionesSirope = document.querySelectorAll('.opcion-sirope'); // Corregido
 opcionesSirope.forEach((opcion) => {
   opcion.addEventListener('click', seleccionarSirope);
 });
+
+// Añadir event listeners a las opciones de topping
+const opcionesTopping = document.querySelectorAll('.opcion-topping');
+opcionesTopping.forEach((opcion) => {
+  opcion.addEventListener('click', seleccionarTopping);
+});
+
