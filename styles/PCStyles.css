@@ -1,0 +1,157 @@
+@media screen and (min-width: 1024px) {
+  header {
+    #logo {
+      width: 10%;
+      height: 100%;
+    }
+
+    #separador {
+      width: 30%;
+    }
+
+    h1 {
+      font-size: 50px;
+    }
+    h2 {
+      font-size: 50px;
+    }
+  }
+
+  .horario-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+
+    .horario {
+      width: 30%;
+      span {
+        font-size: 30px;
+      }
+    }
+  }
+
+  #infoButton {
+    svg {
+      width: 3%;
+    }
+  }
+
+  .modal {
+    .modal-content {
+      h2 {
+        font-size: 35px;
+      }
+      width:50%;
+      font-size: 25px;
+    }
+
+  }
+
+  #contenedorDetalles {
+    margin: 0 auto;
+    width: 50%;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1%;
+    details {
+      margin-bottom: 10px;
+    }
+  }
+
+  #mostrarTicket {
+    margin: 0 auto;
+    width: 30%;
+    
+  }
+ 
+  #ticket {
+    width: 30%;
+    img {
+      width: 25%;
+    }
+    h4 {
+      font-size: 30px;
+    }
+    i {
+      font-size: 20px;
+      text-align: justify;
+      padding: 10px;
+    }
+    table tr td {
+      font-size: 25px;
+    }
+    p {
+      font-size: 25px;
+    }
+  }
+
+
+  #specialTeas {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    img {
+      width: 8%;
+    }
+
+    details {
+      width: 40%;
+    }
+  }
+
+  .carousel {
+    width: 50%;
+    margin-bottom: 100px;
+  }
+
+  #ubicacion iframe {
+    width: 50%;
+    height: 400px;
+  }
+}
+
+/* <header>
+    <img id="logo" src="images/tequeriaWhitePng.PNG" alt="">
+    <h1>La TéQuería</h1>
+    <h2>Bubble Tea</h2>
+    <img id="separador" src="images/hojas.png" alt="separador de hojas">
+  </header> */
+
+  /* <div class="horario-container">
+  <h2 class="titulo">NUESTRO HORARIO</h2>
+  <div class="horario">
+    <div class="fila">
+      <span class="dias">MAR - VIER</span>
+      <span class="horas">12h - 21h</span>
+    </div>
+    <div class="fila">
+      <span class="dias">SÁB & DOM</span>
+      <span class="horas">12h - 21h</span>
+    </div>
+    <div class="fila">
+      <span class="dias">LUN</span>
+      <span class="cerrado">CERRADO</span>
+    </div>
+  </div>
+</div> */
+
+
+/* <section id="tablaPrecios">
+
+    <h2 class="titulo">NUESTRA CARTA</h2>
+
+    <!-- Botón de Información -->
+    <button id="infoButton">
+      <?xml version="1.0" encoding="utf-8"?>
+      <!-- License: MIT. Made by michaelampr: https://github.com/michaelampr/jam -->
+      <svg fill="#ffff" width="10%" height="" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMinYMin" class="jam jam-info">
+        <path
+          d='M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-10a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1zm0-1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z' />
+      </svg>
+    </button> */
+

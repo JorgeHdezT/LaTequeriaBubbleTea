@@ -10,12 +10,39 @@
   <link rel="stylesheet" href="styles/indexHorario.css">
   <link rel="stylesheet" href="styles/indexTicket.css">
   <link rel="stylesheet" href="styles/indexSlider.css">
+  <link rel="stylesheet" href="styles/index.SpecialTeas.css">
+  <link rel="stylesheet" href="styles/PCStyles.css">
+  <link rel="stylesheet" href="styles/animacion.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="scripts/animacion.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
 
 </head>
 
 <body>
+
+
+  <!-- Modal -->
+  <div id="modal">
+    <div class="PromoModal">
+      <h3>DISFRUTA DE NUESTRA</h3>
+      <h2>HAPPY HOUR</h2>
+      <div class="images-container">
+        <!-- Imagen izquierda -->
+        <img class="image-left" src="images/bubble solo.png" alt="Bubble tea 1">
+        <!-- Imagen derecha -->
+        <img class="image-right" src="images/bubble solo.png" alt="Bubble tea 2">
+      </div>
+      <h2 id="tusegundobubble">TU SEGUNDO BUBBLE TEA</h2>
+      <h2 id="descuento">AL 50%</h2>
+      <h3>TODOS LOS JUEVES</h3>
+      <h3>DE 16:00 A 18:00H</h3>
+    </div>
+  </div>
+
+
+
+
   <header>
     <img id="logo" src="images/tequeriaWhitePng.PNG" alt="">
     <h1>La TéQuería</h1>
@@ -46,187 +73,221 @@
     <h2 class="titulo">NUESTRA CARTA</h2>
 
     <!-- Botón de Información -->
-    <button id="infoButton">🛈 ¿Cómo funciona? 🛈</button>
+    <button id="infoButton">
+      <?xml version="1.0" encoding="utf-8"?>
+      <!-- License: MIT. Made by michaelampr: https://github.com/michaelampr/jam -->
+      <svg fill="#ffff" width="10%" height="" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMinYMin" class="jam jam-info">
+        <path
+          d='M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-10a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1zm0-1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z' />
+      </svg>
+    </button>
 
     <!-- Modal de Información -->
     <div id="infoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Bienvenido/a a nuestra Carta Interactiva</h2>
-        <p>Esta carta interactiva te permite organizar tu pedido de forma rápida y sencilla. <b>Puedes hacer click o tocar en cada opción (tamaño, sirope...) </b>para ver cómo se arma tu <b>ticket virtual</b></p>
-        <p>Recuerda, esta herramienta <b>no sirve para pedidos online</b>, sino solo para ayudarte a decidir y agilizar el proceso cuando pidas en la barra.</p>
+        <p>Esta carta interactiva te permite organizar tu pedido de forma rápida y sencilla. <b>Puedes hacer click o
+            tocar en cada opción (tamaño, sirope...) </b>para ver cómo se arma tu <b>ticket virtual</b></p>
+        <p>Recuerda, esta herramienta <b>no sirve para pedidos online</b>, sino solo para ayudarte a decidir y agilizar
+          el proceso cuando pidas en la barra.</p>
         <p>¡Haz clic en las opciones para empezar a personalizar tu bubble tea y organizar tu pedido!</p>
       </div>
     </div>
-    
 
-    <details>
-      <summary>PASO 1: ELIGE TAMAÑO</summary>
-      <table id="tablaTamaño">
-        <tbody>
-          <tr>
-            <td class="opcion-tamaño" data-tamaño="PEQUEÑO 500ML">PEQUEÑO 500ML</td>
-            <td class="Precio" data-precio="4.50">4,50€</td>
-          </tr>
-          <tr>
-            <td class="opcion-tamaño" data-tamaño="GRANDE 700ML">GRANDE 700ML</td>
-            <td class="Precio" data-precio="5.00">5,00€</td>
-          </tr>
-        </tbody>
-      </table>
-    </details>
-
-    <details>
-      <summary>PASO 2: ELIGE BEBIDA</summary>
-      <table id="tablaBebida">
-        <thead>
-          <tr>
-            <th>TÉ</th>
-            <th>LECHE</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="opcion-bebida" data-bebida="Jazmín">Jazmín</td>
-            <td class="opcion-bebida" data-bebida="Entera">Entera</td>
-          </tr>
-          <tr>
-            <td class="opcion-bebida" data-bebida="Earl Gray">Earl Grey</td>
-            <td class="opcion-bebida" data-bebida="Sin lactosa">Sin lactosa</td>
-          </tr>
-          <tr>
-            <td class="opcion-bebida" data-bebida="Rojo">Rojo</td>
-            <td class="opcion-bebida" data-bebida="Soja">Soja</td>
-          </tr>
-          <tr>
-            <td class="opcion-bebida" data-bebida="Rooibos">Rooibos (sin teína)</td>
-            <td class="opcion-bebida" data-bebida="Avena">Avena</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td class="opcion-bebida" data-bebida="Leche con coco">Leche con coco</td>
-          </tr>
-        </tbody>
-      </table>
-    </details>
-
-    <details>
-      <summary>PASO 3: ELIGE SIROPE</summary>
-      <table id="tablaSirope">
-        <tbody>
-          <tr>
-            <td class="opcion-sirope" data-sirope="Limón" style="color: #FFFF00;">Limón</td>
-            <td class="opcion-sirope" data-sirope="Melón Dulce" style="color: #FFD700;">Melón Dulce</td>
-          </tr>
-          <tr>
-            <td class="opcion-sirope" data-sirope="Manzana Verde" style="color: #32CD32;">Manzana Verde</td>
-            <td class="opcion-sirope" data-sirope="Maracuyá" style="color: #FF7F00;">Maracuyá</td>
-          </tr>
-          <tr>
-            <td class="opcion-sirope" data-sirope="Piña" style="color: #FFB900;">Piña</td>
-            <td class="opcion-sirope" data-sirope="Mango" style="color: #FF8C00;">Mango</td>
-          </tr>
-          <tr>
-            <td class="opcion-sirope" data-sirope="Lichi" style="color: #FF1493;">Lichi</td>
-            <td class="opcion-sirope" data-sirope="Melocotón" style="color: #FFA07A;">Melocotón</td>
-          </tr>
-          <tr>
-            <td class="opcion-sirope" data-sirope="Fresa" style="color: #FF0000;">Fresa</td>
-            <td class="opcion-sirope" data-sirope="Frambuesa" style="color: #E30B5D;">Frambuesa</td>
-          </tr>
-          <tr>
-            <td class="opcion-sirope" data-sirope="Sandía" style="color: #FF6347;">Sandía</td>
-            <td class="opcion-sirope" data-sirope="Cereza" style="color: #DC143C;">Cereza</td>
-          </tr>
-          <tr>
-            <td class="opcion-sirope" data-sirope="Arándanos" style="color: #b969ff;">Arándanos</td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </details>
-
-    <details>
-      <summary>PASO 4: ELIGE TOPPING</summary>
-      <table id="tablaTopping">
-        <tbody>
-          <tr>
-            <td class="opcion-topping" data-topping="Mango" style="color: #FF8C00;">Mango</td>
-            <td><span class="circle" style="background-color: #FF8C00;"></span></td>
-            <td class="opcion-topping" data-topping="Arándanos" style="color: #b969ff;">Arándanos</td>
-            <td><span class="circle" style="background-color: #b969ff;"></span></td>
-          </tr>
-          <tr>
-            <td class="opcion-topping" data-topping="Cereza" style="color: #DC143C;">Cereza</td>
-            <td><span class="circle" style="background-color: #DC143C;"></span></td>
-            <td class="opcion-topping" data-topping="Maracuyá" style="color: #FF7F00;">Maracuyá</td>
-            <td><span class="circle" style="background-color: #FF7F00;"></span></td>
-          </tr>
-          <tr>
-            <td class="opcion-topping" data-topping="Granada" style="color: #E30022;">Granada</td>
-            <td><span class="circle" style="background-color: #E30022;"></span></td>
-            <td class="opcion-topping" data-topping="Manzana Verde" style="color: #32CD32;">Manzana Verde</td>
-            <td><span class="circle" style="background-color: #32CD32;"></span></td>
-          </tr>
-          <tr>
-            <td class="opcion-topping" data-topping="Fresa" style="color: #FF0000;">Fresa</td>
-            <td><span class="circle" style="background-color: #FF0000;"></span></td>
-            <td class="opcion-topping" data-topping="Melocotón" style="color: #FFA07A;">Melocotón</td>
-            <td><span class="circle" style="background-color: #FFA07A;"></span></td>
-          </tr>
-          <tr>
-            <td class="opcion-topping" data-topping="Lichi" style="color: #FF1493;">Lichi</td>
-            <td><span class="circle" style="background-color: #FF1493;"></span></td>
-            <td class="opcion-topping" data-topping="Sandía" style="color: #FF6347;">Sandía</td>
-            <td><span class="circle" style="background-color: #FF6347;"></span></td>
-          </tr>
-          <tr>
-            <td class="opcion-topping" data-topping="Melón Dulce" style="color: #FFD700;">Melón Dulce</td>
-            <td><span class="circle" style="background-color: #FFD700;"></span></td>
-            <td class="opcion-topping" data-topping="Limón" style="color: #FFFF00;">Limón</td>
-            <td><span class="circle" style="background-color: #FFFF00;"></span></td>
-          </tr>
-          <tr>
-            <td class="opcion-topping" data-topping="Coco" style="color: #ffff;">Coco</td>
-            <td><span class="circle" style="background-color: #ffff;"></span></td>
-            <td class="opcion-topping" data-topping="Perlas de Cristal" style="color: #FFFFFF;">Perlas de Cristal</td>
-            <td><span class="circle" style="background-color: #FFFFFF; border: 1px solid #000;"></span></td>
-          </tr>
-          <tr>
-            <td class="opcion-topping" data-topping="Perlas Brown Sugar" style="color: #ca7105;">Perlas Brown Sugar</td>
-            <td><span class="circle" style="background-color: #ca7105;"></span></td>
-            <td class="opcion-topping" data-topping="Jelly (Mango)" style="color: #FF8C00;">Jelly (Mango)</td>
-            <td><span class="circle" style="background-color: #FF8C00;"></span></td>
-          </tr>
-          <tr>
-            <td class="opcion-topping" data-topping="Jelly (Lichi)" style="color: #FF1493;">Jelly (Lichi)</td>
-            <td><span class="circle" style="background-color: #FF1493;"></span></td>
-            <td class="opcion-topping" data-topping="Jelly (Arcoiris)" style="color: #FF00FF;">Jelly (Arcoiris)</td>
-            <td><span class="circle" style="background-color: #FF00FF;"></span></td>
-          </tr>
-          <tr>
-            <td class="opcion-topping" data-topping="Tapioca Negra" style="color: #000000;">Tapioca Negra</td>
-            <td><span class="circle" style="background-color: #000000;"></span></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </details>
+    <div id="contenedorDetalles">
 
 
+      <details>
+        <summary>PASO 1: ELIGE TAMAÑO</summary>
+        <table id="tablaTamaño">
+          <tbody>
+            <tr>
+              <td class="opcion-tamaño" data-tamaño="PEQUEÑO 500ML">PEQUEÑO 500ML</td>
+              <td class="Precio" data-precio="4.50">4,50€</td>
+            </tr>
+            <tr>
+              <td class="opcion-tamaño" data-tamaño="GRANDE 700ML">GRANDE 700ML</td>
+              <td class="Precio" data-precio="5.00">5,00€</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
 
+      <details>
+        <summary>PASO 2: ELIGE BEBIDA</summary>
+        <table id="tablaBebida">
+          <thead>
+            <tr>
+              <th>TÉ</th>
+              <th>LECHE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="opcion-bebida" data-bebida="Jazmín">Jazmín</td>
+              <td class="opcion-bebida" data-bebida="Entera">Entera</td>
+            </tr>
+            <tr>
+              <td class="opcion-bebida" data-bebida="Earl Gray">Earl Grey</td>
+              <td class="opcion-bebida" data-bebida="Sin lactosa">Sin lactosa</td>
+            </tr>
+            <tr>
+              <td class="opcion-bebida" data-bebida="Rojo">Rojo</td>
+              <td class="opcion-bebida" data-bebida="Soja">Soja</td>
+            </tr>
+            <tr>
+              <td class="opcion-bebida" data-bebida="Rooibos">Rooibos (sin teína)</td>
+              <td class="opcion-bebida" data-bebida="Avena">Avena</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="opcion-bebida" data-bebida="Leche con coco">Leche con coco</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
 
+      <details>
+        <summary>PASO 3: ELIGE SIROPE</summary>
+        <table id="tablaSirope">
+          <tbody>
+            <tr>
+              <td class="opcion-sirope" data-sirope="Limón" style="color: #FFFF00;">Limón</td>
+              <td class="opcion-sirope" data-sirope="Melón Dulce" style="color: #FFD700;">Melón Dulce</td>
+            </tr>
+            <tr>
+              <td class="opcion-sirope" data-sirope="Manzana Verde" style="color: #32CD32;">Manzana Verde</td>
+              <td class="opcion-sirope" data-sirope="Maracuyá" style="color: #FF7F00;">Maracuyá</td>
+            </tr>
+            <tr>
+              <td class="opcion-sirope" data-sirope="Piña" style="color: #FFB900;">Piña</td>
+              <td class="opcion-sirope" data-sirope="Mango" style="color: #FF8C00;">Mango</td>
+            </tr>
+            <tr>
+              <td class="opcion-sirope" data-sirope="Lichi" style="color: #FF1493;">Lichi</td>
+              <td class="opcion-sirope" data-sirope="Melocotón" style="color: #FFA07A;">Melocotón</td>
+            </tr>
+            <tr>
+              <td class="opcion-sirope" data-sirope="Fresa" style="color: #FF0000;">Fresa</td>
+              <td class="opcion-sirope" data-sirope="Frambuesa" style="color: #E30B5D;">Frambuesa</td>
+            </tr>
+            <tr>
+              <td class="opcion-sirope" data-sirope="Sandía" style="color: #FF6347;">Sandía</td>
+              <td class="opcion-sirope" data-sirope="Cereza" style="color: #DC143C;">Cereza</td>
+            </tr>
+            <tr>
+              <td class="opcion-sirope" data-sirope="Arándanos" style="color: #b969ff;">Arándanos</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
 
+      <details>
+        <summary>PASO 4: ELIGE TOPPING</summary>
+        <table id="tablaTopping">
+          <tbody>
+            <tr>
+              <td class="opcion-topping" data-topping="Mango" style="color: #FF8C00;">Mango</td>
+              <td><span class="circle" style="background-color: #FF8C00;"></span></td>
+              <td class="opcion-topping" data-topping="Arándanos" style="color: #b969ff;">Arándanos</td>
+              <td><span class="circle" style="background-color: #b969ff;"></span></td>
+            </tr>
+            <tr>
+              <td class="opcion-topping" data-topping="Cereza" style="color: #DC143C;">Cereza</td>
+              <td><span class="circle" style="background-color: #DC143C;"></span></td>
+              <td class="opcion-topping" data-topping="Maracuyá" style="color: #FF7F00;">Maracuyá</td>
+              <td><span class="circle" style="background-color: #FF7F00;"></span></td>
+            </tr>
+            <tr>
+              <td class="opcion-topping" data-topping="Granada" style="color: #E30022;">Granada</td>
+              <td><span class="circle" style="background-color: #E30022;"></span></td>
+              <td class="opcion-topping" data-topping="Manzana Verde" style="color: #32CD32;">Manzana Verde</td>
+              <td><span class="circle" style="background-color: #32CD32;"></span></td>
+            </tr>
+            <tr>
+              <td class="opcion-topping" data-topping="Fresa" style="color: #FF0000;">Fresa</td>
+              <td><span class="circle" style="background-color: #FF0000;"></span></td>
+              <td class="opcion-topping" data-topping="Melocotón" style="color: #FFA07A;">Melocotón</td>
+              <td><span class="circle" style="background-color: #FFA07A;"></span></td>
+            </tr>
+            <tr>
+              <td class="opcion-topping" data-topping="Lichi" style="color: #FF1493;">Lichi</td>
+              <td><span class="circle" style="background-color: #FF1493;"></span></td>
+              <td class="opcion-topping" data-topping="Sandía" style="color: #FF6347;">Sandía</td>
+              <td><span class="circle" style="background-color: #FF6347;"></span></td>
+            </tr>
+            <tr>
+              <td class="opcion-topping" data-topping="Melón Dulce" style="color: #FFD700;">Melón Dulce</td>
+              <td><span class="circle" style="background-color: #FFD700;"></span></td>
+              <td class="opcion-topping" data-topping="Limón" style="color: #FFFF00;">Limón</td>
+              <td><span class="circle" style="background-color: #FFFF00;"></span></td>
+            </tr>
+            <tr>
+              <td class="opcion-topping" data-topping="Coco" style="color: #ffff;">Coco</td>
+              <td><span class="circle" style="background-color: #ffff;"></span></td>
+              <td class="opcion-topping" data-topping="Perlas de Cristal" style="color: #FFFFFF;">Perlas de Cristal</td>
+              <td><span class="circle" style="background-color: #FFFFFF; border: 1px solid #000;"></span></td>
+            </tr>
+            <tr>
+              <td class="opcion-topping" data-topping="Perlas Brown Sugar" style="color: #ca7105;">Perlas Brown Sugar
+              </td>
+              <td><span class="circle" style="background-color: #ca7105;"></span></td>
+              <td class="opcion-topping" data-topping="Jelly (Mango)" style="color: #FF8C00;">Jelly (Mango)</td>
+              <td><span class="circle" style="background-color: #FF8C00;"></span></td>
+            </tr>
+            <tr>
+              <td class="opcion-topping" data-topping="Jelly (Lichi)" style="color: #FF1493;">Jelly (Lichi)</td>
+              <td><span class="circle" style="background-color: #FF1493;"></span></td>
+              <td class="opcion-topping" data-topping="Jelly (Arcoiris)" style="color: #FF00FF;">Jelly (Arcoiris)</td>
+              <td><span class="circle" style="background-color: #FF00FF;"></span></td>
+            </tr>
+            <tr>
+              <td class="opcion-topping" data-topping="Tapioca Negra" style="color: #000000;">Tapioca Negra</td>
+              <td><span class="circle" style="background-color: #000000;"></span></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
 
+      <details>
+        <summary>PASO 5: EXTRA TOPPING</summary>
+        <table id="tablaExtra" style="color: #FFFFFF;">
+          <tbody>
+            <tr>
+              <td class="opcion-extra" data-topping="Bola Bomba">Bola Bomba</td>
+              <td class="opcion-extra-precio">0.50</td>
+            </tr>
+            <tr>
+              <td class="opcion-extra" data-topping="Perlas de Cristal">Perlas de Cristal</td>
+              <td class="opcion-extra-precio">0.75</td>
+            </tr>
+            <tr>
+              <td class="opcion-extra" data-topping="Tapioca Negra">Tapioca Negra</td>
+              <td class="opcion-extra-precio">0.50</td>
+            </tr>
+            <tr>
+              <td class="opcion-extra" data-topping="Jelly">Jelly</td>
+              <td class="opcion-extra-precio">0.50</td>
+            </tr>
+            <tr>
+              <td class="opcion-extra" data-topping="Espuma de Queso">Espuma de Queso</td>
+              <td class="opcion-extra-precio">0.75</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+    </div>
 
     <button onclick="showTicket()" id="mostrarTicket">MOSTRAR TICKET</button>
 
-    <div id="ticket">
-
+    <div id="ticket" style="display:none;">
       <img src="images/tequeriaWhitePng.PNG" alt="">
       <h4>La TéQuería Bubble Tea</h4>
-
       <i>Saca una captura de pantalla a esto y muestralo en la barra cuando vayas a hacer tu pedido.</i>
 
       <h3>Tus Selecciones:</h3>
@@ -248,6 +309,10 @@
           <td>Topping: </td>
           <td id="ticketTopping"></td>
         </tr>
+        <tr>
+          <td>Extras: </td>
+          <td id="ticketExtras">Sin extras</td>
+        </tr>
       </table>
 
       <p>----------------------</p>
@@ -256,8 +321,81 @@
 
       <button onclick="hideTicket()">CERRAR</button>
     </div>
-  </section>
 
+    <section id="specialTeas">
+      <h3>PRUEBA NUESTROS</h3>
+      <h2>Special-Teas</h2>
+      <img src="images/bubbleteaSVG.svg" alt="">
+      <details>
+        <summary>VER LA TABLA</summary>
+        <table>
+          <thead>
+            <tr>
+              <th>Bebida</th>
+              <th>Ingredientes</th>
+              <th>Precio (500ml/700ml)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Melóncito (granizado)</td>
+              <td>Té jazmín, melón dulce, perlas de cristal, espuma de queso</td>
+              <td>€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td>Crema de Maracuyá (granizado)</td>
+              <td>Té jazmín, maracuyá, espuma de queso, perlas de cristal</td>
+              <td>€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td>Del Bosque (granizado)</td>
+              <td>Té jazmín, frambuesa, perlas de cristal, espuma de queso</td>
+              <td>€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td>Ponche Polinesia (granizado)</td>
+              <td>Té jazmín, fresa, mango, piña, espuma de queso, perlas de cristal</td>
+              <td>€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td>Pink Lichi (granizado)</td>
+              <td>Té jazmín, lichi, espuma de queso, perlas de cristal</td>
+              <td>€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td>Miss Fresa (granizado)</td>
+              <td>Té jazmín, fresa, perlas de cristal, espuma de queso</td>
+              <td>€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td>Sueño de Mango (granizado)</td>
+              <td>Té jazmín, mango, perlas de cristal, espuma de queso</td>
+              <td>€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td>TARO COCO</td>
+              <td>Taro, leche, coco</td>
+              <td>€4.50 / €5.00</td>
+            </tr>
+            <tr>
+              <td>MATCHA LATTE</td>
+              <td>Matcha leche</td>
+              <td>€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td>Brown Sugar Milktea</td>
+              <td>Té negro con leche, sirope de azúcar morena, tapioca y cheesefoam</td>
+              <td>€4.50 / €5.00</td>
+            </tr>
+            <tr>
+              <td colspan="2">Thai Milktea</td>
+              <td>€4.50 / €5.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+    </section>
+  </section>
 
   <section id="imagenes">
 
@@ -311,7 +449,7 @@
       </svg>
     </div>
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4187.916259428895!2d-16.254624923966016!3d28.466384691605292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc41cb6a598f4ff9%3A0xf0b3481014cfa981!2sLa%20T%C3%A9quer%C3%ADa%20Bubble%20Tea!5e1!3m2!1ses!2ses!4v1731944643382!5m2!1ses!2ses"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1894.1192373293266!2d-16.253257669855394!3d28.466462593080234!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc41cb6a598f4ff9%3A0xf0b3481014cfa981!2sLa%20T%C3%A9quer%C3%ADa%20Bubble%20Tea!5e0!3m2!1ses!2ses!4v1733755342586!5m2!1ses!2ses"
       allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
 
@@ -334,6 +472,7 @@
 
   <script src="scripts/ticketCreator.js"></script>
   <script src="scripts/infoButton.js"></script>
+  
 </body>
 
 </html>

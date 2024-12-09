@@ -2,7 +2,9 @@
 let ticket = {
   tamaño: null,
   bebida: null,
-  sirope: null, // Nuevo campo para el sirope
+  sirope: null,
+  extras: [], // Nuevo campo para los extras
+  topping: null, // Solo un topping puede ser seleccionado
 };
 
 // Función para registrar la selección de tamaño
@@ -13,8 +15,8 @@ const seleccionarTamaño = (e) => {
   e.target.style.color = 'white';
 
   const tamañoSeleccionado = e.target.getAttribute('data-tamaño');
-  const precioSeleccionado = e.target.nextElementSibling.getAttribute('data-precio'); // Precio de la misma fila
-  ticket.tamaño = { tamaño: tamañoSeleccionado, precio: `${precioSeleccionado}€` };
+  const precioSeleccionado = parseFloat(e.target.nextElementSibling.getAttribute('data-precio')); // Precio como número
+  ticket.tamaño = { tamaño: tamañoSeleccionado, precio: precioSeleccionado };
 
   mostrarTicket();
 };
@@ -50,33 +52,64 @@ const seleccionarBebida = (e) => {
 
 // Nueva función para registrar la selección de sirope
 const seleccionarSirope = (e) => {
-  resetearResaltado('.opcion-sirope'); // Nuevo selector para sirope
+  resetearResaltado('.opcion-sirope');
 
   e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
 
-  const siropeSeleccionado = e.target.getAttribute('data-sirope'); // Usamos el atributo "data-sirope"
+  const siropeSeleccionado = e.target.getAttribute('data-sirope');
   ticket.sirope = siropeSeleccionado;
 
   mostrarTicket();
 };
 
-// Función para registrar la selección del topping
+// Función para registrar la selección de un topping
 const seleccionarTopping = (e) => {
-  resetearResaltado('.opcion-topping');
-  e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
-
   const toppingSeleccionado = e.target.getAttribute('data-topping');
-  ticket.topping = toppingSeleccionado;
 
-  mostrarTicket();
+  // Si ya hay un topping seleccionado, lo deseleccionamos
+  if (ticket.topping === toppingSeleccionado) {
+    ticket.topping = null; // Deseleccionamos el topping
+    e.target.style.backgroundColor = ''; // Quitar resaltado
+  } else {
+    ticket.topping = toppingSeleccionado; // Seleccionamos el nuevo topping
+    resetearResaltado('.opcion-topping'); // Limpiamos el resaltado en todas las opciones
+    e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.3)'; // Resaltamos el nuevo topping
+  }
+
+  mostrarTicket(); // Actualizar el ticket
+};
+
+// Función para registrar la selección de un extra
+const seleccionarExtra = (e) => {
+  const extraSeleccionado = e.target.getAttribute('data-topping');
+
+  // Encontrar el precio correspondiente al extra
+  const precioCelda = e.target.parentElement.querySelector('.opcion-extra-precio');
+  const precioExtra = parseFloat(precioCelda.textContent); // Obtener precio como número
+
+  // Verificar si el extra ya está en el ticket
+  const index = ticket.extras.findIndex(extra => extra.topping === extraSeleccionado);
+
+  if (index !== -1) {
+    // Si ya está seleccionado, lo deseleccionamos
+    ticket.extras.splice(index, 1); // Eliminar del array
+    e.target.style.backgroundColor = ''; // Quitar resaltado
+  } else {
+    // Si no está seleccionado, lo añadimos
+    ticket.extras.push({ topping: extraSeleccionado, precio: precioExtra });
+    e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.3)'; // Resaltar
+  }
+
+  mostrarTicket(); // Actualizar el ticket
 };
 
 // Función para mostrar el ticket actualizado
 const mostrarTicket = () => {
   const ticketTamaño = document.querySelector("#ticketTamaño");
   const ticketBebida = document.querySelector("#ticketBebida");
-  const ticketSirope = document.querySelector("#ticketSirope"); // Nueva sección del ticket
-  const ticketTopping = document.querySelector("#ticketTopping"); // Nueva sección del ticket
+  const ticketSirope = document.querySelector("#ticketSirope");
+  const ticketExtras = document.querySelector("#ticketExtras"); // Nueva sección para los extras
+  const ticketTopping = document.querySelector("#ticketTopping"); // Sección para el topping
   const totalPedido = document.querySelector("#checkout");
 
   if (ticket.tamaño) {
@@ -88,12 +121,28 @@ const mostrarTicket = () => {
   if (ticket.sirope) {
     ticketSirope.textContent = ticket.sirope;
   }
+  if (ticket.extras.length > 0) {
+    // Mostrar todos los extras seleccionados, uno debajo del otro
+    ticketExtras.innerHTML = ticket.extras
+      .map((extra) => `${extra.topping} (${extra.precio}€)`)
+      .join('<br>'); // Usamos <br> para separar cada extra en una nueva línea
+  } else {
+    ticketExtras.innerHTML = "Sin extras";
+  }
   if (ticket.topping) {
-    ticketTopping.textContent = ticket.topping;
+    ticketTopping.textContent = `${ticket.topping}`;
+  } else {
+    ticketTopping.textContent = "Sin topping";
   }
-  if (totalPedido) {
-    totalPedido.textContent = "Total: " + ticket.tamaño.precio;
-  }
+
+  // Calcular el total
+  let total = ticket.tamaño ? ticket.tamaño.precio : 0;
+  ticket.extras.forEach((extra) => {
+    total += extra.precio;
+  });
+  // No sumamos el topping, ya que no tiene precio asociado por defecto
+
+  totalPedido.textContent = `Total: ${total.toFixed(2)}€`;
 };
 
 // Mostrar el ticket
@@ -113,7 +162,6 @@ const resetearResaltado = (selector) => {
   const opciones = document.querySelectorAll(selector);
   opciones.forEach((opcion) => {
     opcion.style.backgroundColor = ''; 
-
   });
 };
 
@@ -130,14 +178,19 @@ opcionesBebida.forEach((opcion) => {
 });
 
 // Añadir event listeners a las opciones de sirope
-const opcionesSirope = document.querySelectorAll('.opcion-sirope'); // Corregido para usar la clase correcta
+const opcionesSirope = document.querySelectorAll('.opcion-sirope');
 opcionesSirope.forEach((opcion) => {
   opcion.addEventListener('click', seleccionarSirope);
 });
 
-// Añadir event listeners a las opciones de topping
+// Añadir event listeners a las opciones de topping (solo uno)
 const opcionesTopping = document.querySelectorAll('.opcion-topping');
 opcionesTopping.forEach((opcion) => {
   opcion.addEventListener('click', seleccionarTopping);
 });
 
+// Añadir event listeners a las opciones de extra (varios posibles)
+const opcionesExtra = document.querySelectorAll('.opcion-extra');
+opcionesExtra.forEach((opcion) => {
+  opcion.addEventListener('click', seleccionarExtra);
+});

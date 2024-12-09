@@ -1,0 +1,132 @@
+/* Modal principal */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease-out; /* Suaviza la opacidad */
+}
+
+#modal.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Transición suave */
+}
+
+/* Contenido del modal */
+.PromoModal {
+  background: #983dff; /* Fondo violeta */
+  border-radius: 15px;
+  padding: 30px 20px;
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-out;
+}
+
+#tusegundobubble {
+  font-size: 20px;
+}
+
+/* Títulos */
+.PromoModal h2 {
+  font-size: 1.8rem;
+  margin: 15px 0;
+  color: #ffffff;
+  text-shadow: 0px 0px 10px rgb(255, 230, 0), 0px 0px 10px rgb(255, 153, 0);
+  font-weight: bold;
+}
+
+.PromoModal h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+/* Contenedor de las imágenes */
+.PromoModal .images-container {
+  height: 50%;
+}
+
+/* Estilo para las imágenes */
+.images-container img {
+  width: 40%;  /* Ajustamos el tamaño de las imágenes */
+  opacity: 1;
+  transition: opacity 0.5s ease;  /* Suavizamos la transición de opacidad */
+}
+
+.image-left {
+  animation-name: slideInLeft;
+  animation-delay: 0.3s;  /* Retraso en la animación para la entrada */
+}
+
+.image-right {
+  filter: drop-shadow(0px 0px 5px rgb(0, 255, 0));
+  transform: translateX(2000px);
+  animation: slideAndScale 2s ease forwards; /* Combina ambas animaciones */
+  animation-delay: 1s;  /* Retraso en la animación para la entrada */
+}
+
+#descuento {
+  text-shadow: 0px 0px 10px rgb(0, 217, 255);
+}
+
+/* Animaciones */
+
+@keyframes scale {
+  from {
+
+    transform: scale(1);
+  }
+
+  to {
+
+    transform: scale(1.2);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-200%);  /* Desplazamos la imagen fuera de la pantalla hacia la izquierda */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;  /* La imagen aparecerá con opacidad */
+  }
+}
+
+@keyframes slideAndScale {
+  0% {
+    transform: translateX(200%) scale(1); /* Fuera de la pantalla y tamaño normal */
+    opacity: 0;
+  }
+  40% {
+    transform: translateX(0) scale(1); /* Se desliza hacia su lugar */
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(0) scale(1.2) rotate(-10deg); /* Agrandado */
+  }
+  100% {
+    transform: translateX(0) scale(1); /* Tamaño normal */
+  }
+}
