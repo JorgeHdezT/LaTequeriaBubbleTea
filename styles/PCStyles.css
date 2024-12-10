@@ -50,8 +50,9 @@
   }
 
   #contenedorDetalles {
+    border: 1px solid black;
     margin: 0 auto;
-    width: 50%;
+    width: 70%;
     flex-wrap: wrap;
     display: flex;
     flex-direction: row;
@@ -59,6 +60,7 @@
     justify-content: space-evenly;
     gap: 1%;
     details {
+      width: 30%;
       margin-bottom: 10px;
     }
   }

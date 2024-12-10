@@ -104,11 +104,11 @@
         <table id="tablaTamaño">
           <tbody>
             <tr>
-              <td class="opcion-tamaño" data-tamaño="PEQUEÑO 500ML">PEQUEÑO 500ML</td>
+              <td id="ticketTamañoPequeño" class="opcion-tamaño" data-tamaño="PEQUEÑO 500ML">PEQUEÑO 500ML</td>
               <td class="Precio" data-precio="4.50">4,50€</td>
             </tr>
             <tr>
-              <td class="opcion-tamaño" data-tamaño="GRANDE 700ML">GRANDE 700ML</td>
+              <td id="ticketTamañoGrande" class="opcion-tamaño" data-tamaño="GRANDE 700ML">GRANDE 700ML</td>
               <td class="Precio" data-precio="5.00">5,00€</td>
             </tr>
           </tbody>
@@ -120,30 +120,30 @@
         <table id="tablaBebida">
           <thead>
             <tr>
-              <th>TÉ</th>
-              <th>LECHE</th>
+              <th id="ticketTe">TÉ</th>
+              <th id="ticketLeche">LECHE</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="opcion-bebida" data-bebida="Jazmín">Jazmín</td>
-              <td class="opcion-bebida" data-bebida="Entera">Entera</td>
+              <td id="ticketBebidaJazmin" class="opcion-bebida" data-bebida="Jazmín">Jazmín</td>
+              <td id="ticketLecheEntera" class="opcion-bebida" data-bebida="Entera">Entera</td>
             </tr>
             <tr>
-              <td class="opcion-bebida" data-bebida="Earl Gray">Earl Grey</td>
-              <td class="opcion-bebida" data-bebida="Sin lactosa">Sin lactosa</td>
+              <td id="ticketBebidaEarlGray" class="opcion-bebida" data-bebida="Earl Gray">Earl Grey</td>
+              <td id="ticketLecheSinLactosa" class="opcion-bebida" data-bebida="Sin lactosa">Sin lactosa</td>
             </tr>
             <tr>
-              <td class="opcion-bebida" data-bebida="Rojo">Rojo</td>
-              <td class="opcion-bebida" data-bebida="Soja">Soja</td>
+              <td id="ticketBebidaRojo" class="opcion-bebida" data-bebida="Rojo">Rojo</td>
+              <td id="ticketLecheSoja" class="opcion-bebida" data-bebida="Soja">Soja</td>
             </tr>
             <tr>
-              <td class="opcion-bebida" data-bebida="Rooibos">Rooibos (sin teína)</td>
-              <td class="opcion-bebida" data-bebida="Avena">Avena</td>
+              <td id="ticketBebidaRooibos" class="opcion-bebida" data-bebida="Rooibos">Rooibos (sin teína)</td>
+              <td id="ticketLecheAvena" class="opcion-bebida" data-bebida="Avena">Avena</td>
             </tr>
             <tr>
               <td></td>
-              <td class="opcion-bebida" data-bebida="Leche con coco">Leche con coco</td>
+              <td id="ticketLecheCoco" class="opcion-bebida" data-bebida="Leche con coco">Leche con coco</td>
             </tr>
           </tbody>
         </table>
@@ -154,35 +154,42 @@
         <table id="tablaSirope">
           <tbody>
             <tr>
-              <td class="opcion-sirope" data-sirope="Limón" style="color: #FFFF00;">Limón</td>
-              <td class="opcion-sirope" data-sirope="Melón Dulce" style="color: #FFD700;">Melón Dulce</td>
+              <td id="ticketSiropeLimon" class="opcion-sirope" data-sirope="Limón" style="color: #FFFF00;">Limón</td>
+              <td id="ticketSiropeMelonDulce" class="opcion-sirope" data-sirope="Melón Dulce" style="color: #FFD700;">
+                Melón Dulce</td>
             </tr>
             <tr>
-              <td class="opcion-sirope" data-sirope="Manzana Verde" style="color: #32CD32;">Manzana Verde</td>
-              <td class="opcion-sirope" data-sirope="Maracuyá" style="color: #FF7F00;">Maracuyá</td>
+              <td id="ticketSiropeManzanaVerde" class="opcion-sirope" data-sirope="Manzana Verde"
+                style="color: #32CD32;">Manzana Verde</td>
+              <td id="ticketSiropeMaracuya" class="opcion-sirope" data-sirope="Maracuyá" style="color: #FF7F00;">
+                Maracuyá</td>
             </tr>
             <tr>
-              <td class="opcion-sirope" data-sirope="Piña" style="color: #FFB900;">Piña</td>
-              <td class="opcion-sirope" data-sirope="Mango" style="color: #FF8C00;">Mango</td>
+              <td id="ticketSiropePiña" class="opcion-sirope" data-sirope="Piña" style="color: #FFB900;">Piña</td>
+              <td id="ticketSiropeMango" class="opcion-sirope" data-sirope="Mango" style="color: #FF8C00;">Mango</td>
             </tr>
             <tr>
-              <td class="opcion-sirope" data-sirope="Lichi" style="color: #FF1493;">Lichi</td>
-              <td class="opcion-sirope" data-sirope="Melocotón" style="color: #FFA07A;">Melocotón</td>
+              <td id="ticketSiropeLichi" class="opcion-sirope" data-sirope="Lichi" style="color: #FF1493;">Lichi</td>
+              <td id="ticketSiropeMelocoton" class="opcion-sirope" data-sirope="Melocotón" style="color: #FFA07A;">
+                Melocotón</td>
             </tr>
             <tr>
-              <td class="opcion-sirope" data-sirope="Fresa" style="color: #FF0000;">Fresa</td>
-              <td class="opcion-sirope" data-sirope="Frambuesa" style="color: #E30B5D;">Frambuesa</td>
+              <td id="ticketSiropeFresa" class="opcion-sirope" data-sirope="Fresa" style="color: #FF0000;">Fresa</td>
+              <td id="ticketSiropeFrambuesa" class="opcion-sirope" data-sirope="Frambuesa" style="color: #E30B5D;">
+                Frambuesa</td>
             </tr>
             <tr>
-              <td class="opcion-sirope" data-sirope="Sandía" style="color: #FF6347;">Sandía</td>
-              <td class="opcion-sirope" data-sirope="Cereza" style="color: #DC143C;">Cereza</td>
+              <td id="ticketSiropeSandia" class="opcion-sirope" data-sirope="Sandía" style="color: #FF6347;">Sandía</td>
+              <td id="ticketSiropeCereza" class="opcion-sirope" data-sirope="Cereza" style="color: #DC143C;">Cereza</td>
             </tr>
             <tr>
-              <td class="opcion-sirope" data-sirope="Arándanos" style="color: #b969ff;">Arándanos</td>
+              <td id="ticketSiropeArandanos" class="opcion-sirope" data-sirope="Arándanos" style="color: #b969ff;">
+                Arándanos</td>
               <td></td>
             </tr>
           </tbody>
         </table>
+
       </details>
 
       <details>
@@ -190,68 +197,82 @@
         <table id="tablaTopping">
           <tbody>
             <tr>
-              <td class="opcion-topping" data-topping="Mango" style="color: #FF8C00;">Mango</td>
+              <td id="ticketToppingMango" class="opcion-topping" data-topping="Mango" style="color: #FF8C00;">Mango</td>
               <td><span class="circle" style="background-color: #FF8C00;"></span></td>
-              <td class="opcion-topping" data-topping="Arándanos" style="color: #b969ff;">Arándanos</td>
+              <td id="ticketToppingArandanos" class="opcion-topping" data-topping="Arándanos" style="color: #b969ff;">
+                Arándanos</td>
               <td><span class="circle" style="background-color: #b969ff;"></span></td>
             </tr>
             <tr>
-              <td class="opcion-topping" data-topping="Cereza" style="color: #DC143C;">Cereza</td>
+              <td id="ticketToppingCereza" class="opcion-topping" data-topping="Cereza" style="color: #DC143C;">Cereza
+              </td>
               <td><span class="circle" style="background-color: #DC143C;"></span></td>
-              <td class="opcion-topping" data-topping="Maracuyá" style="color: #FF7F00;">Maracuyá</td>
+              <td id="ticketToppingMaracuya" class="opcion-topping" data-topping="Maracuyá" style="color: #FF7F00;">
+                Maracuyá</td>
               <td><span class="circle" style="background-color: #FF7F00;"></span></td>
             </tr>
             <tr>
-              <td class="opcion-topping" data-topping="Granada" style="color: #E30022;">Granada</td>
+              <td id="ticketToppingGranada" class="opcion-topping" data-topping="Granada" style="color: #E30022;">
+                Granada</td>
               <td><span class="circle" style="background-color: #E30022;"></span></td>
-              <td class="opcion-topping" data-topping="Manzana Verde" style="color: #32CD32;">Manzana Verde</td>
+              <td id="ticketToppingManzanaVerde" class="opcion-topping" data-topping="Manzana Verde"
+                style="color: #32CD32;">Manzana Verde</td>
               <td><span class="circle" style="background-color: #32CD32;"></span></td>
             </tr>
             <tr>
-              <td class="opcion-topping" data-topping="Fresa" style="color: #FF0000;">Fresa</td>
+              <td id="ticketToppingFresa" class="opcion-topping" data-topping="Fresa" style="color: #FF0000;">Fresa</td>
               <td><span class="circle" style="background-color: #FF0000;"></span></td>
-              <td class="opcion-topping" data-topping="Melocotón" style="color: #FFA07A;">Melocotón</td>
+              <td id="ticketToppingMelocoton" class="opcion-topping" data-topping="Melocotón" style="color: #FFA07A;">
+                Melocotón</td>
               <td><span class="circle" style="background-color: #FFA07A;"></span></td>
             </tr>
             <tr>
-              <td class="opcion-topping" data-topping="Lichi" style="color: #FF1493;">Lichi</td>
+              <td id="ticketToppingLichi" class="opcion-topping" data-topping="Lichi" style="color: #FF1493;">Lichi</td>
               <td><span class="circle" style="background-color: #FF1493;"></span></td>
-              <td class="opcion-topping" data-topping="Sandía" style="color: #FF6347;">Sandía</td>
+              <td id="ticketToppingSandia" class="opcion-topping" data-topping="Sandía" style="color: #FF6347;">Sandía
+              </td>
               <td><span class="circle" style="background-color: #FF6347;"></span></td>
             </tr>
             <tr>
-              <td class="opcion-topping" data-topping="Melón Dulce" style="color: #FFD700;">Melón Dulce</td>
+              <td id="ticketToppingMelonDulce" class="opcion-topping" data-topping="Melón Dulce"
+                style="color: #FFD700;">Melón Dulce</td>
               <td><span class="circle" style="background-color: #FFD700;"></span></td>
-              <td class="opcion-topping" data-topping="Limón" style="color: #FFFF00;">Limón</td>
+              <td id="ticketToppingLimon" class="opcion-topping" data-topping="Limón" style="color: #FFFF00;">Limón</td>
               <td><span class="circle" style="background-color: #FFFF00;"></span></td>
             </tr>
             <tr>
-              <td class="opcion-topping" data-topping="Coco" style="color: #ffff;">Coco</td>
+              <td id="ticketToppingCoco" class="opcion-topping" data-topping="Coco" style="color: #ffff;">Coco</td>
               <td><span class="circle" style="background-color: #ffff;"></span></td>
-              <td class="opcion-topping" data-topping="Perlas de Cristal" style="color: #FFFFFF;">Perlas de Cristal</td>
+              <td id="ticketToppingPerlasCristal" class="opcion-topping" data-topping="Perlas de Cristal"
+                style="color: #FFFFFF;">Perlas de Cristal</td>
               <td><span class="circle" style="background-color: #FFFFFF; border: 1px solid #000;"></span></td>
             </tr>
             <tr>
-              <td class="opcion-topping" data-topping="Perlas Brown Sugar" style="color: #ca7105;">Perlas Brown Sugar
-              </td>
+              <td id="ticketToppingPerlasBrownSugar" class="opcion-topping" data-topping="Perlas Brown Sugar"
+                style="color: #ca7105;">Perlas Brown Sugar</td>
               <td><span class="circle" style="background-color: #ca7105;"></span></td>
-              <td class="opcion-topping" data-topping="Jelly (Mango)" style="color: #FF8C00;">Jelly (Mango)</td>
+              <td id="ticketToppingJellyMango" class="opcion-topping" data-topping="Jelly (Mango)"
+                style="color: #FF8C00;">Jelly (Mango)</td>
               <td><span class="circle" style="background-color: #FF8C00;"></span></td>
             </tr>
             <tr>
-              <td class="opcion-topping" data-topping="Jelly (Lichi)" style="color: #FF1493;">Jelly (Lichi)</td>
+              <td id="ticketToppingJellyLichi" class="opcion-topping" data-topping="Jelly (Lichi)"
+                style="color: #FF1493;">Jelly (Lichi)</td>
               <td><span class="circle" style="background-color: #FF1493;"></span></td>
-              <td class="opcion-topping" data-topping="Jelly (Arcoiris)" style="color: #FF00FF;">Jelly (Arcoiris)</td>
+              <td id="ticketToppingJellyArcoiris" class="opcion-topping" data-topping="Jelly (Arcoiris)"
+                style="color: #FF00FF;">Jelly (Arcoiris)</td>
               <td><span class="circle" style="background-color: #FF00FF;"></span></td>
             </tr>
             <tr>
-              <td class="opcion-topping" data-topping="Tapioca Negra" style="color: #000000;">Tapioca Negra</td>
+              <td id="ticketToppingTapiocaNegra" class="opcion-topping" data-topping="Tapioca Negra"
+                style="color: #000000;">Tapioca Negra</td>
               <td><span class="circle" style="background-color: #000000;"></span></td>
               <td></td>
               <td></td>
             </tr>
           </tbody>
         </table>
+
       </details>
 
       <details>
@@ -259,25 +280,27 @@
         <table id="tablaExtra" style="color: #FFFFFF;">
           <tbody>
             <tr>
-              <td class="opcion-extra" data-topping="Bola Bomba">Bola Bomba</td>
+              <td id="ticketExtraBolaBomba" class="opcion-extra" data-topping="Bola Bomba">Bola Bomba</td>
               <td class="opcion-extra-precio">0.50</td>
             </tr>
             <tr>
-              <td class="opcion-extra" data-topping="Perlas de Cristal">Perlas de Cristal</td>
+              <td id="ticketExtraPerlasCristal" class="opcion-extra" data-topping="Perlas de Cristal">Perlas de Cristal
+              </td>
               <td class="opcion-extra-precio">0.75</td>
             </tr>
             <tr>
-              <td class="opcion-extra" data-topping="Tapioca Negra">Tapioca Negra</td>
+              <td id="ticketExtraTapiocaNegra" class="opcion-extra" data-topping="Tapioca Negra">Tapioca Negra</td>
               <td class="opcion-extra-precio">0.50</td>
             </tr>
             <tr>
-              <td class="opcion-extra" data-topping="Jelly">Jelly</td>
+              <td id="ticketExtraJelly" class="opcion-extra" data-topping="Jelly">Jelly</td>
               <td class="opcion-extra-precio">0.50</td>
             </tr>
             <tr>
-              <td class="opcion-extra" data-topping="Espuma de Queso">Espuma de Queso</td>
+              <td id="ticketExtraEspumaQueso" class="opcion-extra" data-topping="Espuma de Queso">Espuma de Queso</td>
               <td class="opcion-extra-precio">0.75</td>
             </tr>
+
           </tbody>
         </table>
       </details>
@@ -294,23 +317,23 @@
 
       <table>
         <tr>
-          <td>Tamaño: </td>
+          <td id="ticketTextoTamaño">Tamaño: </td>
           <td id="ticketTamaño"></td>
         </tr>
         <tr>
-          <td>Bebida: </td>
+          <td id="ticketTextoBebida">Bebida: </td>
           <td id="ticketBebida"></td>
         </tr>
         <tr>
-          <td>Sirope: </td>
+          <td id="ticketTextoSirope">Sirope: </td>
           <td id="ticketSirope"></td>
         </tr>
         <tr>
-          <td>Topping: </td>
+          <td id="ticketTextoTopping">Topping: </td>
           <td id="ticketTopping"></td>
         </tr>
         <tr>
-          <td>Extras: </td>
+          <td id="ticketTextoExtras">Extras: </td>
           <td id="ticketExtras">Sin extras</td>
         </tr>
       </table>
@@ -328,7 +351,7 @@
       <img src="images/bubbleteaSVG.svg" alt="">
       <details>
         <summary>VER LA TABLA</summary>
-        <table>
+        <table id="tablaSpecialTeas">
           <thead>
             <tr>
               <th>Bebida</th>
@@ -338,141 +361,232 @@
           </thead>
           <tbody>
             <tr>
-              <td>Melóncito (granizado)</td>
-              <td>Té jazmín, melón dulce, perlas de cristal, espuma de queso</td>
-              <td>€5.00 / €5.50</td>
+              <td id="ticketMeloncito">Melóncito (granizado)</td>
+              <td id="ticketMeloncitoIngredientes">Té jazmín, melón dulce, perlas de cristal, espuma de queso</td>
+              <td id="ticketMeloncitoPrecio">€5.00 / €5.50</td>
             </tr>
             <tr>
-              <td>Crema de Maracuyá (granizado)</td>
-              <td>Té jazmín, maracuyá, espuma de queso, perlas de cristal</td>
-              <td>€5.00 / €5.50</td>
+              <td id="ticketCremaMaracuya">Crema de Maracuyá (granizado)</td>
+              <td id="ticketCremaMaracuyaIngredientes">Té jazmín, maracuyá, espuma de queso, perlas de cristal</td>
+              <td id="ticketCremaMaracuyaPrecio">€5.00 / €5.50</td>
             </tr>
             <tr>
-              <td>Del Bosque (granizado)</td>
-              <td>Té jazmín, frambuesa, perlas de cristal, espuma de queso</td>
-              <td>€5.00 / €5.50</td>
+              <td id="ticketDelBosque">Del Bosque (granizado)</td>
+              <td id="ticketDelBosqueIngredientes">Té jazmín, frambuesa, perlas de cristal, espuma de queso</td>
+              <td id="ticketDelBosquePrecio">€5.00 / €5.50</td>
             </tr>
             <tr>
-              <td>Ponche Polinesia (granizado)</td>
-              <td>Té jazmín, fresa, mango, piña, espuma de queso, perlas de cristal</td>
-              <td>€5.00 / €5.50</td>
+              <td id="ticketPonchePolinesia">Ponche Polinesia (granizado)</td>
+              <td id="ticketPonchePolinesiaIngredientes">Té jazmín, fresa, mango, piña, espuma de queso, perlas de
+                cristal</td>
+              <td id="ticketPonchePolinesiaPrecio">€5.00 / €5.50</td>
             </tr>
             <tr>
-              <td>Pink Lichi (granizado)</td>
-              <td>Té jazmín, lichi, espuma de queso, perlas de cristal</td>
-              <td>€5.00 / €5.50</td>
+              <td id="ticketPinkLichi">Pink Lichi (granizado)</td>
+              <td id="ticketPinkLichiIngredientes">Té jazmín, lichi, espuma de queso, perlas de cristal</td>
+              <td id="ticketPinkLichiPrecio">€5.00 / €5.50</td>
             </tr>
             <tr>
-              <td>Miss Fresa (granizado)</td>
-              <td>Té jazmín, fresa, perlas de cristal, espuma de queso</td>
-              <td>€5.00 / €5.50</td>
+              <td id="ticketMissFresa">Miss Fresa (granizado)</td>
+              <td id="ticketMissFresaIngredientes">Té jazmín, fresa, perlas de cristal, espuma de queso</td>
+              <td id="ticketMissFresaPrecio">€5.00 / €5.50</td>
             </tr>
             <tr>
-              <td>Sueño de Mango (granizado)</td>
-              <td>Té jazmín, mango, perlas de cristal, espuma de queso</td>
-              <td>€5.00 / €5.50</td>
+              <td id="ticketSuenoMango">Sueño de Mango (granizado)</td>
+              <td id="ticketSuenoMangoIngredientes">Té jazmín, mango, perlas de cristal, espuma de queso</td>
+              <td id="ticketSuenoMangoPrecio">€5.00 / €5.50</td>
             </tr>
             <tr>
-              <td>TARO COCO</td>
-              <td>Taro, leche, coco</td>
-              <td>€4.50 / €5.00</td>
+              <td id="ticketTaroCoco">TARO COCO</td>
+              <td id="ticketTaroCocoIngredientes">Taro, leche, coco</td>
+              <td id="ticketTaroCocoPrecio">€4.50 / €5.00</td>
             </tr>
             <tr>
-              <td>MATCHA LATTE</td>
-              <td>Matcha leche</td>
-              <td>€5.00 / €5.50</td>
+              <td id="ticketMatchaLatte">MATCHA LATTE</td>
+              <td id="ticketMatchaLatteIngredientes">Matcha leche</td>
+              <td id="ticketMatchaLattePrecio">€5.00 / €5.50</td>
             </tr>
             <tr>
-              <td>Brown Sugar Milktea</td>
-              <td>Té negro con leche, sirope de azúcar morena, tapioca y cheesefoam</td>
-              <td>€4.50 / €5.00</td>
+              <td id="ticketBrownSugarMilktea">Brown Sugar Milktea</td>
+              <td id="ticketBrownSugarMilkteaIngredientes">Té negro con leche, sirope de azúcar morena, tapioca y
+                cheesefoam</td>
+              <td id="ticketBrownSugarMilkteaPrecio">€4.50 / €5.00</td>
             </tr>
             <tr>
-              <td colspan="2">Thai Milktea</td>
-              <td>€4.50 / €5.00</td>
+              <td colspan="2" id="ticketThaiMilktea">Thai Milktea</td>
+              <td id="ticketThaiMilkteaPrecio">€4.50 / €5.00</td>
             </tr>
           </tbody>
         </table>
+
       </details>
     </section>
-  </section>
-
-  <section id="imagenes">
-
-    <h2 class="titulo">DEGUSTA LA EXPERIENCIA</h2>
 
 
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="images/1.jpg" class="d-block w-100" alt="...">
+    <section id="imagenes">
+
+      <h2 class="titulo">DEGUSTA LA EXPERIENCIA</h2>
+
+
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="images/2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="images/3.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="images/4.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="images/5.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="images/6.jpg" class="d-block w-100" alt="...">
+          </div>
         </div>
-        <div class="carousel-item">
-          <img src="images/2.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="images/3.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="images/4.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="images/5.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="images/6.jpg" class="d-block w-100" alt="...">
-        </div>
+
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
+    </section>
 
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </section>
+    <section id="ubicacion">
+      <div id="texto">
+        <h2 class="titulo">ENCUÉNTRANOS</h2>
+        <svg width="30px" height="30px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <path stroke="#ffff" stroke-width="12"
+            d="M96 22a51.88 51.88 0 0 0-36.77 15.303A52.368 52.368 0 0 0 44 74.246c0 16.596 4.296 28.669 20.811 48.898a163.733 163.733 0 0 1 20.053 28.38C90.852 163.721 90.146 172 96 172c5.854 0 5.148-8.279 11.136-20.476a163.723 163.723 0 0 1 20.053-28.38C143.704 102.915 148 90.841 148 74.246a52.37 52.37 0 0 0-15.23-36.943A51.88 51.88 0 0 0 96 22Z" />
+          <circle cx="96" cy="74" r="20" stroke="#ffff" stroke-width="12" />
+        </svg>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1894.1192373293266!2d-16.253257669855394!3d28.466462593080234!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc41cb6a598f4ff9%3A0xf0b3481014cfa981!2sLa%20T%C3%A9quer%C3%ADa%20Bubble%20Tea!5e0!3m2!1ses!2ses!4v1733755342586!5m2!1ses!2ses"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
 
 
-  <section id="ubicacion">
-    <div id="texto">
-      <h2 class="titulo">ENCUÉNTRANOS</h2>
-      <svg width="30px" height="30px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <path stroke="#ffff" stroke-width="12"
-          d="M96 22a51.88 51.88 0 0 0-36.77 15.303A52.368 52.368 0 0 0 44 74.246c0 16.596 4.296 28.669 20.811 48.898a163.733 163.733 0 0 1 20.053 28.38C90.852 163.721 90.146 172 96 172c5.854 0 5.148-8.279 11.136-20.476a163.723 163.723 0 0 1 20.053-28.38C143.704 102.915 148 90.841 148 74.246a52.37 52.37 0 0 0-15.23-36.943A51.88 51.88 0 0 0 96 22Z" />
-        <circle cx="96" cy="74" r="20" stroke="#ffff" stroke-width="12" />
+
+    <footer id="footer">
+      <h3 id="followUs">¡Síguenos en redes!</h3>
+      <a href="https://www.instagram.com/latequeriasantacruz/" target="_blank">
+        <svg fill="#ffff" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin"
+          class="jam jam-instagram">
+          <path
+            d='M14.017 0h-8.07A5.954 5.954 0 0 0 0 5.948v8.07a5.954 5.954 0 0 0 5.948 5.947h8.07a5.954 5.954 0 0 0 5.947-5.948v-8.07A5.954 5.954 0 0 0 14.017 0zm3.94 14.017a3.94 3.94 0 0 1-3.94 3.94h-8.07a3.94 3.94 0 0 1-3.939-3.94v-8.07a3.94 3.94 0 0 1 3.94-3.939h8.07a3.94 3.94 0 0 1 3.939 3.94v8.07z' />
+          <path
+            d='M9.982 4.819A5.17 5.17 0 0 0 4.82 9.982a5.17 5.17 0 0 0 5.163 5.164 5.17 5.17 0 0 0 5.164-5.164A5.17 5.17 0 0 0 9.982 4.82zm0 8.319a3.155 3.155 0 1 1 0-6.31 3.155 3.155 0 0 1 0 6.31z' />
+          <circle cx='15.156' cy='4.858' r='1.237' />
+        </svg>
+      </a>
+      <p> Copyright © Todos los derechos reservados </p>
+    </footer>
+
+    <button id="toggleButton">
+      <svg id="svgContainer" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 473.68 473.68;" xml:space="preserve"
+        width="50" height="50">
+        <g>
+          <path style="fill:#29337A;" d="M4.403 10.834c-1.612 2.34 -2.837 4.967 -3.58 7.791h11.372z" />
+          <path style="fill:#29337A;" d="M17.999 1.001a24.911 24.911 0 0 0 -7.897 3.923l7.897 7.897z" />
+          <path style="fill:#29337A;" d="M10.689 45.493a24.869 24.869 0 0 0 7.31 3.506v-10.814z" />
+          <path style="fill:#29337A;" d="M1.11 32.382c0.827 2.678 2.093 5.162 3.712 7.371l7.371 -7.371z" />
+        </g>
+        <g>
+          <path style="fill:#FFFFFF;"
+            d="M4.815 10.254a25.545 25.545 0 0 0 -0.413 0.581l7.792 7.791H0.823c-0.184 0.701 -0.335 1.416 -0.459 2.141h14.965z" />
+          <path style="fill:#FFFFFF;"
+            d="M10.109 45.08c0.19 0.142 0.386 0.277 0.58 0.413l7.31 -7.309v10.814c0.702 0.205 1.416 0.383 2.141 0.525V35.05z" />
+          <path style="fill:#FFFFFF;"
+            d="M0.554 30.241c0.155 0.725 0.338 1.44 0.555 2.141h11.084l-7.371 7.371a25.165 25.165 0 0 0 2.657 3.074L20.064 30.241z" />
+          <path style="fill:#FFFFFF;"
+            d="M17.999 1.001v11.82l-7.897 -7.897c-1.089 0.81 -2.106 1.708 -3.049 2.681l13.087 13.087V0.476c-0.725 0.143 -1.438 0.321 -2.141 0.525" />
+        </g>
+        <g>
+          <path style="fill:#D32030;" points="170.511,306.056 169.8,306.771 170.511,306.771 	"
+            d="M17.999 32.306L17.923 32.382L17.999 32.382Z" />
+          <path style="fill:#D32030;" points="190.084,286.487 190.794,286.487 190.794,285.773 	"
+            d="M20.065 30.241L20.14 30.241L20.14 30.165Z" />
+          <path style="fill:#D32030;" points="281.229,196.737 280.545,196.737 280.545,197.425 	"
+            d="M29.686 20.767L29.613 20.767L29.613 20.839Z" />
+          <path style="fill:#D32030;" points="171.21,176.457 170.511,175.754 170.511,176.457 	"
+            d="M18.072 18.626L17.999 18.552L17.999 18.626Z" />
+          <path style="fill:#D32030;" points="190.794,196.037 190.794,196.737 191.494,196.737 	"
+            d="M20.14 20.693L20.14 20.767L20.213 20.767Z" />
+        </g>
+        <g>
+          <path style="fill:#252F6C;"
+            d="M31.754 43.464v5.604a24.859 24.859 0 0 0 7.411 -3.472l-6.072 -6.072c-0.485 1.705 -0.663 2.586 -1.339 3.941" />
+          <path style="fill:#252F6C;"
+            d="m33.125 11.45 6.629 -6.629a24.901 24.901 0 0 0 -8 -3.89v5.757c0.78 1.561 0.845 2.747 1.371 4.762" />
+          <path style="fill:#252F6C;" d="M45.076 39.899c1.669 -2.246 2.97 -4.781 3.816 -7.517h-11.333z" />
+          <path style="fill:#252F6C;" d="M49.177 18.626c-0.759 -2.884 -2.021 -5.56 -3.684 -7.937l-7.938 7.937z" />
+        </g>
+        <g>
+          <path style="fill:#E7E7E7;"
+            d="m34.584 30.664 1.718 1.718 8.223 8.223c0.187 -0.234 0.372 -0.467 0.551 -0.706l-7.517 -7.517h11.333c0.216 -0.701 0.399 -1.416 0.554 -2.141H34.745c-0.024 0.304 -0.132 0.122 -0.161 0.423" />
+          <path style="fill:#E7E7E7;"
+            d="m32.865 12.704 7.453 -7.454a25.967 25.967 0 0 0 -0.565 -0.429l-6.629 6.629c0.069 0.262 -0.324 0.985 -0.26 1.254" />
+          <path style="fill:#E7E7E7;"
+            d="M31.754 6.227V0.93a24.911 24.911 0 0 0 -2.141 -0.499v2.584c0.797 0.864 1.511 1.948 2.141 3.212" />
+          <path style="fill:#E7E7E7;"
+            d="M34.416 20.767h15.221c-0.124 -0.725 -0.274 -1.439 -0.459 -2.141H37.556l7.938 -7.937a25.122 25.122 0 0 0 -2.595 -3.135l-8.941 8.94c0.241 1.622 0.349 2.563 0.457 4.273" />
+          <path style="fill:#E7E7E7;"
+            d="m32.732 39.162 6.434 6.435c1.07 -0.737 2.078 -1.557 3.018 -2.448l-8.463 -8.463c-0.27 1.565 -0.591 3.077 -0.989 4.476" />
+          <path style="fill:#E7E7E7;"
+            d="M29.613 46.688v2.88a24.7 24.7 0 0 0 2.141 -0.499v-5.604c-0.631 1.264 -1.345 2.361 -2.141 3.223" />
+        </g>
+        <path style="fill:#D71F28;"
+          d="m33.958 16.494 8.94 -8.94a25.017 25.017 0 0 0 -2.58 -2.305l-7.025 7.026c0.312 1.305 0.454 2.799 0.665 4.219" />
+        <g>
+          <path style="fill:#D32030;" d="M23.752 0.031" />
+          <path style="fill:#D32030;" d="M25 50c-0.416 0 -0.831 -0.011 -1.247 -0.032q0.62 0.031 1.247 0.032" />
+          <path style="fill:#D32030;"
+            d="M25 50c1.577 0 3.118 -0.153 4.614 -0.433v-2.88c-1.313 1.423 -2.849 3.312 -4.614 3.312" />
+        </g>
+        <g>
+          <path style="fill:#D71F28;"
+            d="M49.636 20.767H34.613c0.199 3.135 0.175 6.36 -0.072 9.474h14.905a25.08 25.08 0 0 0 0.554 -5.24c0 -1.444 -0.129 -2.856 -0.364 -4.234" />
+          <path style="fill:#D71F28;"
+            d="M34.584 30.664c-0.139 1.477 -0.623 2.628 -0.864 4.022l8.463 8.463a25.228 25.228 0 0 0 2.342 -2.543l-8.223 -8.224z" />
+        </g>
+        <path style="fill:#D32030;" d="M29.613 3.201V0.432C28.118 0.153 26.577 0 25 0c1.764 0 3.3 1.778 4.614 3.201" />
+        <g>
+          <path style="fill:#29337A;" d="M31.754 44.546c0.676 -1.355 1.256 -2.914 1.742 -4.619l-1.742 -1.742z" />
+          <path style="fill:#29337A;" d="M33.712 10.862c-0.527 -2.015 -1.179 -3.846 -1.958 -5.408v7.365z" />
+        </g>
+        <g>
+          <path style="fill:#FFFFFF;" d="M35.069 31.149c0.028 -0.302 0.054 -0.604 0.079 -0.908h-0.987z" />
+          <path style="fill:#FFFFFF;"
+            d="M31.754 12.82V5.455c-0.631 -1.264 -1.344 -2.349 -2.141 -3.212v13.712l4.3 -4.3a48.345 48.345 0 0 0 -0.201 -0.793z" />
+          <path style="fill:#FFFFFF;" d="M29.686 20.767h5.534c-0.109 -1.709 -0.281 -3.391 -0.522 -5.012z" />
+          <path style="fill:#FFFFFF;"
+            d="M29.613 47.757c0.797 -0.864 1.51 -1.948 2.141 -3.212v-6.36l1.742 1.742c0.399 -1.4 0.735 -2.896 1.005 -4.461l-4.888 -4.888z" />
+        </g>
+        <path style="fill:#E51D35;"
+          d="M29.613 47.757V30.578l4.888 4.888c0.24 -1.394 0.43 -2.839 0.568 -4.317l-0.908 -0.908h0.987c0.247 -3.114 0.271 -6.338 0.072 -9.474h-5.534l5.012 -5.012c-0.211 -1.42 -0.472 -2.794 -0.785 -4.099l-4.299 4.3V2.243C28.3 0.819 26.764 0 25 0c-0.416 0 -0.831 0.011 -1.247 0.031a25.165 25.165 0 0 0 -3.613 0.445v20.217L7.052 7.606a25.228 25.228 0 0 0 -2.237 2.648l8.372 8.372 2.142 2.141H0.364C0.13 22.144 0 23.556 0 25c0 1.798 0.194 3.549 0.554 5.24h19.51L7.478 42.827a25.175 25.175 0 0 0 2.631 2.254l10.03 -10.03v14.473a25.228 25.228 0 0 0 3.613 0.445c0.416 0.02 0.831 0.032 1.247 0.032 1.764 0 3.301 -0.819 4.614 -2.243" />
       </svg>
-    </div>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1894.1192373293266!2d-16.253257669855394!3d28.466462593080234!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc41cb6a598f4ff9%3A0xf0b3481014cfa981!2sLa%20T%C3%A9quer%C3%ADa%20Bubble%20Tea!5e0!3m2!1ses!2ses!4v1733755342586!5m2!1ses!2ses"
-      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
+    </button>
 
 
+    <script src="scripts/ticketCreator.js"></script>
+    <script src="scripts/infoButton.js"></script>
+    <script src="scripts/traduccion.js"></script>
 
-  <footer>
-    <h3>¡Síguenos en redes!</h3>
-    <a href="https://www.instagram.com/latequeriasantacruz/" target="_blank">
-      <svg fill="#ffff" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin"
-        class="jam jam-instagram">
-        <path
-          d='M14.017 0h-8.07A5.954 5.954 0 0 0 0 5.948v8.07a5.954 5.954 0 0 0 5.948 5.947h8.07a5.954 5.954 0 0 0 5.947-5.948v-8.07A5.954 5.954 0 0 0 14.017 0zm3.94 14.017a3.94 3.94 0 0 1-3.94 3.94h-8.07a3.94 3.94 0 0 1-3.939-3.94v-8.07a3.94 3.94 0 0 1 3.94-3.939h8.07a3.94 3.94 0 0 1 3.939 3.94v8.07z' />
-        <path
-          d='M9.982 4.819A5.17 5.17 0 0 0 4.82 9.982a5.17 5.17 0 0 0 5.163 5.164 5.17 5.17 0 0 0 5.164-5.164A5.17 5.17 0 0 0 9.982 4.82zm0 8.319a3.155 3.155 0 1 1 0-6.31 3.155 3.155 0 0 1 0 6.31z' />
-        <circle cx='15.156' cy='4.858' r='1.237' />
-      </svg>
-    </a>
-    <p> Copyright © Todos los derechos reservados </p>
-  </footer>
-
-  <script src="scripts/ticketCreator.js"></script>
-  <script src="scripts/infoButton.js"></script>
-  
 </body>
 
 </html>
