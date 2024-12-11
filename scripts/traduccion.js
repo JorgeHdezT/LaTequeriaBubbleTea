@@ -100,7 +100,7 @@ const translations = {
     experience: "DEGUSTA LA EXPERIENCIA",
     findUs: "ENCUÉNTRANOS",
     copyright: "Copyright © Todos los derechos reservados",
-    viewTable: "VIEW TABLE",
+    viewTable: "VER LA TABLA",
     showTable: "VER LA TABLA",
     meloncito: "Melóncito (granizado)",
     meloncitoIngredientes: "Té jazmín, melón dulce, perlas de cristal, espuma de queso",
