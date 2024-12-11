@@ -50,7 +50,6 @@
   }
 
   #contenedorDetalles {
-    border: 1px solid black;
     margin: 0 auto;
     width: 70%;
     flex-wrap: wrap;
