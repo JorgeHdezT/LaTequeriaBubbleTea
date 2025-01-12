@@ -123,7 +123,7 @@
 
 
   #tablaPrecios {
-    margin-top: 20px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -143,6 +143,7 @@
       transition: all .2s;
       cursor: pointer;
       animation: shineButton linear 2s infinite;
+      margin-top: 10px;
     }
 
     #mostrarTicket:hover {

@@ -124,7 +124,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 50px;
   
   #texto {
     display: flex;
