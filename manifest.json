@@ -1,0 +1,21 @@
+{
+  "name": "La Téquería Bubble Tea",
+  "short_name": "La Téquería",
+  "description": "Disfruta del mejor bubble tea en Santa Cruz de Tenerife. Sabores únicos, siropes naturales y toppings irresistibles.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffb6c1",
+  "icons": [
+    {
+      "src": "images/tequeriaIcon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/tequeriaIcon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
