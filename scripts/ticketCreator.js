@@ -108,9 +108,24 @@ const mostrarTicket = () => {
   const ticketTamaño = document.querySelector("#ticketTamaño");
   const ticketBebida = document.querySelector("#ticketBebida");
   const ticketSirope = document.querySelector("#ticketSirope");
-  const ticketExtras = document.querySelector("#ticketExtras"); // Nueva sección para los extras
-  const ticketTopping = document.querySelector("#ticketTopping"); // Sección para el topping
+  const ticketExtras = document.querySelector("#ticketExtras");
+  const ticketTopping = document.querySelector("#ticketTopping");
   const totalPedido = document.querySelector("#checkout");
+
+  const textos = {
+    es: {
+      sinExtras: "Sin extras",
+      sinTopping: "Sin topping",
+      total: "Total",
+    },
+    en: {
+      sinExtras: "No extras",
+      sinTopping: "No topping",
+      total: "Total",
+    },
+  };
+
+  const lang = textos[currentLang] || textos.es;
 
   if (ticket.tamaño) {
     ticketTamaño.textContent = `${ticket.tamaño.tamaño}`;
@@ -122,28 +137,25 @@ const mostrarTicket = () => {
     ticketSirope.textContent = ticket.sirope;
   }
   if (ticket.extras.length > 0) {
-    // Mostrar todos los extras seleccionados, uno debajo del otro
     ticketExtras.innerHTML = ticket.extras
       .map((extra) => `${extra.topping} (${extra.precio}€)`)
-      .join('<br>'); // Usamos <br> para separar cada extra en una nueva línea
+      .join('<br>');
   } else {
-    ticketExtras.innerHTML = "Sin extras";
+    ticketExtras.innerHTML = lang.sinExtras;
   }
   if (ticket.topping) {
     ticketTopping.textContent = `${ticket.topping}`;
   } else {
-    ticketTopping.textContent = "Sin topping";
+    ticketTopping.textContent = lang.sinTopping;
   }
 
-  // Calcular el total
+  // Calcular total
   let total = ticket.tamaño ? ticket.tamaño.precio : 0;
-  ticket.extras.forEach((extra) => {
-    total += extra.precio;
-  });
-  // No sumamos el topping, ya que no tiene precio asociado por defecto
+  ticket.extras.forEach((extra) => total += extra.precio);
 
-  totalPedido.textContent = `Total: ${total.toFixed(2)}€`;
+  totalPedido.textContent = `${lang.total}: ${total.toFixed(2)}€`;
 };
+
 
 // Mostrar el ticket
 function showTicket() {

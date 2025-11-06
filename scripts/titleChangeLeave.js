@@ -5,7 +5,11 @@ let originalTitle = document.title;
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
     // Cuando el usuario abandona la página (la pestaña o la ventana se ocultan)
-    document.title = "¡Te olvidas de tu Bubble Tea!";
+    if (currentLang === "es") {
+      document.title = "¡Te olvidas de tu Bubble Tea!";
+    } else if (currentLang === "en") {
+      document.title = "You forget your Bubble Tea!";
+    }
   } else {
     // Cuando el usuario vuelve a la página
     document.title = originalTitle;

@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La Téquería Bubble Tea en Santa Cruz de Tenerife. Prueba nuestros bubble teas artesanales, con sabores únicos, siropes naturales y toppings deliciosos. ¡Ven y disfruta!">
+  <meta name="keywords" content="bubble tea, té con perlas, Santa Cruz de Tenerife, La Téquería, bebidas asiáticas, té artesanal, tapioca">
+
+  <title>La Téquería Bubble Tea</title>
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/indexDetails.css">
+  <link rel="stylesheet" href="../styles/indexHorario.css">
+  <link rel="stylesheet" href="../styles/indexTicket.css">
+  <link rel="stylesheet" href="../styles/indexSlider.css">
+  <link rel="stylesheet" href="../styles/index.SpecialTeas.css">
+  <link rel="stylesheet" href="../styles/PCStyles.css">
+  <link rel="stylesheet" href="../styles/animacion.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="../scripts/animacion.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+ 
+
+  <link rel="icon" href="../images/tequeriaIcon.png">
+
+</head>
+
+<body>
+
+  <!-- Modal -->
+  <div id="modal">
+    <div class="PromoModal">
+      <h3>ENJOY OUR</h3>
+      <h2>HAPPY HOUR</h2>
+      <div class="images-container">
+        <!-- Imagen izquierda -->
+        <img class="image-left" src="../images/bubble solo.png" alt="Bubble tea 1">
+        <!-- Imagen derecha -->
+        <img class="image-right" src="../images/bubble solo.png" alt="Bubble tea 2">
+      </div>
+      <h2 id="tusegundobubble">YOUR SECOND BUBBLE TEA</h2>
+      <h2 id="descuento">50% OFF</h2>
+      <h3>EVERY THURSDAY</h3>
+      <h3>FROM 16:00 TO 18:00H</h3>
+    </div>
+  </div>
+
+  
+  <header>
+    <img id="logo" src="../images/tequeriaWhitePng.PNG" alt="">
+    <h1>LA TÉQUERÍA</h1>
+    <h2>Bubble Tea</h2>
+    <img id="separador" src="../images/hojas.png" alt="separador de hojas">
+  </header>
+
+  <div class="horario-container">
+    <h2 class="titulo">OUR SCHEDULE</h2>
+    <div class="horario">
+      <div class="fila">
+        <span class="dias">TUE - FRI</span>
+        <span class="horas">12h - 21h</span>
+      </div>
+      <div class="fila">
+        <span class="dias">SAT & SUN</span>
+        <span class="horas">12h - 21h</span>
+      </div>
+      <div class="fila">
+        <span class="dias">MON</span>
+        <span class="cerrado">CLOSED</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="tablaPrecios">
+
+    <h2 class="titulo">OUR MENU</h2>
+
+    <!-- Botón de Información -->
+    <button id="infoButton">
+      <?xml version="1.0" encoding="utf-8"?>
+      <!-- License: MIT. Made by michaelampr: https://github.com/michaelampr/jam -->
+      <svg fill="#ffff" width="10%" height="" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMinYMin" class="jam jam-info">
+        <path
+          d='M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-10a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1zm0-1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z' />
+      </svg>
+    </button>
+
+    <!-- Modal de Información -->
+    <div id="infoModal" class="modal">
+      <div class="modal-content">
+        <span class="close">×</span>
+        <h2>WELCOME TO OUR INTERACTIVE MENU</h2>
+        <p>This interactive menu allows you to organize your order quickly and easily. <b>You can click or tap on each option (size, syrup...)</b> to see how your <b>virtual ticket</b> is created.</p>
+        <p>Remember, this tool <b>is not for online orders</b>; it’s only to help you decide and speed up the process when ordering at the counter.</p>
+        <p>Click on the options to start customizing your bubble tea and organizing your order!</p>
+      </div>
+    </div>
+
+    <div id="contenedorDetalles">
+
+
+      <details>
+        <summary>STEP 1: CHOOSE SIZE</summary>
+        <table id="tablaTamaño">
+          <tbody>
+            <tr>
+              <td id="ticketTamañoPequeño" class="opcion-tamaño" data-tamaño="SMALL 500ML">SMALL 500ML</td>
+              <td class="Precio" data-precio="5.00">5,00€</td>
+            </tr>
+            <tr>
+              <td id="ticketTamañoGrande" class="opcion-tamaño" data-tamaño="BIG 700ML">BIG 700ML</td>
+              <td class="Precio" data-precio="5.50">5,50€</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+      <details>
+        <summary>STEP 2: CHOOSE DRINK</summary>
+        <table id="tablaBebida">
+          <thead>
+            <tr>
+              <th id="ticketTe">TEA</th>
+              <th id="ticketLeche">MILK</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="ticketBebidaJazmin" class="opcion-bebida" data-bebida="Jasmine">Jasmine</td>
+              <td id="ticketLecheEntera" class="opcion-bebida" data-bebida="Whole milk">Whole milk</td>
+            </tr>
+            <tr>
+              <td id="ticketBebidaEarlGray" class="opcion-bebida" data-bebida="Earl Grey">Earl Grey</td>
+              <td id="ticketLecheSinLactosa" class="opcion-bebida" data-bebida="Lactose-free milk">Lactose-free</td>
+            </tr>
+            <tr>
+              <td id="ticketBebidaRojo" class="opcion-bebida" data-bebida="Red tea">Red</td>
+              <td id="ticketLecheSoja" class="opcion-bebida" data-bebida="Soy milk">Soy milk</td>
+            </tr>
+            <tr>
+              <td id="ticketBebidaRooibos" class="opcion-bebida" data-bebida="Rooibos (without teiine)">Rooibos (Without Teiine)</td>
+              <td id="ticketLecheAvena" class="opcion-bebida" data-bebida="Oat milk">Oatmilk</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td id="ticketLecheCoco" class="opcion-bebida" data-bebida="Milk with coconut">Milk with coconut</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+
+      <details>
+        <summary>STEP 3: CHOOSE SYRUP</summary>
+        <table id="tablaSirope">
+          <tbody>
+            <tr>
+              <td id="ticketSiropeLimon" class="opcion-sirope" data-sirope="Lemon" style="color: #FFFF00;">Lemon</td>
+              <td id="ticketSiropeMelonDulce" class="opcion-sirope" data-sirope="Honeydew Melon" style="color: #FFD700;">Honeydew Melon</td>
+            </tr>
+            <tr>
+              <td id="ticketSiropeManzanaVerde" class="opcion-sirope" data-sirope="Green Apple" style="color: #32CD32;">Green Apple</td>
+              <td id="ticketSiropeMaracuya" class="opcion-sirope" data-sirope="Passion Fruit" style="color: #FF7F00;">Passion Fruit</td>
+            </tr>
+            <tr>
+              <td id="ticketSiropePiña" class="opcion-sirope" data-sirope="Pineapple" style="color: #FFB900;">Pineapple</td>
+              <td id="ticketSiropeMango" class="opcion-sirope" data-sirope="Mango" style="color: #FF8C00;">Mango</td>
+            </tr>
+            <tr>
+              <td id="ticketSiropeLichi" class="opcion-sirope" data-sirope="Lychee" style="color: #FF1493;">Lychee</td>
+              <td id="ticketSiropeMelocoton" class="opcion-sirope" data-sirope="Peach" style="color: #FFA07A;">Peach</td>
+            </tr>
+            <tr>
+              <td id="ticketSiropeFresa" class="opcion-sirope" data-sirope="Strawberry" style="color: #FF0000;">Strawberry</td>
+              <td id="ticketSiropeFrambuesa" class="opcion-sirope" data-sirope="Raspberry" style="color: #E30B5D;">Raspberry</td>
+            </tr>
+            <tr>
+              <td id="ticketSiropeSandia" class="opcion-sirope" data-sirope="Watermelon" style="color: #FF6347;">Watermelon</td>
+              <td id="ticketSiropeCereza" class="opcion-sirope" data-sirope="Cherry" style="color: #DC143C;">Cherry</td>
+            </tr>
+            <tr>
+              <td id="ticketSiropeArandanos" class="opcion-sirope" data-sirope="Blueberry" style="color: #b969ff;">Blueberry</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+
+      <details>
+        <summary>STEP 4: CHOOSE TOPPING</summary>
+        <table id="tablaTopping">
+          <tbody>
+            <tr>
+              <td id="ticketToppingMango" class="opcion-topping" data-topping="Mango">Mango</td>
+              <td><span class="circle" style="background-color: #FF8C00;"></span></td>
+              <td id="ticketToppingArandanos" class="opcion-topping" data-topping="Blueberry">Blueberry</td>
+              <td><span class="circle" style="background-color: #b969ff;"></span></td>
+            </tr>
+            <tr>
+              <td id="ticketToppingCereza" class="opcion-topping" data-topping="Cherry">Cherry</td>
+              <td><span class="circle" style="background-color: #DC143C;"></span></td>
+              <td id="ticketToppingMaracuya" class="opcion-topping" data-topping="Passion Fruit">Passion Fruit</td>
+              <td><span class="circle" style="background-color: #FF7F00;"></span></td>
+            </tr>
+            <tr>
+              <td id="ticketToppingGranada" class="opcion-topping" data-topping="Pomegranate">Pomegranate</td>
+              <td><span class="circle" style="background-color: #E30022;"></span></td>
+              <td id="ticketToppingManzanaVerde" class="opcion-topping" data-topping="Green Apple">Green Apple</td>
+              <td><span class="circle" style="background-color: #32CD32;"></span></td>
+            </tr>
+            <tr>
+              <td id="ticketToppingFresa" class="opcion-topping" data-topping="Strawberry">Strawberry</td>
+              <td><span class="circle" style="background-color: #FF0000;"></span></td>
+              <td id="ticketToppingMelocoton" class="opcion-topping" data-topping="Peach">Peach</td>
+              <td><span class="circle" style="background-color: #FFA07A;"></span></td>
+            </tr>
+            <tr>
+              <td id="ticketToppingLichi" class="opcion-topping" data-topping="Lychee">Lychee</td>
+              <td><span class="circle" style="background-color: #FF1493;"></span></td>
+              <td id="ticketToppingSandia" class="opcion-topping" data-topping="Watermelon">Watermelon</td>
+              <td><span class="circle" style="background-color: #FF6347;"></span></td>
+            </tr>
+            <tr>
+              <td id="ticketToppingMelonDulce" class="opcion-topping" data-topping="Honeydew Melon">Honeydew Melon</td>
+              <td><span class="circle" style="background-color: #FFD700;"></span></td>
+              <td id="ticketToppingLimon" class="opcion-topping" data-topping="Lemon">Lemon</td>
+              <td><span class="circle" style="background-color: #FFFF00;"></span></td>
+            </tr>
+            <tr>
+              <td id="ticketToppingCoco" class="opcion-topping" data-topping="Coconut">Coconut</td>
+              <td><span class="circle" style="background-color: #ffff;"></span></td>
+              <td id="ticketToppingPerlasCristal" class="opcion-topping" data-topping="Crystal Pearls">Crystal Pearls</td>
+              <td><span class="circle" style="background-color: #FFFFFF; border: 1px solid #000;"></span></td>
+            </tr>
+            <tr>
+              <td id="ticketToppingPerlasBrownSugar" class="opcion-topping" data-topping="Brown Sugar Pearls">Brown Sugar Pearls</td>
+              <td><span class="circle" style="background-color: #ca7105;"></span></td>
+              <td id="ticketToppingJellyMango" class="opcion-topping" data-topping="Jelly (Mango)">Jelly (Mango)</td>
+              <td><span class="circle" style="background-color: #FF8C00;"></span></td>
+            </tr>
+            <tr>
+              <td id="ticketToppingJellyLichi" class="opcion-topping" data-topping="Jelly (Lychee)">Jelly (Lychee)</td>
+              <td><span class="circle" style="background-color: #FF1493;"></span></td>
+              <td id="ticketToppingJellyArcoiris" class="opcion-topping" data-topping="Jelly (Rainbow)">Jelly (Rainbow)</td>
+              <td><span class="circle" style="background-color: #FF00FF;"></span></td>
+            </tr>
+            <tr>
+              <td id="ticketToppingTapiocaNegra" class="opcion-topping" data-topping="Black Tapioca">Black Tapioca</td>
+              <td><span class="circle" style="background-color: #000000;"></span></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+
+      <details>
+        <summary>STEP 5: EXTRA TOPPING</summary>
+        <table id="tablaExtra" style="color: #FFFFFF;">
+          <tbody>
+            <tr>
+              <td id="ticketExtraBolaBomba" class="opcion-extra" data-topping="Popping Boba">Popping Boba</td>
+              <td class="opcion-extra-precio">0.50</td>
+            </tr>
+            <tr>
+              <td id="ticketExtraPerlasCristal" class="opcion-extra" data-topping="Crystal Pearls">Crystal Pearls</td>
+              <td class="opcion-extra-precio">0.75</td>
+            </tr>
+            <tr>
+              <td id="ticketExtraTapiocaNegra" class="opcion-extra" data-topping="Black Tapioca">Tapioca</td>
+              <td class="opcion-extra-precio">0.50</td>
+            </tr>
+            <tr>
+              <td id="ticketExtraJelly" class="opcion-extra" data-topping="Jelly">Jelly</td>
+              <td class="opcion-extra-precio">0.50</td>
+            </tr>
+            <tr>
+              <td id="ticketExtraEspumaQueso" class="opcion-extra" data-topping="Cheese Foam">Cheese Foam</td>
+              <td class="opcion-extra-precio">0.75</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+    </div>
+
+    <button onclick="showTicket()" id="mostrarTicket">SHOW TICKET</button>
+
+    <div id="ticket" style="display:none;" class="__text_mode_custom_bg__">
+      <img src="../images/tequeriaWhitePng.PNG" alt="">
+      <h4>La TéQuería Bubble Tea</h4>
+      <i>Take a screenshot of this and show it at the counter when placing your order.</i>
+
+      <h3>Your Selections:</h3>
+
+      <table>
+        <tbody><tr>
+          <td id="ticketTextoTamaño">Size: </td>
+          <td id="ticketTamaño"></td>
+        </tr>
+        <tr>
+          <td id="ticketTextoBebida">Drink: </td>
+          <td id="ticketBebida"></td>
+        </tr>
+        <tr>
+          <td id="ticketTextoSirope">Syrup: </td>
+          <td id="ticketSirope"></td>
+        </tr>
+        <tr>
+          <td id="ticketTextoTopping">Topping: </td>
+          <td id="ticketTopping"></td>
+        </tr>
+        <tr>
+          <td id="ticketTextoExtras">Extras: </td>
+          <td id="ticketExtras">Without extras</td>
+        </tr>
+      </tbody></table>
+
+      <p>----------------------</p>
+
+      <p id="checkout">Total:</p>
+
+      <button onclick="hideTicket()">CLOSE</button>
+    </div>
+
+    <section id="specialTeas">
+      <h3>TRY OUR</h3>
+      <h2>SPECIAL-TEAS</h2>
+      <img src="images/bubbleteaSVG.svg" alt="">
+      <details>
+        <summary>VIEW TABLE</summary>
+        <!-- <table id="tablaSpecialTeas">
+          <thead>
+            <tr>
+              <th>Bebida</th>
+              <th>Ingredientes</th>
+              <th>Precio (500ml/700ml)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="ticketMeloncito">Melóncito (granizado)</td>
+              <td id="ticketMeloncitoIngredientes">Té jazmín, melón dulce, perlas de cristal, espuma de queso</td>
+              <td id="ticketMeloncitoPrecio">€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td id="ticketCremaMaracuya">Crema de Maracuyá (granizado)</td>
+              <td id="ticketCremaMaracuyaIngredientes">Té jazmín, maracuyá, espuma de queso, perlas de cristal</td>
+              <td id="ticketCremaMaracuyaPrecio">€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td id="ticketDelBosque">Del Bosque (granizado)</td>
+              <td id="ticketDelBosqueIngredientes">Té jazmín, frambuesa, perlas de cristal, espuma de queso</td>
+              <td id="ticketDelBosquePrecio">€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td id="ticketPonchePolinesia">Ponche Polinesia (granizado)</td>
+              <td id="ticketPonchePolinesiaIngredientes">Té jazmín, fresa, mango, piña, espuma de queso, perlas de
+                cristal</td>
+              <td id="ticketPonchePolinesiaPrecio">€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td id="ticketPinkLichi">Pink Lichi (granizado)</td>
+              <td id="ticketPinkLichiIngredientes">Té jazmín, lichi, espuma de queso, perlas de cristal</td>
+              <td id="ticketPinkLichiPrecio">€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td id="ticketMissFresa">Miss Fresa (granizado)</td>
+              <td id="ticketMissFresaIngredientes">Té jazmín, fresa, perlas de cristal, espuma de queso</td>
+              <td id="ticketMissFresaPrecio">€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td id="ticketSuenoMango">Sueño de Mango (granizado)</td>
+              <td id="ticketSuenoMangoIngredientes">Té jazmín, mango, perlas de cristal, espuma de queso</td>
+              <td id="ticketSuenoMangoPrecio">€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td id="ticketTaroCoco">TARO COCO</td>
+              <td id="ticketTaroCocoIngredientes">Taro, leche, coco</td>
+              <td id="ticketTaroCocoPrecio">€4.50 / €5.00</td>
+            </tr>
+            <tr>
+              <td id="ticketMatchaLatte">MATCHA LATTE</td>
+              <td id="ticketMatchaLatteIngredientes">Matcha leche</td>
+              <td id="ticketMatchaLattePrecio">€5.00 / €5.50</td>
+            </tr>
+            <tr>
+              <td id="ticketBrownSugarMilktea">Brown Sugar Milktea</td>
+              <td id="ticketBrownSugarMilkteaIngredientes">Té negro con leche, sirope de azúcar morena, tapioca y
+                cheesefoam</td>
+              <td id="ticketBrownSugarMilkteaPrecio">€4.50 / €5.00</td>
+            </tr>
+            <tr>
+              <td colspan="2" id="ticketThaiMilktea">Thai Milktea</td>
+              <td id="ticketThaiMilkteaPrecio">€4.50 / €5.00</td>
+            </tr>
+          </tbody>
+        </table> -->
+
+        <br>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+
+          <!-- Melóncito -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+            <div style="flex: 1;">
+              <h3>Meloncito (slush)</h3>
+              <p>Jasmine tea, honeydew melon, crystal pearls, cheese foam</p>
+              <p>500ml / 700ml</p>
+            </div>
+            <div style="text-align: center; width: 150px;">
+              <svg width="50px" height="50px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fxemoji" preserveAspectRatio="xMidYMid meet">
+                <path fill="#16992B" d="M31.028 24.865a1.31 1.31 0 0 1 -0.076 1.92c-7.175 6.155 -17.993 5.835 -24.788 -0.96S-0.953 8.21 5.203 1.036a1.31 1.31 0 0 1 1.92 -0.076z"></path>
+                <path fill="#F4C3C3" d="M30.529 24.366c-6.325 6.325 -16.581 6.325 -22.907 0s-6.325 -16.581 0 -22.907z"></path>
+                <path fill="#F44D61" d="M29.442 23.279c-5.726 5.726 -15.008 5.726 -20.734 0s-5.726 -15.008 0 -20.734z"></path>
+                <path fill="#442A34" d="m11.405 8.01 -0.019 0.031c-0.013 0.018 -0.031 0.049 -0.055 0.08 -0.024 0.031 -0.053 0.071 -0.087 0.111a2 2 0 0 1 -0.253 0.248 1.5 1.5 0 0 1 -0.157 0.116 1.666 1.666 0 0 1 -0.349 0.181 1.4 1.4 0 0 1 -0.359 0.088 1.1 1.1 0 0 1 -0.323 -0.012 1 1 0 0 1 -0.236 -0.076c-0.029 -0.013 -0.052 -0.029 -0.068 -0.037q-0.025 -0.015 -0.025 -0.016a0.797 0.797 0 0 1 -0.141 -1.119l0.015 -0.018s0.007 -0.009 0.021 -0.021c0.013 -0.012 0.033 -0.032 0.058 -0.051a1 1 0 0 1 0.213 -0.127 1.1 1.1 0 0 1 0.313 -0.083 1.4 1.4 0 0 1 0.369 0.007 1.5 1.5 0 0 1 0.192 0.039c0.064 0.017 0.127 0.036 0.189 0.061q0.092 0.035 0.178 0.079c0.086 0.043 0.112 0.059 0.162 0.091q0.076 0.048 0.139 0.096c0.042 0.03 0.079 0.064 0.109 0.088 0.03 0.024 0.054 0.051 0.071 0.066q0.025 0.025 0.025 0.026a0.135 0.135 0 0 1 0.017 0.155m4.316 13.259s0.011 0.009 0.029 0.021c0.018 0.012 0.047 0.035 0.081 0.053 0.034 0.02 0.075 0.047 0.121 0.07a2 2 0 0 0 0.327 0.137c0.061 0.019 0.124 0.037 0.189 0.05q0.098 0.021 0.196 0.03 0.099 0.01 0.196 0.009c0.129 -0.001 0.254 -0.018 0.366 -0.051a1.1 1.1 0 0 0 0.295 -0.131 1 1 0 0 0 0.191 -0.159c0.022 -0.023 0.038 -0.046 0.05 -0.059a0.25 0.25 0 0 0 0.028 -0.044 0.797 0.797 0 0 0 -0.315 -1.083s-0.009 -0.005 -0.026 -0.012c-0.017 -0.006 -0.043 -0.018 -0.073 -0.026a1 1 0 0 0 -0.245 -0.038 1.1 1.1 0 0 0 -0.321 0.039c-0.113 0.03 -0.229 0.079 -0.341 0.144a1.5 1.5 0 0 0 -0.164 0.107 1.5 1.5 0 0 0 -0.152 0.127 2 2 0 0 0 -0.137 0.139 2 2 0 0 0 -0.117 0.144 2 2 0 0 0 -0.094 0.14c-0.028 0.043 -0.05 0.088 -0.069 0.122 -0.019 0.034 -0.032 0.068 -0.042 0.087l-0.014 0.034a0.135 0.135 0 0 0 0.041 0.15m-5.841 -1.035s-0.006 0.011 -0.017 0.033c-0.009 0.02 -0.026 0.052 -0.039 0.088 -0.014 0.036 -0.034 0.083 -0.049 0.132a2 2 0 0 0 -0.045 0.163 2 2 0 0 0 -0.034 0.183 2 2 0 0 0 -0.017 0.194c-0.004 0.067 -0.002 0.132 0.003 0.198a1.5 1.5 0 0 0 0.025 0.194c0.023 0.127 0.061 0.247 0.112 0.352a1.1 1.1 0 0 0 0.178 0.27 1 1 0 0 0 0.189 0.162c0.026 0.018 0.051 0.029 0.067 0.038a0.25 0.25 0 0 0 0.049 0.021 0.797 0.797 0 0 0 1.014 -0.493q0.001 -0.001 0.007 -0.028c0.003 -0.018 0.011 -0.044 0.013 -0.076a1 1 0 0 0 -0.004 -0.248 1.1 1.1 0 0 0 -0.092 -0.31 1.4 1.4 0 0 0 -0.199 -0.311 1.5 1.5 0 0 0 -0.133 -0.143 1.5 1.5 0 0 0 -0.15 -0.129 2 2 0 0 0 -0.16 -0.112 2 2 0 0 0 -0.316 -0.16c-0.048 -0.02 -0.095 -0.034 -0.133 -0.046 -0.036 -0.013 -0.072 -0.02 -0.092 -0.026l-0.035 -0.008a0.135 0.135 0 0 0 -0.141 0.066m-0.447 -6.486 -0.035 0.012c-0.02 0.009 -0.054 0.019 -0.089 0.036 -0.035 0.017 -0.082 0.036 -0.127 0.061a2 2 0 0 0 -0.297 0.194 2 2 0 0 0 -0.147 0.128 1.5 1.5 0 0 0 -0.136 0.144 1.5 1.5 0 0 0 -0.117 0.157c-0.071 0.107 -0.128 0.22 -0.165 0.331a1.1 1.1 0 0 0 -0.059 0.318c-0.003 0.098 0.009 0.184 0.024 0.247 0.006 0.031 0.017 0.057 0.021 0.074a0.2 0.2 0 0 0 0.011 0.027l0.011 0.021c0.2 0.393 0.68 0.548 1.073 0.348q0.001 0 0.025 -0.015c0.015 -0.011 0.038 -0.025 0.063 -0.045a1 1 0 0 0 0.17 -0.181 1.1 1.1 0 0 0 0.148 -0.287c0.038 -0.111 0.064 -0.234 0.072 -0.362a1.7 1.7 0 0 0 -0.015 -0.393 2 2 0 0 0 -0.038 -0.191 2 2 0 0 0 -0.117 -0.335c-0.021 -0.047 -0.045 -0.09 -0.063 -0.126 -0.017 -0.035 -0.037 -0.065 -0.049 -0.084l-0.02 -0.03a0.135 0.135 0 0 0 -0.147 -0.051m7.673 1.465s-0.003 -0.013 -0.009 -0.035c-0.007 -0.021 -0.015 -0.056 -0.03 -0.091 -0.014 -0.036 -0.03 -0.084 -0.052 -0.131a2 2 0 0 0 -0.075 -0.151 2 2 0 0 0 -0.097 -0.159 2 2 0 0 0 -0.117 -0.155 1.5 1.5 0 0 0 -0.135 -0.145 1.5 1.5 0 0 0 -0.148 -0.128 1.4 1.4 0 0 0 -0.319 -0.187 1.1 1.1 0 0 0 -0.313 -0.081 1 1 0 0 0 -0.248 0.006c-0.032 0.004 -0.059 0.013 -0.075 0.017l-0.028 0.009 -0.022 0.009a0.797 0.797 0 0 0 -0.422 1.046s0.004 0.01 0.013 0.026c0.009 0.015 0.022 0.04 0.041 0.066a1 1 0 0 0 0.169 0.182 1.1 1.1 0 0 0 0.276 0.168c0.107 0.046 0.229 0.08 0.356 0.098q0.096 0.014 0.195 0.017 0.099 0.004 0.198 -0.005a2 2 0 0 0 0.194 -0.025 2 2 0 0 0 0.181 -0.041q0.086 -0.024 0.161 -0.052c0.049 -0.017 0.093 -0.038 0.13 -0.054 0.035 -0.015 0.067 -0.033 0.086 -0.043q0.032 -0.017 0.032 -0.018a0.135 0.135 0 0 0 0.06 -0.143m5.234 6.144 0.033 0.015c0.021 0.007 0.053 0.024 0.089 0.035 0.037 0.013 0.084 0.03 0.134 0.043a1.95 1.95 0 0 0 0.542 0.074q0.1 0.001 0.198 -0.011a1.5 1.5 0 0 0 0.193 -0.033c0.126 -0.028 0.244 -0.071 0.348 -0.126a1.1 1.1 0 0 0 0.262 -0.19 1 1 0 0 0 0.154 -0.195c0.017 -0.027 0.028 -0.053 0.036 -0.069 0.008 -0.017 0.011 -0.027 0.011 -0.027l0.007 -0.022a0.797 0.797 0 0 0 -0.533 -0.994q-0.001 -0.001 -0.029 -0.006c-0.018 -0.003 -0.045 -0.009 -0.076 -0.011a1 1 0 0 0 -0.248 0.013 1.1 1.1 0 0 0 -0.306 0.104 1.4 1.4 0 0 0 -0.303 0.211 1.5 1.5 0 0 0 -0.138 0.139 1.5 1.5 0 0 0 -0.122 0.155 2 2 0 0 0 -0.105 0.164 2 2 0 0 0 -0.147 0.322c-0.018 0.049 -0.03 0.097 -0.042 0.134 -0.012 0.036 -0.018 0.072 -0.023 0.093 -0.005 0.022 -0.006 0.036 -0.006 0.036a0.135 0.135 0 0 0 0.071 0.139m-2.728 3.092 0.007 0.035c0.006 0.021 0.013 0.057 0.025 0.093 0.013 0.037 0.026 0.085 0.045 0.133a2 2 0 0 0 0.157 0.318 2 2 0 0 0 0.11 0.161q0.059 0.08 0.128 0.151 0.068 0.072 0.142 0.135c0.098 0.084 0.203 0.152 0.309 0.203a1.1 1.1 0 0 0 0.309 0.096c0.097 0.015 0.184 0.013 0.248 0.006 0.032 -0.003 0.059 -0.009 0.076 -0.013l0.029 -0.007 0.022 -0.008a0.797 0.797 0 0 0 0.473 -1.024q0 -0.001 -0.012 -0.026c-0.009 -0.015 -0.021 -0.041 -0.038 -0.068a1 1 0 0 0 -0.16 -0.19 1.1 1.1 0 0 0 -0.268 -0.181 1.4 1.4 0 0 0 -0.351 -0.116 1.5 1.5 0 0 0 -0.194 -0.026c-0.066 -0.005 -0.132 -0.008 -0.198 -0.005a2 2 0 0 0 -0.195 0.015 2 2 0 0 0 -0.346 0.076c-0.05 0.015 -0.096 0.034 -0.132 0.048 -0.036 0.013 -0.069 0.029 -0.088 0.038q-0.032 0.015 -0.033 0.016a0.135 0.135 0 0 0 -0.068 0.141"></path>
+              </svg>
+              <p>€5.50 / €6.00</p>
+            </div>
+          </div>
+
+          <!-- Crema de Maracuyá -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+            <div style="flex: 1;">
+              <h3>Passion Fruit Cream (slush)</h3>
+              <p>Jasmine tea, passion fruit, cheese foam, crystal pearls</p>
+              <p>500ml / 700ml</p>
+            </div>
+            <div style="text-align: center; width: 150px;">
+              <svg height="50px" width="50px" version="1.1" id="_x36_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve"><g><g><path style="fill:#911f4a;" d="M31.998 15.999c0 8.839 -7.16 15.999 -15.999 15.999 -1.933 0 -3.785 -0.342 -5.501 -0.971a12.063 12.063 0 0 1 -0.726 -0.284c-0.24 -0.101 -0.476 -0.207 -0.707 -0.322h-0.005a22.625 22.625 0 0 1 -0.688 -0.351c-0.442 -0.24 -0.875 -0.505 -1.294 -0.784 -0.01 -0.01 -0.019 -0.014 -0.024 -0.019h-0.005c-0.212 -0.144 -0.423 -0.293 -0.625 -0.447 -0.207 -0.154 -0.409 -0.313 -0.606 -0.471a14.563 14.563 0 0 1 -0.577 -0.505 14.5 14.5 0 0 1 -0.558 -0.529c-0.731 -0.731 -1.395 -1.534 -1.972 -2.395 -0.414 -0.611 -0.779 -1.255 -1.101 -1.919C0.577 20.885 0 18.509 0 15.999 0 7.16 7.16 0 15.999 0c2.51 0 4.886 0.577 7.002 1.611a15.438 15.438 0 0 1 1.625 0.909c0.005 0 0.01 0.005 0.014 0.01a16.05 16.05 0 0 1 2.674 2.154 14.563 14.563 0 0 1 0.529 0.558 14.5 14.5 0 0 1 0.505 0.577c0.159 0.197 0.317 0.399 0.471 0.606 0.154 0.202 0.303 0.414 0.447 0.625v0.005a5.5 5.5 0 0 1 0.202 0.303c0.005 0.005 0.01 0.01 0.01 0.014 0.044 0.069 0.082 0.142 0.125 0.212 0.164 0.258 0.321 0.519 0.466 0.788a22.938 22.938 0 0 1 0.351 0.688v0.005c0.115 0.231 0.221 0.466 0.322 0.707a11.938 11.938 0 0 1 0.284 0.726c0.63 1.717 0.971 3.568 0.971 5.501"></path><path style="fill:#911f4a;" d="M15.999 31.23c-8.399 0 -15.232 -6.833 -15.232 -15.232 0 -8.399 6.833 -15.232 15.232 -15.232s15.232 6.833 15.232 15.232c0 8.399 -6.833 15.232 -15.232 15.232"></path><path style="fill:#f73636;" d="M15.999 31.251c-8.41 0 -15.252 -6.842 -15.252 -15.252S7.589 0.746 15.999 0.746s15.252 6.842 15.252 15.252 -6.842 15.252 -15.252 15.252"></path><path style="fill:#F2F9F3;" d="M15.999 30.482c-7.986 0 -14.483 -6.497 -14.483 -14.483S8.013 1.515 15.999 1.515c7.986 0 14.483 6.497 14.483 14.483S23.985 30.482 15.999 30.482"></path><path style="fill:#FDEFD1;" d="M15.999 29.357c-7.366 0 -13.358 -5.992 -13.358 -13.358 0 -7.366 5.992 -13.358 13.358 -13.358 7.366 0 13.358 5.992 13.358 13.358 0 7.366 -5.992 13.358 -13.358 13.358"></path><path style="fill:#ED8C5A;" d="M15.999 28.844c-7.083 0 -12.846 -5.763 -12.846 -12.846s5.763 -12.846 12.846 -12.846 12.846 5.763 12.846 12.846 -5.763 12.846 -12.846 12.846"></path><g><path style="fill:#ED8C5A;" d="M15.966 25.097c-5.034 0 -9.129 -4.095 -9.129 -9.13 0 -5.034 4.095 -9.129 9.129 -9.129 5.034 0 9.13 4.096 9.13 9.129 0 5.034 -4.095 9.13 -9.13 9.13"></path><g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M15.6 24.438c-0.178 -0.006 -0.394 0.362 -0.427 0.705 -0.031 0.339 0.096 0.633 0.37 0.646 0.274 0.007 0.426 -0.267 0.423 -0.609 -0.004 -0.343 -0.187 -0.737 -0.366 -0.741"></path><path style="fill:#656250;" d="M15.594 24.386c-0.177 -0.007 -0.392 0.36 -0.425 0.7 -0.032 0.337 0.095 0.629 0.367 0.642 0.272 0.007 0.423 -0.265 0.421 -0.606 -0.003 -0.34 -0.186 -0.732 -0.363 -0.737"></path><path style="fill:#484747;" d="M15.68 24.879c-0.003 0.116 -0.1 0.211 -0.216 0.204a0.21 0.21 0 0 1 -0.193 -0.227c0.009 -0.116 0.106 -0.204 0.216 -0.195 0.11 0.006 0.197 0.1 0.193 0.218"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M13.321 24.371c0.119 0.037 0.188 0.164 0.152 0.29 -0.035 0.125 -0.168 0.2 -0.294 0.16 -0.125 -0.042 -0.192 -0.177 -0.149 -0.3 0.043 -0.123 0.173 -0.191 0.291 -0.151"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M12.871 23.86c-0.084 -0.034 -0.207 0.025 -0.326 0.125 -0.119 0.1 -0.238 0.247 -0.308 0.403 -0.141 0.311 -0.117 0.633 0.139 0.73 0.254 0.104 0.491 -0.117 0.6 -0.44 0.108 -0.325 0.06 -0.749 -0.104 -0.818"></path><path style="fill:#656250;" d="M12.882 23.808c-0.166 -0.062 -0.489 0.215 -0.631 0.524 -0.14 0.309 -0.117 0.629 0.138 0.726 0.252 0.103 0.488 -0.115 0.596 -0.436 0.108 -0.323 0.06 -0.745 -0.103 -0.813"></path><path style="fill:#484747;" d="M12.803 24.305a0.207 0.207 0 0 1 -0.27 0.12c-0.109 -0.041 -0.156 -0.168 -0.109 -0.275 0.047 -0.107 0.166 -0.155 0.269 -0.117 0.102 0.04 0.152 0.162 0.111 0.271"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M10.739 23.053c0.102 0.072 0.123 0.218 0.049 0.325 -0.074 0.107 -0.222 0.132 -0.33 0.055 -0.107 -0.078 -0.124 -0.23 -0.044 -0.332 0.081 -0.103 0.224 -0.121 0.325 -0.048"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M10.479 22.424c-0.069 -0.06 -0.202 -0.046 -0.349 0.012 -0.147 0.058 -0.305 0.156 -0.422 0.282 -0.116 0.125 -0.196 0.264 -0.22 0.396 -0.022 0.129 0.012 0.251 0.115 0.34 0.206 0.18 0.503 0.047 0.71 -0.222 0.105 -0.135 0.179 -0.31 0.211 -0.463 0.031 -0.152 0.023 -0.284 -0.045 -0.345"></path><path style="fill:#656250;" d="M10.506 22.379c-0.068 -0.059 -0.2 -0.046 -0.347 0.012 -0.145 0.056 -0.304 0.155 -0.42 0.28 -0.116 0.125 -0.195 0.262 -0.219 0.393 -0.022 0.129 0.012 0.249 0.114 0.338 0.204 0.18 0.5 0.048 0.706 -0.219 0.105 -0.134 0.178 -0.308 0.21 -0.459 0.031 -0.151 0.023 -0.283 -0.044 -0.343"></path><path style="fill:#484747;" d="M10.269 22.823a0.205 0.205 0 0 1 -0.294 0.025c-0.088 -0.076 -0.096 -0.207 -0.016 -0.294 0.078 -0.085 0.21 -0.097 0.293 -0.024 0.083 0.072 0.09 0.204 0.016 0.294"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M8.721 20.97c0.072 0.101 0.046 0.246 -0.059 0.324 -0.105 0.077 -0.252 0.053 -0.329 -0.055 -0.079 -0.106 -0.044 -0.257 0.065 -0.328 0.111 -0.072 0.25 -0.042 0.324 0.058"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M8.676 20.292c-0.088 -0.155 -0.525 -0.128 -0.825 0.029 -0.305 0.162 -0.473 0.425 -0.336 0.662 0.14 0.235 0.46 0.208 0.744 0.019 0.286 -0.192 0.508 -0.557 0.418 -0.711"></path><path style="fill:#656250;" d="M8.716 20.258c-0.088 -0.154 -0.521 -0.128 -0.82 0.028 -0.303 0.16 -0.471 0.422 -0.335 0.658 0.139 0.234 0.457 0.207 0.739 0.02 0.284 -0.19 0.504 -0.553 0.416 -0.706"></path><path style="fill:#484747;" d="M8.349 20.602c-0.101 0.062 -0.227 0.029 -0.286 -0.071a0.205 0.205 0 0 1 0.081 -0.284c0.103 -0.056 0.23 -0.024 0.285 0.072 0.055 0.095 0.018 0.223 -0.08 0.283"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M7.486 18.348c0.034 0.12 -0.039 0.248 -0.164 0.288s-0.255 -0.032 -0.291 -0.16a0.229 0.229 0 0 1 0.166 -0.288c0.125 -0.031 0.255 0.041 0.289 0.16"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M7.663 17.693c-0.033 -0.175 -0.449 -0.293 -0.788 -0.242 -0.338 0.053 -0.587 0.247 -0.536 0.517 0.061 0.267 0.365 0.347 0.697 0.261 0.331 -0.088 0.668 -0.362 0.627 -0.536"></path><path style="fill:#656250;" d="M7.712 17.674c-0.032 -0.174 -0.446 -0.292 -0.782 -0.241 -0.336 0.052 -0.583 0.245 -0.533 0.513 0.061 0.265 0.363 0.345 0.692 0.26 0.329 -0.087 0.664 -0.359 0.623 -0.532"></path><path style="fill:#484747;" d="M7.256 17.879c-0.112 0.025 -0.231 -0.045 -0.249 -0.16a0.208 0.208 0 0 1 0.171 -0.242c0.115 -0.019 0.224 0.053 0.244 0.161a0.212 0.212 0 0 1 -0.166 0.241"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M7.172 15.466c-0.008 0.124 -0.113 0.223 -0.244 0.219 -0.129 -0.003 -0.236 -0.114 -0.228 -0.246 0.01 -0.132 0.124 -0.23 0.254 -0.218 0.13 0.011 0.228 0.121 0.218 0.245"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M7.556 14.904c0.012 -0.09 -0.075 -0.194 -0.202 -0.285 -0.126 -0.091 -0.298 -0.17 -0.467 -0.199 -0.337 -0.059 -0.641 0.043 -0.673 0.315 -0.038 0.271 0.234 0.447 0.574 0.472 0.342 0.025 0.741 -0.127 0.767 -0.303"></path><path style="fill:#656250;" d="M7.608 14.902c0.012 -0.089 -0.075 -0.193 -0.2 -0.284 -0.125 -0.09 -0.296 -0.169 -0.464 -0.198 -0.334 -0.059 -0.638 0.042 -0.669 0.313 -0.038 0.27 0.232 0.444 0.57 0.47 0.339 0.025 0.737 -0.126 0.763 -0.301"></path><path style="fill:#484747;" d="M7.108 14.947a0.207 0.207 0 0 1 -0.183 -0.232c0.013 -0.116 0.123 -0.193 0.239 -0.174 0.115 0.019 0.192 0.122 0.18 0.232 -0.014 0.109 -0.119 0.187 -0.235 0.174"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M7.812 12.639c-0.046 0.116 -0.182 0.172 -0.304 0.127s-0.182 -0.183 -0.133 -0.306c0.046 -0.124 0.192 -0.177 0.31 -0.124 0.12 0.054 0.171 0.187 0.128 0.303"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M8.356 12.233c0.082 -0.158 -0.178 -0.51 -0.474 -0.676 -0.301 -0.168 -0.613 -0.165 -0.739 0.079 -0.12 0.246 0.076 0.499 0.389 0.634 0.316 0.135 0.744 0.123 0.824 -0.036"></path><path style="fill:#656250;" d="M8.406 12.248c0.082 -0.157 -0.177 -0.507 -0.47 -0.673 -0.299 -0.167 -0.61 -0.165 -0.734 0.077 -0.12 0.244 0.075 0.496 0.386 0.631 0.314 0.135 0.739 0.122 0.819 -0.035"></path><path style="fill:#484747;" d="M7.918 12.127c-0.107 -0.051 -0.149 -0.175 -0.096 -0.279a0.205 0.205 0 0 1 0.282 -0.087c0.103 0.056 0.145 0.18 0.095 0.278 -0.05 0.098 -0.177 0.137 -0.281 0.087"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M9.338 10.175c-0.082 0.094 -0.229 0.103 -0.33 0.02 -0.101 -0.083 -0.112 -0.231 -0.026 -0.331 0.086 -0.101 0.236 -0.108 0.332 -0.018 0.095 0.088 0.104 0.234 0.023 0.329"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M9.984 9.965c0.129 -0.123 -0.001 -0.537 -0.229 -0.792 -0.23 -0.254 -0.527 -0.354 -0.725 -0.165 -0.19 0.197 -0.09 0.496 0.163 0.726 0.255 0.23 0.667 0.36 0.791 0.232"></path><path style="fill:#656250;" d="M10.027 9.995c0.129 -0.122 0 -0.534 -0.227 -0.788 -0.228 -0.253 -0.523 -0.352 -0.72 -0.165 -0.19 0.195 -0.09 0.493 0.161 0.722 0.253 0.229 0.662 0.358 0.786 0.231"></path><path style="fill:#484747;" d="M9.605 9.725c-0.084 -0.082 -0.087 -0.217 -0.002 -0.296a0.207 0.207 0 0 1 0.296 0.01c0.079 0.086 0.079 0.217 -0.001 0.293 -0.081 0.075 -0.209 0.074 -0.293 -0.007"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M11.579 8.334c-0.108 0.062 -0.251 0.022 -0.319 -0.088 -0.07 -0.113 -0.032 -0.255 0.083 -0.322 0.115 -0.066 0.258 -0.026 0.32 0.089 0.062 0.115 0.024 0.259 -0.084 0.321"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M12.258 8.344c0.161 -0.077 0.173 -0.507 0.04 -0.823 -0.134 -0.314 -0.386 -0.509 -0.633 -0.391 -0.244 0.125 -0.247 0.439 -0.081 0.738 0.167 0.299 0.516 0.558 0.675 0.476"></path><path style="fill:#656250;" d="M12.288 8.387c0.16 -0.076 0.173 -0.504 0.04 -0.818 -0.133 -0.312 -0.382 -0.505 -0.629 -0.39 -0.242 0.124 -0.245 0.436 -0.081 0.734 0.165 0.297 0.512 0.555 0.67 0.474"></path><path style="fill:#484747;" d="M11.977 7.995c-0.052 -0.103 -0.013 -0.234 0.093 -0.282a0.209 0.209 0 0 1 0.277 0.106c0.047 0.107 0.004 0.23 -0.096 0.276 -0.101 0.045 -0.221 0.005 -0.274 -0.1"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M14.293 7.32c-0.123 0.019 -0.243 -0.056 -0.272 -0.185 -0.028 -0.126 0.052 -0.258 0.183 -0.279 0.13 -0.023 0.253 0.062 0.274 0.191 0.021 0.129 -0.062 0.251 -0.184 0.273"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M14.932 7.554c0.176 -0.027 0.33 -0.423 0.306 -0.766 -0.024 -0.338 -0.199 -0.615 -0.47 -0.576 -0.135 0.017 -0.231 0.099 -0.283 0.22 -0.053 0.123 -0.063 0.283 -0.035 0.452 0.028 0.169 0.107 0.34 0.197 0.467 0.091 0.13 0.195 0.215 0.285 0.203"></path><path style="fill:#656250;" d="M14.947 7.604c0.175 -0.027 0.328 -0.419 0.305 -0.761 -0.013 -0.17 -0.061 -0.321 -0.141 -0.426 -0.08 -0.107 -0.192 -0.165 -0.326 -0.147 -0.134 0.017 -0.229 0.099 -0.282 0.218 -0.052 0.122 -0.063 0.281 -0.035 0.449 0.028 0.168 0.105 0.338 0.195 0.465 0.091 0.129 0.193 0.213 0.283 0.202"></path><path style="fill:#484747;" d="M14.78 7.131a0.208 0.208 0 0 1 0.18 -0.236c0.115 -0.016 0.218 0.076 0.227 0.191 0.01 0.118 -0.072 0.214 -0.181 0.229 -0.109 0.014 -0.211 -0.069 -0.227 -0.184"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M17.192 7.246c-0.123 -0.016 -0.212 -0.134 -0.198 -0.263s0.132 -0.221 0.263 -0.205c0.132 0.014 0.219 0.141 0.197 0.269a0.239 0.239 0 0 1 -0.263 0.199"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M17.721 7.672c0.173 0.04 0.449 -0.296 0.538 -0.627 0.087 -0.331 0.008 -0.635 -0.259 -0.696 -0.269 -0.054 -0.465 0.197 -0.519 0.534 -0.053 0.34 0.065 0.753 0.239 0.789"></path><path style="fill:#656250;" d="M17.718 7.725c0.172 0.04 0.447 -0.294 0.536 -0.622 0.087 -0.329 0.009 -0.631 -0.257 -0.692 -0.267 -0.055 -0.462 0.196 -0.516 0.53 -0.053 0.338 0.064 0.747 0.237 0.784"></path><path style="fill:#484747;" d="M17.714 7.223c0.023 -0.116 0.133 -0.19 0.246 -0.162a0.206 0.206 0 0 1 0.154 0.252c-0.029 0.113 -0.139 0.185 -0.246 0.16 -0.107 -0.026 -0.176 -0.137 -0.154 -0.25"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M19.955 8.118c-0.111 -0.057 -0.155 -0.199 -0.1 -0.315 0.057 -0.119 0.197 -0.166 0.315 -0.106 0.118 0.06 0.162 0.202 0.099 0.317 -0.063 0.114 -0.203 0.161 -0.314 0.104"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M20.316 8.693c0.152 0.092 0.52 -0.131 0.712 -0.415 0.19 -0.284 0.217 -0.601 -0.016 -0.744 -0.237 -0.137 -0.502 0.031 -0.663 0.334 -0.16 0.302 -0.187 0.737 -0.032 0.825"></path><path style="fill:#656250;" d="M20.297 8.742c0.151 0.093 0.517 -0.129 0.708 -0.412 0.189 -0.282 0.216 -0.596 -0.016 -0.739 -0.236 -0.136 -0.499 0.031 -0.66 0.331 -0.16 0.3 -0.187 0.732 -0.033 0.82"></path><path style="fill:#484747;" d="M20.456 8.267c0.058 -0.1 0.189 -0.138 0.287 -0.075a0.209 0.209 0 0 1 0.062 0.291c-0.064 0.098 -0.191 0.129 -0.284 0.069 -0.093 -0.059 -0.125 -0.182 -0.065 -0.284"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M22.287 9.842c-0.084 -0.092 -0.085 -0.236 0.006 -0.33 0.091 -0.094 0.243 -0.096 0.333 0.001 0.091 0.096 0.087 0.245 -0.009 0.333s-0.244 0.086 -0.33 -0.004"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M22.442 10.504c0.118 0.134 0.534 0.045 0.808 -0.164 0.27 -0.206 0.402 -0.501 0.224 -0.709 -0.178 -0.208 -0.484 -0.133 -0.736 0.102 -0.247 0.233 -0.413 0.636 -0.297 0.771"></path><path style="fill:#656250;" d="M22.408 10.543c0.116 0.134 0.53 0.045 0.803 -0.162 0.269 -0.205 0.399 -0.497 0.223 -0.705 -0.178 -0.206 -0.481 -0.133 -0.731 0.101 -0.246 0.231 -0.412 0.632 -0.296 0.766"></path><path style="fill:#484747;" d="M22.712 10.145a0.21 0.21 0 0 1 0.297 0.021 0.21 0.21 0 0 1 -0.036 0.296c-0.092 0.072 -0.222 0.06 -0.29 -0.027 -0.072 -0.083 -0.059 -0.213 0.029 -0.29"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M23.938 12.225c-0.05 -0.114 -0.007 -0.249 0.111 -0.309 0.115 -0.058 0.263 -0.013 0.316 0.108 0.055 0.121 0.002 0.261 -0.118 0.313s-0.258 0.002 -0.31 -0.111"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M23.869 12.902c0.07 0.164 0.491 0.215 0.818 0.107 0.322 -0.107 0.546 -0.344 0.442 -0.598 -0.098 -0.256 -0.416 -0.282 -0.73 -0.142 -0.157 0.069 -0.304 0.188 -0.404 0.306 -0.103 0.12 -0.16 0.242 -0.127 0.326"></path><path style="fill:#656250;" d="M23.824 12.928c0.069 0.163 0.487 0.214 0.813 0.108 0.161 -0.055 0.295 -0.138 0.378 -0.242 0.084 -0.104 0.113 -0.227 0.062 -0.352 -0.05 -0.126 -0.152 -0.198 -0.281 -0.219 -0.132 -0.021 -0.287 0.009 -0.443 0.077 -0.156 0.069 -0.302 0.186 -0.402 0.304 -0.102 0.12 -0.159 0.24 -0.126 0.324"></path><path style="fill:#484747;" d="M24.242 12.65a0.208 0.208 0 0 1 0.273 0.116c0.044 0.108 -0.02 0.23 -0.129 0.267 -0.112 0.039 -0.225 -0.017 -0.267 -0.119 -0.041 -0.102 0.014 -0.221 0.122 -0.265"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M24.722 15.015c-0.016 -0.123 0.076 -0.238 0.205 -0.256 0.129 -0.018 0.248 0.074 0.264 0.205 0.016 0.131 -0.086 0.247 -0.214 0.257 -0.131 0.01 -0.24 -0.083 -0.255 -0.206"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M24.436 15.632c0.004 0.178 0.401 0.364 0.74 0.368 0.345 0.003 0.618 -0.148 0.611 -0.421 -0.009 -0.273 -0.306 -0.402 -0.644 -0.372 -0.344 0.032 -0.71 0.247 -0.707 0.425"></path><path style="fill:#656250;" d="M24.385 15.643c0.004 0.177 0.398 0.362 0.735 0.367 0.343 0.004 0.615 -0.146 0.608 -0.418 -0.008 -0.272 -0.303 -0.4 -0.64 -0.37 -0.342 0.031 -0.705 0.244 -0.703 0.422"></path><path style="fill:#484747;" d="M24.873 15.516a0.204 0.204 0 0 1 0.216 0.199 0.205 0.205 0 0 1 -0.206 0.211c-0.117 0 -0.214 -0.089 -0.217 -0.199 -0.003 -0.11 0.09 -0.204 0.206 -0.211"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M24.556 17.909c0.029 -0.121 0.153 -0.2 0.28 -0.175 0.13 0.025 0.212 0.15 0.181 0.279 -0.03 0.129 -0.157 0.207 -0.283 0.174s-0.206 -0.157 -0.178 -0.279"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M24.087 18.401c-0.049 0.171 0.254 0.471 0.578 0.588 0.321 0.114 0.639 0.063 0.717 -0.199 0.075 -0.264 -0.152 -0.478 -0.487 -0.561 -0.33 -0.08 -0.76 0.001 -0.808 0.172"></path><path style="fill:#656250;" d="M24.036 18.394c-0.049 0.17 0.252 0.469 0.574 0.585 0.319 0.114 0.634 0.063 0.713 -0.197 0.074 -0.262 -0.151 -0.475 -0.483 -0.558 -0.328 -0.08 -0.755 0 -0.803 0.17"></path><path style="fill:#484747;" d="M24.535 18.432c0.112 0.032 0.178 0.149 0.145 0.26a0.21 0.21 0 0 1 -0.268 0.131c-0.11 -0.038 -0.171 -0.153 -0.136 -0.257 0.031 -0.105 0.146 -0.166 0.258 -0.134"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M23.459 20.592a0.237 0.237 0 0 1 0.32 -0.075c0.112 0.065 0.154 0.213 0.082 0.324 -0.071 0.111 -0.218 0.143 -0.327 0.071s-0.143 -0.215 -0.075 -0.32"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M22.854 20.903c-0.1 0.148 0.087 0.529 0.356 0.744 0.265 0.211 0.586 0.27 0.742 0.045 0.161 -0.221 0.009 -0.503 -0.279 -0.689 -0.143 -0.094 -0.323 -0.153 -0.477 -0.172 -0.157 -0.02 -0.29 -0.002 -0.342 0.072"></path><path style="fill:#656250;" d="M22.807 20.88c-0.099 0.147 0.086 0.526 0.353 0.74 0.134 0.105 0.277 0.172 0.409 0.185 0.133 0.014 0.252 -0.029 0.329 -0.14 0.16 -0.22 0.01 -0.499 -0.276 -0.685 -0.142 -0.093 -0.321 -0.152 -0.474 -0.171 -0.156 -0.021 -0.288 -0.003 -0.34 0.071"></path><path style="fill:#484747;" d="M23.268 21.078a0.208 0.208 0 0 1 0.051 0.292c-0.067 0.095 -0.203 0.109 -0.294 0.038 -0.093 -0.073 -0.109 -0.198 -0.046 -0.288 0.064 -0.09 0.193 -0.108 0.289 -0.042"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M21.55 22.775c0.095 -0.08 0.24 -0.068 0.326 0.031a0.235 0.235 0 0 1 -0.026 0.334c-0.104 0.082 -0.253 0.064 -0.333 -0.039 -0.08 -0.103 -0.065 -0.249 0.033 -0.326"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M20.876 22.873c-0.143 0.106 -0.086 0.531 0.097 0.82 0.184 0.287 0.467 0.443 0.688 0.281 0.225 -0.156 0.169 -0.475 -0.042 -0.742 -0.214 -0.268 -0.596 -0.459 -0.743 -0.358"></path><path style="fill:#656250;" d="M20.839 22.836c-0.142 0.106 -0.087 0.527 0.095 0.815 0.183 0.285 0.464 0.441 0.683 0.28 0.224 -0.155 0.169 -0.471 -0.041 -0.738 -0.212 -0.266 -0.592 -0.457 -0.738 -0.357"></path><path style="fill:#484747;" d="M21.212 23.174a0.207 0.207 0 0 1 -0.046 0.292c-0.094 0.069 -0.226 0.04 -0.29 -0.058 -0.064 -0.098 -0.04 -0.224 0.049 -0.289 0.09 -0.064 0.219 -0.039 0.288 0.055"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M19.038 24.223c0.116 -0.046 0.249 0.015 0.299 0.136s-0.01 0.258 -0.134 0.307c-0.124 0.047 -0.26 -0.022 -0.302 -0.144 -0.042 -0.125 0.021 -0.254 0.137 -0.298"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M18.37 24.098c-0.171 0.05 -0.254 0.477 -0.175 0.807 0.081 0.335 0.296 0.566 0.559 0.489 0.264 -0.075 0.315 -0.396 0.202 -0.716 -0.056 -0.162 -0.162 -0.319 -0.272 -0.43 -0.111 -0.11 -0.226 -0.174 -0.314 -0.151"></path><path style="fill:#656250;" d="M18.347 24.051c-0.17 0.05 -0.253 0.473 -0.175 0.802 0.08 0.333 0.294 0.563 0.555 0.487 0.262 -0.074 0.313 -0.393 0.202 -0.711 -0.055 -0.161 -0.161 -0.317 -0.27 -0.427 -0.11 -0.109 -0.224 -0.173 -0.311 -0.15"></path><path style="fill:#484747;" d="M18.59 24.492a0.205 0.205 0 0 1 -0.14 0.26 0.204 0.204 0 0 1 -0.255 -0.147c-0.029 -0.113 0.034 -0.229 0.14 -0.26s0.22 0.036 0.255 0.147"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M16.192 24.771c0.124 -0.003 0.231 0.1 0.238 0.23s-0.094 0.239 -0.226 0.242 -0.239 -0.1 -0.238 -0.23c0.001 -0.131 0.102 -0.239 0.226 -0.242"></path></g></g></g><g><path style="fill:#ED8C5A;" d="M15.942 21.358c-2.985 0 -5.413 -2.428 -5.413 -5.413S12.957 10.531 15.942 10.531c2.985 0 5.413 2.428 5.413 5.413 0 2.985 -2.428 5.413 -5.413 5.413"></path><g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M15.587 20.689c-0.044 -0.002 -0.09 0.02 -0.137 0.06 -0.046 0.036 -0.092 0.088 -0.135 0.152 -0.086 0.128 -0.163 0.302 -0.188 0.471 -0.025 0.169 -0.011 0.328 0.049 0.451 0.03 0.061 0.071 0.113 0.123 0.153 0.052 0.039 0.116 0.057 0.188 0.061 0.295 0.015 0.458 -0.255 0.454 -0.598 0 -0.171 -0.05 -0.357 -0.117 -0.501 -0.067 -0.144 -0.15 -0.246 -0.238 -0.25"></path><path style="fill:#656250;" d="M15.583 20.637c-0.044 -0.002 -0.089 0.021 -0.135 0.059 -0.045 0.035 -0.091 0.087 -0.134 0.151 -0.086 0.128 -0.162 0.3 -0.188 0.468 -0.026 0.168 -0.012 0.326 0.047 0.448 0.059 0.122 0.163 0.21 0.308 0.213 0.292 0.015 0.454 -0.254 0.451 -0.594 0 -0.17 -0.049 -0.355 -0.114 -0.497 -0.066 -0.143 -0.148 -0.244 -0.235 -0.248"></path><path style="fill:#484747;" d="M15.655 21.132c-0.006 0.117 -0.107 0.206 -0.226 0.2 -0.119 -0.01 -0.201 -0.124 -0.185 -0.238 0.017 -0.117 0.116 -0.192 0.224 -0.183 0.108 0.005 0.192 0.104 0.186 0.221"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M13.385 20.342c0.053 0.032 0.088 0.086 0.104 0.144a0.234 0.234 0 0 1 -0.017 0.177 0.237 0.237 0 0 1 -0.142 0.117c-0.059 0.016 -0.124 0.006 -0.183 -0.029 -0.117 -0.071 -0.155 -0.218 -0.083 -0.327 0.072 -0.109 0.215 -0.146 0.321 -0.081"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M13.081 19.743c-0.069 -0.054 -0.204 -0.026 -0.346 0.034 -0.141 0.06 -0.299 0.164 -0.412 0.293 -0.228 0.253 -0.297 0.58 -0.056 0.752 0.117 0.087 0.248 0.1 0.372 0.049 0.127 -0.054 0.243 -0.165 0.336 -0.308 0.093 -0.144 0.148 -0.323 0.168 -0.476 0.023 -0.158 0.009 -0.29 -0.061 -0.343"></path><path style="fill:#656250;" d="M13.106 19.697c-0.068 -0.054 -0.203 -0.024 -0.343 0.033 -0.14 0.06 -0.297 0.163 -0.41 0.291 -0.226 0.251 -0.297 0.576 -0.059 0.747 0.116 0.086 0.246 0.098 0.369 0.049 0.126 -0.053 0.241 -0.164 0.334 -0.306 0.093 -0.144 0.148 -0.32 0.169 -0.473 0.023 -0.157 0.01 -0.288 -0.06 -0.34"></path><path style="fill:#484747;" d="M12.897 20.153c-0.068 0.095 -0.201 0.114 -0.296 0.042 -0.098 -0.069 -0.106 -0.208 -0.029 -0.296 0.076 -0.088 0.201 -0.098 0.291 -0.036 0.087 0.065 0.103 0.195 0.035 0.29"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M11.412 18.261c0.05 0.114 0.016 0.25 -0.098 0.316 -0.112 0.065 -0.266 0.026 -0.322 -0.1 -0.06 -0.124 -0.012 -0.268 0.107 -0.321 0.119 -0.053 0.259 -0.006 0.313 0.105"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M11.479 17.592c-0.03 -0.082 -0.153 -0.133 -0.311 -0.157 -0.152 -0.025 -0.34 -0.023 -0.504 0.024 -0.165 0.047 -0.304 0.126 -0.392 0.232 -0.085 0.104 -0.11 0.234 -0.06 0.371 0.096 0.281 0.428 0.308 0.737 0.163 0.155 -0.072 0.3 -0.193 0.399 -0.311 0.1 -0.119 0.164 -0.24 0.133 -0.321"></path><path style="fill:#656250;" d="M11.525 17.566c-0.03 -0.082 -0.152 -0.132 -0.309 -0.156 -0.15 -0.025 -0.337 -0.023 -0.501 0.023 -0.164 0.046 -0.302 0.125 -0.39 0.23 -0.086 0.104 -0.11 0.231 -0.061 0.367 0.052 0.135 0.15 0.218 0.285 0.24 0.135 0.023 0.291 -0.007 0.446 -0.078s0.299 -0.191 0.396 -0.308c0.101 -0.119 0.164 -0.237 0.133 -0.318"></path><path style="fill:#484747;" d="M11.102 17.838c-0.108 0.043 -0.23 -0.012 -0.271 -0.124 -0.043 -0.112 0.018 -0.231 0.132 -0.264 0.109 -0.032 0.228 0.024 0.267 0.126 0.038 0.102 -0.02 0.22 -0.129 0.263"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M10.874 15.444c-0.006 0.124 -0.117 0.219 -0.247 0.213s-0.23 -0.122 -0.223 -0.259c0.016 -0.136 0.141 -0.23 0.269 -0.211 0.13 0.02 0.216 0.134 0.201 0.257"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M11.293 14.918c0.022 -0.085 -0.05 -0.193 -0.168 -0.298 -0.118 -0.104 -0.281 -0.206 -0.445 -0.255 -0.327 -0.102 -0.635 -0.024 -0.708 0.263 -0.02 0.07 -0.013 0.138 0.01 0.199 0.022 0.061 0.06 0.115 0.109 0.162 0.099 0.092 0.247 0.152 0.417 0.176 0.17 0.024 0.358 0 0.507 -0.045 0.152 -0.046 0.251 -0.116 0.278 -0.2"></path><path style="fill:#656250;" d="M11.346 14.921c0.022 -0.084 -0.05 -0.191 -0.167 -0.296 -0.117 -0.104 -0.279 -0.204 -0.442 -0.254 -0.324 -0.102 -0.63 -0.026 -0.703 0.258a0.381 0.381 0 0 0 -0.013 0.102q0.005 0.05 0.021 0.095c0.022 0.06 0.059 0.114 0.109 0.16 0.099 0.092 0.246 0.151 0.414 0.175 0.168 0.024 0.356 0.001 0.504 -0.044 0.15 -0.045 0.25 -0.114 0.276 -0.197"></path><path style="fill:#484747;" d="M10.842 14.921c-0.118 -0.023 -0.186 -0.134 -0.156 -0.25 0.03 -0.116 0.145 -0.183 0.257 -0.15s0.181 0.145 0.154 0.25 -0.143 0.172 -0.255 0.151"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M11.953 12.788c-0.074 0.099 -0.221 0.118 -0.327 0.043s-0.126 -0.226 -0.043 -0.336c0.079 -0.113 0.241 -0.119 0.337 -0.035 0.1 0.088 0.104 0.226 0.034 0.328"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M12.586 12.568c0.066 -0.059 0.064 -0.189 0.022 -0.34 -0.042 -0.151 -0.124 -0.324 -0.235 -0.454 -0.22 -0.262 -0.522 -0.364 -0.74 -0.165 -0.202 0.215 -0.1 0.52 0.161 0.741 0.13 0.112 0.301 0.195 0.452 0.238 0.151 0.043 0.279 0.043 0.34 -0.02"></path><path style="fill:#656250;" d="M12.629 12.6c0.065 -0.058 0.063 -0.187 0.021 -0.338 -0.042 -0.15 -0.123 -0.322 -0.234 -0.451 -0.218 -0.261 -0.517 -0.363 -0.733 -0.165 -0.202 0.212 -0.099 0.516 0.159 0.736 0.129 0.111 0.299 0.194 0.448 0.237 0.15 0.043 0.276 0.043 0.338 -0.018"></path><path style="fill:#484747;" d="M12.209 12.33c-0.085 -0.081 -0.09 -0.22 0.001 -0.297 0.088 -0.08 0.222 -0.074 0.299 0.014s0.074 0.219 -0.007 0.292c-0.083 0.07 -0.209 0.072 -0.293 -0.008"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M14.294 11.131c-0.116 0.043 -0.25 -0.021 -0.299 -0.142s0.016 -0.258 0.145 -0.305c0.064 -0.023 0.13 -0.021 0.185 0.008a0.237 0.237 0 0 1 0.116 0.142 0.234 0.234 0 0 1 -0.018 0.177c-0.027 0.052 -0.071 0.099 -0.13 0.12"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M14.944 11.289c0.085 -0.021 0.155 -0.124 0.202 -0.275 0.046 -0.149 0.071 -0.338 0.048 -0.507 -0.042 -0.338 -0.243 -0.596 -0.533 -0.54 -0.287 0.073 -0.367 0.381 -0.266 0.708 0.049 0.164 0.149 0.327 0.252 0.445 0.104 0.118 0.212 0.191 0.297 0.168"></path><path style="fill:#656250;" d="M14.963 11.337c0.085 -0.019 0.154 -0.122 0.2 -0.272 0.046 -0.148 0.071 -0.336 0.048 -0.504 -0.042 -0.336 -0.239 -0.591 -0.527 -0.538 -0.284 0.072 -0.363 0.378 -0.264 0.704 0.048 0.163 0.147 0.325 0.249 0.443 0.103 0.117 0.21 0.19 0.294 0.167"></path><path style="fill:#484747;" d="M14.756 10.884c-0.027 -0.111 0.043 -0.236 0.161 -0.253 0.118 -0.018 0.227 0.061 0.244 0.176 0.017 0.116 -0.057 0.223 -0.164 0.239 -0.108 0.015 -0.213 -0.046 -0.241 -0.162"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M17.157 11.005c-0.12 -0.031 -0.197 -0.161 -0.173 -0.285 0.025 -0.132 0.153 -0.208 0.286 -0.173 0.133 0.034 0.21 0.164 0.173 0.288s-0.166 0.202 -0.285 0.171"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M17.617 11.492c0.082 0.032 0.204 -0.036 0.322 -0.129 0.119 -0.098 0.241 -0.242 0.314 -0.397 0.146 -0.305 0.123 -0.643 -0.158 -0.738 -0.137 -0.051 -0.267 -0.024 -0.371 0.058 -0.106 0.084 -0.186 0.226 -0.234 0.39 -0.049 0.166 -0.05 0.349 -0.028 0.507 0.023 0.158 0.073 0.28 0.156 0.31"></path><path style="fill:#656250;" d="M17.607 11.543c0.081 0.031 0.202 -0.035 0.319 -0.128 0.118 -0.097 0.24 -0.241 0.312 -0.395 0.072 -0.154 0.104 -0.31 0.082 -0.444 -0.02 -0.137 -0.1 -0.24 -0.236 -0.29 -0.136 -0.05 -0.265 -0.023 -0.368 0.058 -0.104 0.082 -0.185 0.224 -0.233 0.386 -0.049 0.165 -0.05 0.345 -0.029 0.504 0.022 0.157 0.072 0.278 0.153 0.308"></path><path style="fill:#484747;" d="M17.679 11.047c0.038 -0.11 0.16 -0.166 0.273 -0.125 0.114 0.037 0.159 0.173 0.111 0.277 -0.049 0.108 -0.165 0.148 -0.269 0.115 -0.102 -0.037 -0.153 -0.157 -0.115 -0.267"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M19.633 12.447c-0.08 -0.095 -0.083 -0.237 0.006 -0.331 0.09 -0.095 0.247 -0.098 0.337 0.006 0.092 0.102 0.087 0.253 -0.012 0.338 -0.099 0.085 -0.247 0.079 -0.331 -0.012"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M19.758 13.108c0.052 0.071 0.187 0.083 0.342 0.064 0.152 -0.018 0.333 -0.074 0.477 -0.166 0.145 -0.092 0.256 -0.207 0.31 -0.333 0.057 -0.127 0.04 -0.255 -0.046 -0.373 -0.088 -0.116 -0.209 -0.167 -0.344 -0.151 -0.137 0.016 -0.279 0.09 -0.408 0.202 -0.129 0.112 -0.234 0.269 -0.295 0.41 -0.065 0.145 -0.09 0.277 -0.037 0.347"></path><path style="fill:#656250;" d="M19.721 13.145c0.051 0.07 0.187 0.081 0.339 0.063 0.151 -0.018 0.331 -0.073 0.475 -0.164 0.288 -0.178 0.446 -0.469 0.265 -0.7 -0.087 -0.115 -0.207 -0.164 -0.341 -0.15 -0.136 0.016 -0.277 0.089 -0.406 0.201 -0.129 0.112 -0.233 0.267 -0.294 0.407 -0.066 0.144 -0.09 0.274 -0.038 0.344"></path><path style="fill:#484747;" d="M20.05 12.765c0.092 -0.072 0.224 -0.053 0.296 0.043 0.035 0.048 0.049 0.103 0.039 0.157a0.216 0.216 0 0 1 -0.093 0.135 0.211 0.211 0 0 1 -0.155 0.032c-0.052 -0.009 -0.102 -0.034 -0.135 -0.078 -0.065 -0.087 -0.043 -0.216 0.048 -0.288"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M20.943 14.997c-0.007 -0.062 0.005 -0.122 0.035 -0.171a0.237 0.237 0 0 1 0.146 -0.103 0.234 0.234 0 0 1 0.18 0.031c0.054 0.033 0.095 0.088 0.103 0.156 0.021 0.136 -0.067 0.26 -0.196 0.278 -0.129 0.018 -0.249 -0.068 -0.268 -0.19"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M20.688 15.62c0.004 0.088 0.106 0.171 0.25 0.239 0.146 0.067 0.327 0.118 0.497 0.12 0.348 0.006 0.616 -0.155 0.602 -0.451 -0.004 -0.073 -0.025 -0.136 -0.059 -0.189 -0.037 -0.052 -0.091 -0.094 -0.151 -0.124 -0.123 -0.061 -0.282 -0.076 -0.451 -0.051 -0.169 0.025 -0.343 0.1 -0.472 0.185 -0.124 0.086 -0.22 0.183 -0.216 0.271"></path><path style="fill:#656250;" d="M20.637 15.631c0.004 0.087 0.105 0.17 0.249 0.237 0.145 0.067 0.324 0.118 0.493 0.119 0.345 0.006 0.614 -0.153 0.599 -0.445 -0.004 -0.072 -0.024 -0.135 -0.059 -0.187 -0.035 -0.052 -0.09 -0.093 -0.15 -0.123 -0.122 -0.06 -0.28 -0.075 -0.448 -0.051 -0.168 0.024 -0.341 0.099 -0.469 0.183 -0.123 0.085 -0.22 0.181 -0.215 0.267"></path><path style="fill:#484747;" d="M21.121 15.49c0.116 -0.011 0.215 0.077 0.221 0.196s-0.084 0.216 -0.201 0.216 -0.216 -0.088 -0.222 -0.196c-0.005 -0.109 0.085 -0.205 0.201 -0.216"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M20.661 17.851c0.042 -0.116 0.177 -0.176 0.3 -0.133s0.185 0.182 0.138 0.311c-0.021 0.065 -0.072 0.111 -0.131 0.133a0.234 0.234 0 0 1 -0.183 -0.005 0.237 0.237 0 0 1 -0.123 -0.13c-0.02 -0.054 -0.02 -0.116 -0.001 -0.175"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M20.114 18.238c-0.046 0.075 -0.008 0.199 0.075 0.333 0.083 0.133 0.21 0.276 0.353 0.37 0.284 0.19 0.603 0.204 0.755 -0.05 0.136 -0.263 -0.051 -0.528 -0.362 -0.667 -0.156 -0.071 -0.344 -0.102 -0.5 -0.101 -0.158 0.001 -0.278 0.038 -0.321 0.114"></path><path style="fill:#656250;" d="M20.064 18.22c-0.046 0.074 -0.007 0.197 0.075 0.33 0.083 0.133 0.209 0.275 0.351 0.368 0.282 0.19 0.598 0.204 0.749 -0.047 0.136 -0.259 -0.05 -0.523 -0.359 -0.661 -0.155 -0.071 -0.341 -0.102 -0.496 -0.102 -0.157 0.001 -0.275 0.037 -0.319 0.112"></path><path style="fill:#484747;" d="M20.544 18.362a0.216 0.216 0 0 1 0.105 0.126c0.015 0.052 0.007 0.109 -0.024 0.16 -0.062 0.102 -0.192 0.134 -0.29 0.071 -0.098 -0.063 -0.132 -0.19 -0.076 -0.282 0.028 -0.047 0.076 -0.077 0.127 -0.09a0.211 0.211 0 0 1 0.158 0.017"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M18.878 20.098c0.099 -0.074 0.245 -0.051 0.326 0.051s0.057 0.252 -0.053 0.335c-0.108 0.086 -0.263 0.049 -0.332 -0.06 -0.071 -0.112 -0.037 -0.247 0.059 -0.325"></path></g><g><g><path style="opacity:0.2;fill:#FFFFFF;" d="M18.21 20.132c-0.079 0.038 -0.114 0.162 -0.117 0.319 -0.002 0.157 0.028 0.345 0.098 0.501 0.137 0.314 0.399 0.497 0.665 0.367 0.254 -0.152 0.242 -0.471 0.053 -0.757 -0.093 -0.144 -0.235 -0.272 -0.368 -0.355 -0.133 -0.083 -0.257 -0.122 -0.332 -0.075"></path><path style="fill:#656250;" d="M18.178 20.09c-0.079 0.037 -0.113 0.161 -0.116 0.317 -0.002 0.156 0.028 0.343 0.097 0.498 0.136 0.312 0.395 0.494 0.658 0.366 0.252 -0.149 0.24 -0.467 0.053 -0.751 -0.092 -0.143 -0.233 -0.27 -0.364 -0.353 -0.132 -0.083 -0.254 -0.121 -0.329 -0.076"></path><path style="fill:#484747;" d="M18.505 20.466c0.058 0.1 0.025 0.238 -0.084 0.286 -0.108 0.052 -0.234 0.008 -0.283 -0.098s-0.009 -0.231 0.089 -0.277c0.1 -0.043 0.22 -0.013 0.279 0.089"></path></g><path style="opacity:0;fill:#FFFFFF;" d="M16.168 21.026c0.124 -0.006 0.234 0.094 0.247 0.224s-0.089 0.241 -0.226 0.248 -0.248 -0.093 -0.247 -0.224c0.001 -0.131 0.102 -0.242 0.226 -0.248"></path></g></g></g><path style="opacity:0.2;fill:#FDEFD1;" cx="255.986" cy="255.975" r="21.186" d="M17.323 15.998A1.324 1.324 0 0 1 15.999 17.323A1.324 1.324 0 0 1 14.675 15.998A1.324 1.324 0 0 1 17.323 15.998z"></path><path transform="rotate(-43.772 143.693 138.432)" style="opacity:0.12;fill:#F8FBF8;" cx="143.693" cy="138.434" rx="75.349" ry="21.528" d="M13.69 8.652A4.709 1.345 0 0 1 8.981 9.998A4.709 1.345 0 0 1 4.272 8.652A4.709 1.345 0 0 1 13.69 8.652z"></path></g><path style="opacity:0.14;fill:#040000;" d="M15.999 31.999C24.836 31.999 32 24.835 32 15.998c0 -4.418 -1.791 -8.419 -4.687 -11.314L4.685 27.313c2.896 2.896 6.896 4.687 11.314 4.687"></path></g></svg>
+              <p>€5.50 / €6.00</p>
+            </div>
+          </div>
+
+          <!-- Del Bosque -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+            <div style="flex: 1;">
+              <h3>Del Bosque (slush)</h3>
+              <p>Jasmine tea, raspberry, crystal pearls, cheese foam</p>
+              <p>500ml / 700ml</p>
+            </div>
+            <div style="text-align: center; width: 150px;">
+              <svg width="50px" height="50px" viewBox="0 0 64 64" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <path d="M37.333 20s-0.667 -1.333 1.333 -2.667c6.533 -3.733 11.467 -0.667 14.667 -4C53.067 18.4 50.667 20 50.667 20zm-4 0.933C29.867 9.867 37.6 5.333 38 5.2L37.333 4 38 5.2l-1.333 -2.4c-0.133 0 -10 5.733 -6 18.933zM22.667 20v-1.333c-1.067 -7.333 -7.2 -2.533 -13.333 -5.333 0.8 3.6 4 6.667 4 6.667z" fill="#388E3C"></path>
+                <path d="M42.667 21.333H33.333c-0.4 -1.333 -0.667 -3.067 -0.8 -4.267C34.267 14.4 39.867 14.8 44 8c3.2 7.333 -1.333 13.333 -1.333 13.333m-12 0s0.533 0.933 0 -2.667C29.6 11.2 23.2 14 20 5.333c-6.533 10.533 1.333 16 1.333 16z" fill="#4CAF50"></path>
+                <path d="M13.333 44a6.667 6.667 0 1 0 13.333 0 6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M25.333 45.333a6.667 6.667 0 1 0 13.333 0 6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M37.333 44a6.667 6.667 0 1 0 13.333 0 6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M30.667 36A6.667 6.667 0 1 0 44 36a6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M41.333 34.667a6.667 6.667 0 1 0 13.333 0 6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M9.333 34.667a6.667 6.667 0 1 0 13.333 0 6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M20 36a6.667 6.667 0 1 0 13.333 0A6.667 6.667 0 1 0 20 36" fill="#FF4081"></path>
+                <path d="M8 25.333a6.667 6.667 0 1 0 13.333 0 6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M42.667 25.333a6.667 6.667 0 1 0 13.333 0 6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M16 25.333a6.667 6.667 0 1 0 13.333 0 6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M34.667 25.333a6.667 6.667 0 1 0 13.333 0 6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M25.333 25.333a6.667 6.667 0 1 0 13.333 0 6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M25.333 54.667a6.667 6.667 0 1 0 13.333 0 6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M32 50.667a6.667 6.667 0 1 0 13.333 0 6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M18.667 50.667a6.667 6.667 0 1 0 13.333 0 6.667 6.667 0 1 0 -13.333 0" fill="#FF4081"></path>
+                <path d="M32 50.667c-0.267 -0.133 -0.4 -0.133 -0.533 -0.133 0.133 0.133 0.4 0.133 0.533 0.133" fill="#C51162"></path>
+                <path d="M56 25.333c0 -3.733 -2.933 -6.667 -6.667 -6.667 2.267 0 4 4.4 4 6.667s-1.733 4 -4 4c-0.8 0 -1.6 -0.267 -2.267 -0.667C47.6 27.733 48 26.533 48 25.333c0 -1.6 -0.533 -3.067 -1.467 -4.133 0.667 -1.333 1.733 -2.533 2.8 -2.533 -1.467 0 -2.933 0.533 -4 1.333 -1.067 -0.8 -2.533 -1.333 -4 -1.333 2.267 0 4 4.4 4 6.667s-1.733 4 -4 4c-1.333 0 -2.4 -0.667 -3.2 -1.6 0.267 -0.8 0.533 -1.6 0.533 -2.4 0 -1.067 -0.267 -2 -0.667 -2.933 0.667 -1.867 1.867 -3.733 3.333 -3.733 -1.867 0 -3.467 0.8 -4.667 1.867 -1.2 -1.067 -2.8 -1.867 -4.667 -1.867 2.267 0 4 4.4 4 6.667s-1.733 4 -4 4 -4 -1.733 -4 -4 1.733 -6.667 4 -6.667c-1.867 0 -3.467 0.8 -4.667 1.867 -1.2 -1.067 -2.8 -1.867 -4.667 -1.867 1.467 0 2.667 1.867 3.333 3.733 -0.4 0.933 -0.667 1.867 -0.667 2.933 0 0.8 0.133 1.733 0.533 2.4 -0.8 0.933 -1.867 1.6 -3.2 1.6 -2.267 0 -4 -1.733 -4 -4s1.733 -6.667 4 -6.667c-1.467 0 -2.933 0.533 -4 1.333 -1.067 -0.8 -2.533 -1.333 -4 -1.333 1.067 0 2.133 1.067 2.8 2.533C16.533 22.267 16 23.733 16 25.333c0 1.2 0.267 2.267 0.933 3.333 -0.667 0.4 -1.333 0.667 -2.267 0.667 -2.267 0 -4 -1.733 -4 -4s1.733 -6.667 4 -6.667C10.933 18.667 8 21.6 8 25.333c0 2.133 1.067 4.133 2.667 5.333 -0.8 1.067 -1.333 2.533 -1.333 4 0 2.933 2 5.467 4.667 6.4 -0.4 0.8 -0.667 1.867 -0.667 2.933 0 3.2 2.267 5.867 5.333 6.533v0.133c0 3.733 2.933 6.667 6.667 6.667h0.533c1.067 2.4 3.333 4 6.133 4s5.067 -1.733 6.133 -4h0.533c3.733 0 6.667 -2.933 6.667 -6.667v-0.133C48.4 49.867 50.667 47.2 50.667 44c0 -1.067 -0.267 -2.133 -0.8 -2.933 2.8 -0.8 4.8 -3.333 4.8 -6.4 0 -1.467 -0.533 -2.933 -1.333 -4 1.6 -1.2 2.667 -3.2 2.667 -5.333m-21.2 6c0.667 -0.267 1.333 -0.8 1.867 -1.333 0.933 0.933 2.133 1.6 3.467 1.867 0.667 1.333 1.2 3.067 1.2 4.133 0 2.267 -1.733 4 -4 4s-4 -1.733 -4 -4c0 -1.2 0.533 -3.2 1.467 -4.667M32 40c0.8 1.067 2 2 3.333 2.4 0.4 1.067 0.667 2.133 0.667 3.067 0 2.267 -1.733 4 -4 4s-4 -1.733 -4 -4c0 -0.8 0.267 -1.867 0.667 -3.067C30 41.867 31.2 41.067 32 40M23.867 31.867C25.2 31.6 26.4 30.933 27.333 30c0.533 0.533 1.2 0.933 1.867 1.333 0.933 1.467 1.467 3.333 1.467 4.667 0 2.267 -1.733 4 -4 4s-4 -1.733 -4 -4c0 -1.067 0.4 -2.667 1.2 -4.133M12 34.667c0 -0.8 0.267 -1.867 0.667 -3.067q1 0.4 2 0.4c1.467 0 2.933 -0.533 4 -1.333 0.133 0.133 0.267 0.133 0.4 0.267 0.667 1.333 0.933 2.8 0.933 3.733 0 2.267 -1.733 4 -4 4s-4 -1.733 -4 -4M20 48c-2.267 0 -4 -1.733 -4 -4 0 -0.8 0.267 -1.733 0.533 -2.667 1.733 -0.133 3.2 -0.933 4.267 -2.133 0.667 1.2 1.6 2.133 2.8 2.667 0.267 0.8 0.4 1.6 0.4 2.133 0 2.267 -1.733 4 -4 4m1.333 2.667v-0.133c1.867 -0.4 3.333 -1.467 4.267 -3.067 0.267 0.667 0.533 1.333 1.067 1.867l1.733 1.6 0.8 0.4c-0.267 1.867 -1.867 3.333 -3.867 3.333 -2.267 0 -4 -1.733 -4 -4m10.667 8c-1.467 0 -2.8 -0.933 -3.467 -2.133C30.267 55.6 31.467 54 31.867 52h0.267c0.4 2 1.733 3.6 3.333 4.533 -0.667 1.2 -2 2.133 -3.467 2.133m6.667 -4c-2 0 -3.6 -1.467 -3.867 -3.333l0.8 -0.4 1.733 -1.6c0.4 -0.533 0.8 -1.2 1.067 -1.867 0.933 1.467 2.4 2.667 4.267 3.067h0.133v0.133c-0.133 2.267 -1.867 4 -4.133 4M44 48c-2.267 0 -4 -1.733 -4 -4 0 -0.533 0.133 -1.333 0.4 -2.133 1.2 -0.667 2.133 -1.6 2.8 -2.667 1.067 1.2 2.667 1.867 4.267 2.133 0.4 0.933 0.533 2 0.533 2.667 0 2.267 -1.733 4 -4 4m4 -9.333c-2.267 0 -4 -1.733 -4 -4 0 -1.067 0.4 -2.4 0.933 -3.733 0.133 -0.133 0.267 -0.133 0.4 -0.267 1.067 0.8 2.533 1.333 4 1.333q1 0 2 -0.4c0.4 1.067 0.667 2.133 0.667 3.067 0 2.267 -1.733 4 -4 4" fill="#C51162"></path>
+              </svg>
+              <p>€5.50 / €6.00</p>
+            </div>
+          </div>
+
+          <!-- Ponche Polinesia -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+            <div style="flex: 1;">
+              <h3>Ponche Polinesia (slush)</h3>
+              <p>Jasmine tea, strawberry, mango, pineapple, cheese foam, crystal pearls</p>
+              <p>500ml / 700ml</p>
+            </div>
+            <div style="text-align: center; width: 150px;">
+              <svg width="50px" height="50px" viewBox="0 0 4 4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione" preserveAspectRatio="xMidYMid meet">
+                <path d="M1.469 0.819C1.563 0.575 2.231 0.125 2.231 0.125s0.212 0.806 0.125 1.044c-0.087 0.244 -0.356 0.356 -0.6 0.263 -0.25 -0.1 -0.375 -0.375 -0.287 -0.613" fill="#8cc63e"></path>
+                <path d="M1.075 1.3c-0.113 -0.231 0.05 -1.031 0.05 -1.031S1.837 0.688 1.944 0.925c0.106 0.231 0 0.506 -0.244 0.613 -0.237 0.1 -0.519 -0.006 -0.625 -0.237" fill="#64892f"></path>
+                <path d="M1.294 1.075C1.063 0.969 0.269 1.125 0.269 1.125S0.688 1.844 0.919 1.956c0.231 0.106 0.506 0 0.606 -0.244 0.106 -0.244 0 -0.531 -0.231 -0.637" fill="#8cc63e"></path>
+                <path d="M0.813 1.475C0.575 1.569 0.125 2.244 0.125 2.244s0.8 0.212 1.044 0.125c0.237 -0.087 0.356 -0.362 0.256 -0.606 -0.1 -0.25 -0.369 -0.375 -0.613 -0.287" fill="#64892f"></path>
+                <path d="M3.219 1.044C3.938 1.769 4.019 3.337 3.681 3.681c-0.344 0.344 -1.9 0.256 -2.625 -0.469 -0.531 -0.531 -0.281 -1.337 0.269 -1.894 0.556 -0.556 1.363 -0.806 1.894 -0.275" fill="#ef4d3c"></path>
+                <g fill="#fff0f0">
+                  <path d="M2.544 0.981c-0.031 0 -0.063 0.013 -0.081 0.037 -0.031 0.05 -0.006 0.125 0.069 0.175 0.037 0.025 0.075 0.037 0.106 0.037s0.063 -0.013 0.075 -0.037c0.031 -0.05 0.006 -0.125 -0.069 -0.175 -0.025 -0.025 -0.063 -0.037 -0.1 -0.037"></path>
+                  <path d="M2.775 2.075q-0.028 0 -0.056 0.019c-0.044 0.037 -0.031 0.119 0.019 0.188 0.037 0.044 0.087 0.069 0.125 0.069q0.028 0 0.056 -0.019c0.044 -0.037 0.031 -0.119 -0.019 -0.188 -0.037 -0.044 -0.087 -0.069 -0.125 -0.069"></path>
+                  <path d="M2.237 1.538q-0.028 0 -0.056 0.019c-0.044 0.037 -0.037 0.119 0.019 0.188 0.037 0.044 0.087 0.069 0.125 0.069q0.028 0 0.056 -0.019c0.044 -0.037 0.037 -0.119 -0.019 -0.188 -0.037 -0.044 -0.087 -0.069 -0.125 -0.069"></path>
+                  <path d="M3.156 1.6c-0.013 0 -0.025 0 -0.037 0.006 -0.05 0.025 -0.056 0.113 -0.019 0.188 0.031 0.056 0.081 0.094 0.131 0.094 0.013 0 0.025 0 0.037 -0.006 0.05 -0.025 0.056 -0.113 0.019 -0.188 -0.031 -0.056 -0.087 -0.094 -0.131 -0.094"></path>
+                  <path d="M3.444 2.425h-0.019c-0.056 0.013 -0.087 0.094 -0.063 0.175 0.019 0.075 0.069 0.125 0.125 0.125h0.019c0.056 -0.013 0.087 -0.094 0.063 -0.175 -0.025 -0.075 -0.075 -0.125 -0.125 -0.125"></path>
+                  <path d="M3.369 3.2c-0.019 0 -0.044 0.006 -0.056 0.019 -0.044 0.037 -0.031 0.125 0.025 0.188 0.037 0.044 0.087 0.063 0.125 0.063 0.019 0 0.044 -0.006 0.056 -0.019 0.044 -0.037 0.031 -0.125 -0.025 -0.188 -0.037 -0.037 -0.081 -0.063 -0.125 -0.063"></path>
+                  <path d="M1.981 3.106c-0.031 0 -0.063 0.013 -0.081 0.037 -0.031 0.05 0 0.125 0.069 0.175 0.037 0.025 0.075 0.037 0.106 0.037s0.063 -0.013 0.081 -0.037c0.031 -0.05 0 -0.125 -0.069 -0.175 -0.031 -0.025 -0.069 -0.037 -0.106 -0.037"></path>
+                  <path d="M1.262 2.9c-0.037 0 -0.063 0.013 -0.081 0.037 -0.031 0.05 0 0.125 0.069 0.175 0.037 0.025 0.075 0.037 0.106 0.037s0.063 -0.013 0.081 -0.037c0.031 -0.05 0 -0.125 -0.069 -0.175 -0.037 -0.025 -0.075 -0.037 -0.106 -0.037"></path>
+                  <path d="M2.6 3.406c-0.05 0 -0.087 0.019 -0.106 0.056 -0.019 0.056 0.025 0.125 0.106 0.156 0.025 0.013 0.056 0.019 0.081 0.019 0.05 0 0.087 -0.019 0.106 -0.056 0.019 -0.056 -0.025 -0.125 -0.106 -0.156 -0.025 -0.013 -0.056 -0.019 -0.081 -0.019"></path>
+                  <path d="M2.744 2.781c-0.037 0 -0.069 0.013 -0.087 0.044 -0.031 0.05 0.006 0.125 0.081 0.169 0.031 0.019 0.069 0.031 0.1 0.031 0.037 0 0.069 -0.013 0.087 -0.044 0.031 -0.05 -0.006 -0.125 -0.081 -0.169 -0.037 -0.019 -0.069 -0.031 -0.1 -0.031"></path>
+                  <path d="M2.075 2.337c-0.031 0 -0.056 0.013 -0.069 0.031 -0.037 0.044 -0.013 0.125 0.05 0.181 0.037 0.031 0.081 0.044 0.119 0.044 0.031 0 0.056 -0.013 0.069 -0.031 0.037 -0.044 0.013 -0.125 -0.05 -0.181 -0.037 -0.025 -0.081 -0.044 -0.119 -0.044"></path>
+                  <path d="M1.531 1.494c-0.025 0 -0.044 0.006 -0.063 0.025 -0.044 0.044 -0.025 0.125 0.031 0.181 0.037 0.037 0.081 0.056 0.125 0.056 0.025 0 0.044 -0.006 0.063 -0.025 0.044 -0.044 0.025 -0.125 -0.031 -0.181 -0.037 -0.037 -0.081 -0.056 -0.125 -0.056"></path>
+                  <path d="M1.356 2.169c-0.031 0 -0.056 0.013 -0.075 0.031 -0.037 0.044 -0.013 0.125 0.056 0.181 0.037 0.031 0.081 0.044 0.113 0.044s0.056 -0.013 0.075 -0.031c0.037 -0.044 0.013 -0.125 -0.056 -0.181 -0.037 -0.025 -0.081 -0.044 -0.113 -0.044"></path>
+                </g>
+              </svg>
+
+              <svg width="50px" height="50px" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--noto" preserveAspectRatio="xMidYMid meet">
+                <radialGradient id="IconifyId17ecdb2904d178eab13511" cx="75.424" cy="-61.613" r="183.963" gradientUnits="userSpaceOnUse">
+                  <stop offset=".532" stop-color="#ff7f24"></stop>
+                  <stop offset=".615" stop-color="#f86922"></stop>
+                  <stop offset=".696" stop-color="#fd9124"></stop>
+                  <stop offset=".739" stop-color="#ffa025"></stop>
+                  <stop offset=".793" stop-color="#fca025"></stop>
+                  <stop offset=".839" stop-color="#f1a124"></stop>
+                  <stop offset=".883" stop-color="#dfa222"></stop>
+                  <stop offset=".925" stop-color="#c7a41f"></stop>
+                  <stop offset=".962" stop-color="#aaa61c"></stop>
+                </radialGradient>
+                <path d="M0.252 5.589c-0.075 0.376 0.354 1.82 2.591 2.109 1.149 0.148 2.278 -0.26 3.172 -0.944S7.456 5.188 7.644 4.382c0.289 -1.241 -0.043 -3.114 -2.504 -3.224 -2.516 -0.113 -3.362 2.518 -3.889 3.291C0.616 5.38 0.32 5.25 0.252 5.589" fill="url(#IconifyId17ecdb2904d178eab13511)"></path>
+                <path d="M2.618 2.271s0.848 0.431 2.163 0.34c1.064 -0.074 1.483 -0.596 1.483 -0.596s0.468 0.129 0.779 0.046c0.124 -0.033 0.151 -0.101 -0.001 -0.258 -0.229 -0.239 -1.017 -0.681 -2.178 -0.606 -1.453 0.094 -2.246 1.074 -2.246 1.074" fill="#dc0d27"></path>
+                <path d="M1.627 4.789c0.147 0.246 0.584 -0.071 0.892 -0.379 0.444 -0.445 0.646 -0.853 0.764 -1.059s0.278 -0.652 -0.044 -0.724c-0.336 -0.074 -0.435 0.341 -0.608 0.646s-0.412 0.669 -0.605 0.906c-0.204 0.252 -0.486 0.465 -0.399 0.611" fill="#ffebc9"></path>
+                <path d="M6.397 1.561c-0.043 0.186 0.128 0.316 0.246 0.409s0.384 0.128 0.473 0.064c0.089 -0.064 -0.01 -0.251 0.054 -0.364 0.064 -0.113 0.177 -0.251 0.039 -0.345 -0.116 -0.079 -0.271 -0.108 -0.414 -0.079s-0.143 0.138 -0.202 0.168c-0.06 0.03 -0.183 0.084 -0.198 0.148" fill="#6d4c41"></path>
+                <path d="M6.259 1.617c-0.158 0.069 -0.621 0.434 -1.704 0.517 -1.194 0.092 -2.596 -0.05 -2.829 -0.083s-0.632 -0.049 -0.627 -0.149c0.008 -0.15 0.163 -0.102 0.476 -0.192 0.376 -0.109 0.759 -0.259 1.052 -0.434 0.449 -0.269 1.363 -0.943 2.262 -0.96 0.985 -0.018 1.302 0.292 1.544 0.551s0.246 0.53 0.179 0.639c-0.066 0.109 -0.16 0.028 -0.352 0.111" fill="#518e30"></path>
+                <path d="M3.154 1.558c0.023 0.029 0.459 0.045 0.703 0.037 0.555 -0.018 0.994 -0.166 1.541 -0.227s1.024 0 1.042 -0.021c0.033 -0.039 -0.302 -0.495 -1.401 -0.372 -0.404 0.046 -0.924 0.251 -1.283 0.394 -0.229 0.093 -0.624 0.161 -0.602 0.189" fill="#366918"></path>
+              </svg>
+
+              <svg width="60px" height="60px" viewBox="0 0 64 64" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <path d="M38.935 24.055c0.324 -2.305 1.125 -4.143 2.068 -5.841a22.313 22.313 0 0 1 3.417 -4.519 21.919 21.919 0 0 1 4.441 -3.516C50.539 9.2 52.363 8.365 54.667 8c-0.319 2.309 -1.117 4.151 -2.061 5.848a21.919 21.919 0 0 1 -3.424 4.512 22.313 22.313 0 0 1 -4.448 3.511c-1.679 0.976 -3.501 1.813 -5.799 2.184" fill="#8BC34A"></path>
+                <path d="M57.333 17.333c-1.427 1.849 -3.039 3.06 -4.705 4.079a22.6 22.6 0 0 1 -5.232 2.261 22.163 22.163 0 0 1 -5.628 0.885c-1.953 0.029 -3.964 -0.139 -6.159 -0.949 1.424 -1.859 3.035 -3.071 4.703 -4.087a22.169 22.169 0 0 1 5.235 -2.252 22.556 22.556 0 0 1 5.631 -0.876c1.953 -0.031 3.961 0.135 6.156 0.939" fill="#7CB342"></path>
+                <path d="M39.381 27.38c-0.837 -2.197 -1.032 -4.221 -1.033 -6.193 0.024 -1.965 0.301 -3.861 0.793 -5.699a22.594 22.594 0 0 1 2.175 -5.327c0.989 -1.703 2.18 -3.353 4.017 -4.828 0.845 2.199 1.043 4.224 1.043 6.195a22.625 22.625 0 0 1 -0.803 5.696 22.919 22.919 0 0 1 -2.184 5.324c-0.992 1.704 -2.179 3.356 -4.008 4.832" fill="#7CB342"></path>
+                <path d="M57.333 25.333c-1.971 1.268 -3.901 1.871 -5.82 2.275 -1.917 0.377 -3.819 0.493 -5.708 0.387a22.35 22.35 0 0 1 -5.625 -1.044c-1.86 -0.623 -3.705 -1.451 -5.513 -2.949 1.971 -1.276 3.901 -1.883 5.82 -2.283 1.917 -0.377 3.82 -0.493 5.708 -0.377 1.889 0.115 3.764 0.453 5.625 1.052 1.859 0.625 3.707 1.451 5.513 2.94" fill="#558B2F"></path>
+                <path d="M38.667 5.335c1.267 1.864 1.869 3.687 2.273 5.496 0.377 1.808 0.493 3.6 0.385 5.379a19.875 19.875 0 0 1 -1.043 5.289c-0.624 1.747 -1.452 3.479 -2.949 5.169 -1.276 -1.864 -1.881 -3.687 -2.283 -5.497 -0.376 -1.808 -0.493 -3.6 -0.376 -5.377 0.115 -1.777 0.453 -3.541 1.052 -5.288 0.625 -1.747 1.451 -3.479 2.94 -5.171" fill="#558B2F"></path>
+                <path d="M39.084 46.289c3.179 -3.179 4.952 -7.76 5 -12.417 0.025 -2.417 -1.74 -7.417 -3.777 -9.539l-0.947 -0.947 -1.192 -1.192s-3.224 -3.492 -9.001 -3.492c-4.759 0 -9.476 1.723 -12.711 4.96l-4.829 4.828c-6.4 6.4 -6.524 16.655 -0.276 22.904 6.249 6.248 16.504 6.124 22.904 -0.276z" fill="#F9A825"></path>
+                <path d="M29.435 54.464h0.005a16.512 16.512 0 0 0 3.645 -2.288 22.125 22.125 0 0 0 -3.26 -0.399c-0.077 -1.54 -0.348 -4.063 -1.241 -5.892 2.108 0.088 4.829 0.528 5.716 1.417 0.485 0.484 0.833 1.523 1.067 2.704l2.22 -2.22a8.75 8.75 0 0 0 -0.425 -1.051c0.437 0.02 0.903 0.056 1.369 0.107l0.553 -0.553c0.577 -0.579 1.105 -1.203 1.588 -1.867a22.438 22.438 0 0 0 -3.12 -0.371c-0.079 -1.54 -0.349 -4.063 -1.243 -5.892 2.109 0.089 4.828 0.528 5.716 1.416 0.261 0.263 0.479 0.693 0.664 1.208a18.781 18.781 0 0 0 0.971 -10.999c-0.993 -3.367 -4.301 -6.397 -4.301 -6.397 0.697 0.697 1.115 2.533 1.305 4.312 -1.655 -0.549 -3.561 -0.743 -4.816 -0.804 -0.061 -1.255 -0.253 -3.163 -0.804 -4.816 1.779 0.192 3.615 0.608 4.313 1.307 0 0 -2.581 -3.415 -6.293 -4.236a18.953 18.953 0 0 0 -11.076 0.912c0.503 0.184 0.921 0.4 1.179 0.655 0.888 0.888 1.328 3.609 1.417 5.717 -1.828 -0.892 -4.352 -1.164 -5.891 -1.241a22.625 22.625 0 0 0 -0.372 -3.117c-0.664 0.48 -1.291 1.008 -1.867 1.585l-0.553 0.552c0.051 0.468 0.087 0.932 0.105 1.369a8.375 8.375 0 0 0 -1.049 -0.425l-2.22 2.22c1.183 0.233 2.22 0.581 2.705 1.067 0.887 0.888 1.327 3.608 1.416 5.716 -1.829 -0.893 -4.352 -1.164 -5.892 -1.241a21.938 21.938 0 0 0 -0.4 -3.26c-0.94 1.133 -1.693 2.361 -2.287 3.645v0.004a16.35 16.35 0 0 0 -0.945 2.585c0.141 0.087 0.283 0.176 0.381 0.275 0.888 0.888 1.327 3.608 1.416 5.716 -0.711 -0.345 -1.527 -0.592 -2.348 -0.776a15.956 15.956 0 0 0 0.44 2.924c0.579 0.196 1.059 0.431 1.343 0.713 0.791 0.791 1.224 3.028 1.372 5 0.432 0.569 0.892 1.127 1.411 1.645 0.52 0.519 1.077 0.977 1.645 1.411 1.972 0.148 4.209 0.583 5 1.372 0.284 0.284 0.517 0.764 0.715 1.343a15.938 15.938 0 0 0 2.923 0.44c-0.184 -0.821 -0.431 -1.637 -0.776 -2.348 2.108 0.088 4.828 0.528 5.716 1.416 0.099 0.099 0.188 0.24 0.275 0.381a16.5 16.5 0 0 0 2.587 -0.944zm5.431 -10.017c-1.828 -0.893 -4.351 -1.169 -5.891 -1.248 -0.079 -1.54 -0.355 -4.063 -1.249 -5.891 2.111 0.087 4.836 0.527 5.724 1.416 0.889 0.888 1.329 3.612 1.416 5.723M26.289 43.596c-1.829 -0.895 -4.351 -1.171 -5.892 -1.248 -0.077 -1.541 -0.353 -4.063 -1.248 -5.892 2.109 0.088 4.835 0.528 5.723 1.417 0.889 0.888 1.328 3.612 1.417 5.723m14.888 -12.599c0.887 0.888 1.327 3.608 1.416 5.716 -1.829 -0.893 -4.352 -1.163 -5.891 -1.241 -0.077 -1.539 -0.349 -4.061 -1.241 -5.891 2.108 0.089 4.828 0.528 5.716 1.416M34.015 35.869c-1.828 -0.895 -4.349 -1.171 -5.889 -1.249 -0.079 -1.54 -0.356 -4.06 -1.249 -5.889 2.111 0.087 4.835 0.528 5.723 1.416s1.328 3.612 1.416 5.723m-7.989 -15.716c2.109 0.087 4.833 0.528 5.723 1.415l0.003 0.003c0.887 0.889 1.327 3.613 1.415 5.723 -1.828 -0.895 -4.349 -1.169 -5.891 -1.249 -0.079 -1.54 -0.356 -4.061 -1.249 -5.891m-7.72 7.728c2.109 0.087 4.831 0.527 5.717 1.415 0.888 0.888 1.327 3.608 1.416 5.716 -1.828 -0.893 -4.352 -1.163 -5.891 -1.241 -0.079 -1.539 -0.349 -4.063 -1.243 -5.889M10.58 35.607c2.109 0.087 4.829 0.528 5.717 1.416 0.887 0.888 1.327 3.607 1.415 5.717 -1.828 -0.895 -4.352 -1.165 -5.889 -1.243 -0.079 -1.539 -0.351 -4.063 -1.243 -5.891m2.092 14.468c-0.079 -1.541 -0.355 -4.061 -1.249 -5.891 2.111 0.088 4.835 0.528 5.724 1.416 0.888 0.889 1.328 3.613 1.416 5.725 -1.829 -0.897 -4.349 -1.173 -5.891 -1.251m8.577 0.849c-0.079 -1.54 -0.353 -4.061 -1.249 -5.889 2.111 0.087 4.836 0.527 5.724 1.415 0.889 0.891 1.328 3.613 1.416 5.725 -1.829 -0.896 -4.349 -1.171 -5.891 -1.251" fill="#C68632"></path>
+              </svg>
+
+              <p>€5.50 / €6.00</p>
+            </div>
+          </div>
+
+          <!-- Pink Lichi -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+            <div style="flex: 1;">
+              <h3>Pink Lychee (slush)</h3>
+              <p>Jasmine tea, lychee, cheese foam, crystal pearls              </p>
+              <p>500ml / 700ml</p>
+            </div>
+            <div style="text-align: center; width: 150px;">
+              <svg width="50px" height="50px" viewBox="-3.84 0 50.112 50.112" xmlns="http://www.w3.org/2000/svg">
+                <g id="Group_1628" data-name="Group 1628" transform="translate(3428.414 -2466.81)">
+                  <path id="Path_3651" data-name="Path 3651" d="M-3389.691 2491.264a15.427 15.427 0 0 1 -19.162 10.432 15.43 15.43 0 0 1 -10.432 -19.163 15.427 15.427 0 0 1 19.162 -10.432 15.426 15.426 0 0 1 10.432 19.163" fill="#ffffff" fill-rule="evenodd"></path>
+                  <path id="Path_3652" data-name="Path 3652" d="M-3386.619 2494.336a15.427 15.427 0 0 1 -19.162 10.432 15.43 15.43 0 0 1 -10.432 -19.163 15.43 15.43 0 0 1 19.162 -10.433 15.43 15.43 0 0 1 10.432 19.164" fill="#cd1876" fill-rule="evenodd"></path>
+                  <path id="Path_3653" data-name="Path 3653" d="M-3400.02 2472.718a1 1 0 0 1 -0.273 -0.039 0.96 0.96 0 0 1 -0.65 -1.192 16.4 16.4 0 0 1 2.068 -4.249 0.96 0.96 0 0 1 1.332 -0.267 0.96 0.96 0 0 1 0.267 1.331 14.5 14.5 0 0 0 -1.825 3.728 0.96 0.96 0 0 1 -0.919 0.688" fill="#6f0911" fill-rule="evenodd"></path>
+                  <path id="Path_3654" data-name="Path 3654" d="M-3402.39 2503.147a0.96 0.96 0 0 1 -0.95 -0.829 0.96 0.96 0 0 1 0.819 -1.083 14.5 14.5 0 0 0 11.91 -10.243 14.38 14.38 0 0 0 -1.169 -11.011 14.38 14.38 0 0 0 -8.615 -6.959 14.483 14.483 0 0 0 -17.969 9.782 14.5 14.5 0 0 0 0.563 9.762 0.957 0.957 0 0 1 -0.5 1.259 0.957 0.957 0 0 1 -1.26 -0.506 16.42 16.42 0 0 1 -0.64 -11.058 16.41 16.41 0 0 1 20.354 -11.081 16.28 16.28 0 0 1 9.757 7.882 16.28 16.28 0 0 1 1.326 12.473 16.42 16.42 0 0 1 -13.489 11.6 1 1 0 0 1 -0.132 0.01" fill="#6f0911" fill-rule="evenodd"></path>
+                  <path id="Path_3655" data-name="Path 3655" d="M-3403.3 2496.242c-1.308 -3.3 -7.725 -3.859 -14.331 -1.241s-10.9 7.416 -9.592 10.719a12.865 12.865 0 0 0 16.7 7.223 12.867 12.867 0 0 0 7.223 -16.7" fill="#ffffff" fill-rule="evenodd"></path>
+                  <path id="Path_3656" data-name="Path 3656" d="M-3400.226 2499.314c-1.308 -3.3 -7.725 -3.859 -14.331 -1.241s-10.9 7.416 -9.592 10.718a12.865 12.865 0 0 0 16.7 7.222 12.865 12.865 0 0 0 7.223 -16.7" fill="#cd1876" fill-rule="evenodd"></path>
+                  <path id="Path_3657" data-name="Path 3657" d="M-3427.221 2505.72c1.308 3.3 7.726 3.86 14.331 1.242s10.9 -7.417 9.592 -10.72 -7.725 -3.859 -14.331 -1.241 -10.9 7.416 -9.592 10.719" fill="#ffffff" fill-rule="evenodd"></path>
+                  <path id="Path_3658" data-name="Path 3658" d="M-3423.823 2509.253a11.92 11.92 0 0 0 12.949 2.8 11.93 11.93 0 0 0 7.52 -10.924c-1.682 2.557 -4.959 5.055 -9.181 6.728a21.8 21.8 0 0 1 -9.59 1.664 12 12 0 0 1 -1.698 -0.268m8.581 5.555a13.85 13.85 0 0 1 -12.869 -8.728v-0.006a0.96 0.96 0 0 1 0.539 -1.247 0.96 0.96 0 0 1 1.245 0.539c0.486 1.225 2.078 2.041 4.37 2.238a19.8 19.8 0 0 0 8.715 -1.535c6.62 -2.623 10.025 -7.013 9.055 -9.471a0.96 0.96 0 0 1 0.539 -1.246 0.96 0.96 0 0 1 1.246 0.539 13.843 13.843 0 0 1 -7.761 17.947 13.8 13.8 0 0 1 -5.076 0.972" fill="#6f0911" fill-rule="evenodd"></path>
+                  <path id="Path_3659" data-name="Path 3659" d="M-3403.3 2497.2a0.96 0.96 0 0 1 -0.893 -0.607c-0.548 -1.383 -2.52 -2.237 -5.273 -2.282a0.96 0.96 0 0 1 -0.944 -0.975 0.96 0.96 0 0 1 0.96 -0.945h0.016c3.608 0.059 6.169 1.333 7.026 3.5a0.96 0.96 0 0 1 -0.539 1.246 1 1 0 0 1 -0.353 0.067" fill="#6f0911" fill-rule="evenodd"></path>
+                  <path id="Path_3660" data-name="Path 3660" d="M-3427.221 2506.68a0.96 0.96 0 0 1 -0.892 -0.606c-0.857 -2.163 0.136 -4.844 2.725 -7.359a0.96 0.96 0 0 1 1.357 0.019 0.96 0.96 0 0 1 -0.019 1.358c-1.976 1.919 -2.827 3.89 -2.278 5.273a0.96 0.96 0 0 1 -0.539 1.247 1 1 0 0 1 -0.354 0.068" fill="#6f0911" fill-rule="evenodd"></path>
+                  <path id="Path_3661" data-name="Path 3661" d="M-3415.632 2508.831a0.95 0.95 0 0 1 -0.663 -0.266 16.5 16.5 0 0 1 -3.583 -5.279 0.96 0.96 0 0 1 0.49 -1.265 0.96 0.96 0 0 1 1.266 0.492 14.6 14.6 0 0 0 3.153 4.664 0.96 0.96 0 0 1 0.031 1.356 0.95 0.95 0 0 1 -0.694 0.3" fill="#6f0911" fill-rule="evenodd"></path>
+                  <path id="Path_3662" data-name="Path 3662" d="M-3424.23 2505.5a0.96 0.96 0 0 1 -0.894 -0.608q-0.1 -0.253 -0.184 -0.513a11.73 11.73 0 0 1 1.7 -10.166 5.78 5.78 0 0 1 4.763 -2.29 5.74 5.74 0 0 1 4.932 -1.606 11.58 11.58 0 0 1 8.19 6.028q0.186 0.366 0.331 0.733a0.96 0.96 0 0 1 -0.54 1.246 0.96 0.96 0 0 1 -1.245 -0.541 7 7 0 0 0 -0.257 -0.567 9.68 9.68 0 0 0 -6.71 -4.993 3.86 3.86 0 0 0 -3.583 1.315 0.95 0.95 0 0 1 -0.827 0.327 3.86 3.86 0 0 0 -3.562 1.558 9.78 9.78 0 0 0 -1.359 8.366q0.064 0.205 0.141 0.4a0.96 0.96 0 0 1 -0.541 1.246 1 1 0 0 1 -0.351 0.067" fill="#6f0911" fill-rule="evenodd"></path>
+                  <path id="Path_3663" data-name="Path 3663" d="M-3411.049 2501.285a0.96 0.96 0 0 1 -0.914 -0.668c-1.017 -3.176 -2.869 -5.864 -4.61 -6.687a1.86 1.86 0 0 0 -1.532 -0.131 0.96 0.96 0 0 1 -1.245 -0.539 0.96 0.96 0 0 1 0.539 -1.246 3.77 3.77 0 0 1 3.06 0.179c2.225 1.054 4.429 4.13 5.617 7.84a0.96 0.96 0 0 1 -0.622 1.207 1 1 0 0 1 -0.293 0.045" fill="#6f0911" fill-rule="evenodd"></path>
+                  <path id="Path_3664" data-name="Path 3664" d="M-3420.3 2499.417a0.96 0.96 0 0 1 -0.949 -0.832c-0.463 -3.379 0.425 -5.774 2.436 -6.571a0.96 0.96 0 0 1 1.245 0.54 0.96 0.96 0 0 1 -0.538 1.245c-1.106 0.438 -1.568 2.131 -1.241 4.527a0.96 0.96 0 0 1 -0.821 1.081 1 1 0 0 1 -0.132 0.01" fill="#6f0911" fill-rule="evenodd"></path>
+                  <path id="Path_3665" data-name="Path 3665" d="M-3400.01 2475.582c-0.864 2.928 -4.214 4.52 -7.483 3.556s-5.218 -4.12 -4.354 -7.048 4.214 -4.521 7.482 -3.557 5.219 4.12 4.355 7.049" fill="#ffffff" fill-rule="evenodd"></path>
+                  <path id="Path_3666" data-name="Path 3666" d="M-3390.268 2478.455c-0.864 2.928 -4.214 4.521 -7.483 3.557s-5.219 -4.121 -4.356 -7.049 4.215 -4.52 7.484 -3.556 5.219 4.12 4.355 7.048" fill="#ffffff" fill-rule="evenodd"></path>
+                  <path id="Path_3667" data-name="Path 3667" d="M-3396.777 2478.479a5.29 5.29 0 0 1 -6.373 3.884 5.29 5.29 0 0 1 -3.245 -6.721 5.29 5.29 0 0 1 6.374 -3.884 5.29 5.29 0 0 1 3.244 6.721" fill="#ffffff" fill-rule="evenodd"></path>
+                  <path id="Path_3668" data-name="Path 3668" d="M-3396.938 2478.654c-0.864 2.928 -4.214 4.52 -7.483 3.556s-5.218 -4.12 -4.354 -7.048 4.214 -4.521 7.482 -3.557 5.219 4.12 4.355 7.049" fill="#5db67d" fill-rule="evenodd"></path>
+                  <path id="Path_3669" data-name="Path 3669" d="M-3387.2 2481.527c-0.864 2.928 -4.214 4.521 -7.483 3.557s-5.219 -4.121 -4.355 -7.049 4.214 -4.52 7.483 -3.556 5.219 4.119 4.355 7.048" fill="#5db67d" fill-rule="evenodd"></path>
+                  <path id="Path_3670" data-name="Path 3670" d="M-3393.705 2481.551a5.29 5.29 0 0 1 -6.373 3.884 5.29 5.29 0 0 1 -3.245 -6.721 5.29 5.29 0 0 1 6.374 -3.884 5.29 5.29 0 0 1 3.244 6.721" fill="#5db67d" fill-rule="evenodd"></path>
+                  <path id="Path_3671" data-name="Path 3671" d="M-3406.525 2480.309a1 1 0 0 1 -0.14 -0.009 8 8 0 0 1 -1.1 -0.241c-3.77 -1.113 -6.016 -4.81 -5 -8.241s4.9 -5.32 8.676 -4.205a7.5 7.5 0 0 1 4.126 2.976 0.96 0.96 0 0 1 -0.26 1.332 0.963 0.963 0 0 1 -1.334 -0.26 5.6 5.6 0 0 0 -3.075 -2.207c-2.755 -0.814 -5.579 0.491 -6.291 2.907s0.95 5.044 3.706 5.856a6 6 0 0 0 0.833 0.183 0.96 0.96 0 0 1 0.813 1.088 0.96 0.96 0 0 1 -0.95 0.821" fill="#6f0911" fill-rule="evenodd"></path>
+                  <path id="Path_3672" data-name="Path 3672" d="M-3395.814 2483.254a7.8 7.8 0 0 1 -2.208 -0.322 8 8 0 0 1 -1.313 -0.518 0.96 0.96 0 0 1 -0.426 -1.289 0.96 0.96 0 0 1 1.288 -0.426 6 6 0 0 0 0.992 0.391 5.56 5.56 0 0 0 3.961 -0.263 4.28 4.28 0 0 0 2.331 -2.644 4.28 4.28 0 0 0 -0.523 -3.484 5.55 5.55 0 0 0 -3.183 -2.372 5.64 5.64 0 0 0 -3.421 0.046 0.96 0.96 0 0 1 -1.218 -0.6 0.96 0.96 0 0 1 0.6 -1.219 7.53 7.53 0 0 1 4.586 -0.072 7.47 7.47 0 0 1 4.272 3.206 6.16 6.16 0 0 1 0.732 5.035 6.17 6.17 0 0 1 -3.348 3.835 7.3 7.3 0 0 1 -3.119 0.693" fill="#6f0911" fill-rule="evenodd"></path>
+                  <path id="Path_3673" data-name="Path 3673" d="M-3401.324 2472.53a3.96 3.96 0 0 0 -2.056 0.6 4.84 4.84 0 0 0 -2.094 2.787 4.337 4.337 0 0 0 2.6 5.527 3.8 3.8 0 0 0 3.087 -0.448 4.83 4.83 0 0 0 2.094 -2.785 4.83 4.83 0 0 0 -0.246 -3.476 3.8 3.8 0 0 0 -2.35 -2.053 3.6 3.6 0 0 0 -1.035 -0.152m-0.518 10.983a5.5 5.5 0 0 1 -1.579 -0.23 6.254 6.254 0 0 1 -3.9 -7.912 6.75 6.75 0 0 1 2.936 -3.883 5.7 5.7 0 0 1 4.63 -0.651 5.7 5.7 0 0 1 3.536 3.06 6.75 6.75 0 0 1 0.359 4.854 6.75 6.75 0 0 1 -2.936 3.882 5.86 5.86 0 0 1 -3.051 0.88" fill="#6f0911" fill-rule="evenodd"></path>
+                </g>
+              </svg>
+              <p>€5.50 / €6.00</p>
+            </div>
+          </div>
+
+          <!-- Miss Fresa -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+            <div style="flex: 1;">
+              <h3>Miss Strawberry (slush)</h3>
+              <p>Jasmine tea, strawberry, crystal pearls, cheese foam</p>
+              <p>500ml / 700ml</p>
+            </div>
+            <div style="text-align: center; width: 150px;">
+              <svg width="50px" height="50px" viewBox="0 0 4 4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione" preserveAspectRatio="xMidYMid meet">
+                <path d="M1.469 0.819C1.563 0.575 2.231 0.125 2.231 0.125s0.212 0.806 0.125 1.044c-0.087 0.244 -0.356 0.356 -0.6 0.263 -0.25 -0.1 -0.375 -0.375 -0.287 -0.613" fill="#8cc63e"></path>
+                <path d="M1.075 1.3c-0.113 -0.231 0.05 -1.031 0.05 -1.031S1.837 0.688 1.944 0.925c0.106 0.231 0 0.506 -0.244 0.613 -0.237 0.1 -0.519 -0.006 -0.625 -0.237" fill="#64892f"></path>
+                <path d="M1.294 1.075C1.063 0.969 0.269 1.125 0.269 1.125S0.688 1.844 0.919 1.956c0.231 0.106 0.506 0 0.606 -0.244 0.106 -0.244 0 -0.531 -0.231 -0.637" fill="#8cc63e"></path>
+                <path d="M0.813 1.475C0.575 1.569 0.125 2.244 0.125 2.244s0.8 0.212 1.044 0.125c0.237 -0.087 0.356 -0.362 0.256 -0.606 -0.1 -0.25 -0.369 -0.375 -0.613 -0.287" fill="#64892f"></path>
+                <path d="M3.219 1.044C3.938 1.769 4.019 3.337 3.681 3.681c-0.344 0.344 -1.9 0.256 -2.625 -0.469 -0.531 -0.531 -0.281 -1.337 0.269 -1.894 0.556 -0.556 1.363 -0.806 1.894 -0.275" fill="#ef4d3c"></path>
+                <g fill="#fff0f0">
+                  <path d="M2.544 0.981c-0.031 0 -0.063 0.013 -0.081 0.037 -0.031 0.05 -0.006 0.125 0.069 0.175 0.037 0.025 0.075 0.037 0.106 0.037s0.063 -0.013 0.075 -0.037c0.031 -0.05 0.006 -0.125 -0.069 -0.175 -0.025 -0.025 -0.063 -0.037 -0.1 -0.037"></path>
+                  <path d="M2.775 2.075q-0.028 0 -0.056 0.019c-0.044 0.037 -0.031 0.119 0.019 0.188 0.037 0.044 0.087 0.069 0.125 0.069q0.028 0 0.056 -0.019c0.044 -0.037 0.031 -0.119 -0.019 -0.188 -0.037 -0.044 -0.087 -0.069 -0.125 -0.069"></path>
+                  <path d="M2.237 1.538q-0.028 0 -0.056 0.019c-0.044 0.037 -0.037 0.119 0.019 0.188 0.037 0.044 0.087 0.069 0.125 0.069q0.028 0 0.056 -0.019c0.044 -0.037 0.037 -0.119 -0.019 -0.188 -0.037 -0.044 -0.087 -0.069 -0.125 -0.069"></path>
+                  <path d="M3.156 1.6c-0.013 0 -0.025 0 -0.037 0.006 -0.05 0.025 -0.056 0.113 -0.019 0.188 0.031 0.056 0.081 0.094 0.131 0.094 0.013 0 0.025 0 0.037 -0.006 0.05 -0.025 0.056 -0.113 0.019 -0.188 -0.031 -0.056 -0.087 -0.094 -0.131 -0.094"></path>
+                  <path d="M3.444 2.425h-0.019c-0.056 0.013 -0.087 0.094 -0.063 0.175 0.019 0.075 0.069 0.125 0.125 0.125h0.019c0.056 -0.013 0.087 -0.094 0.063 -0.175 -0.025 -0.075 -0.075 -0.125 -0.125 -0.125"></path>
+                  <path d="M3.369 3.2c-0.019 0 -0.044 0.006 -0.056 0.019 -0.044 0.037 -0.031 0.125 0.025 0.188 0.037 0.044 0.087 0.063 0.125 0.063 0.019 0 0.044 -0.006 0.056 -0.019 0.044 -0.037 0.031 -0.125 -0.025 -0.188 -0.037 -0.037 -0.081 -0.063 -0.125 -0.063"></path>
+                  <path d="M1.981 3.106c-0.031 0 -0.063 0.013 -0.081 0.037 -0.031 0.05 0 0.125 0.069 0.175 0.037 0.025 0.075 0.037 0.106 0.037s0.063 -0.013 0.081 -0.037c0.031 -0.05 0 -0.125 -0.069 -0.175 -0.031 -0.025 -0.069 -0.037 -0.106 -0.037"></path>
+                  <path d="M1.262 2.9c-0.037 0 -0.063 0.013 -0.081 0.037 -0.031 0.05 0 0.125 0.069 0.175 0.037 0.025 0.075 0.037 0.106 0.037s0.063 -0.013 0.081 -0.037c0.031 -0.05 0 -0.125 -0.069 -0.175 -0.037 -0.025 -0.075 -0.037 -0.106 -0.037"></path>
+                  <path d="M2.6 3.406c-0.05 0 -0.087 0.019 -0.106 0.056 -0.019 0.056 0.025 0.125 0.106 0.156 0.025 0.013 0.056 0.019 0.081 0.019 0.05 0 0.087 -0.019 0.106 -0.056 0.019 -0.056 -0.025 -0.125 -0.106 -0.156 -0.025 -0.013 -0.056 -0.019 -0.081 -0.019"></path>
+                  <path d="M2.744 2.781c-0.037 0 -0.069 0.013 -0.087 0.044 -0.031 0.05 0.006 0.125 0.081 0.169 0.031 0.019 0.069 0.031 0.1 0.031 0.037 0 0.069 -0.013 0.087 -0.044 0.031 -0.05 -0.006 -0.125 -0.081 -0.169 -0.037 -0.019 -0.069 -0.031 -0.1 -0.031"></path>
+                  <path d="M2.075 2.337c-0.031 0 -0.056 0.013 -0.069 0.031 -0.037 0.044 -0.013 0.125 0.05 0.181 0.037 0.031 0.081 0.044 0.119 0.044 0.031 0 0.056 -0.013 0.069 -0.031 0.037 -0.044 0.013 -0.125 -0.05 -0.181 -0.037 -0.025 -0.081 -0.044 -0.119 -0.044"></path>
+                  <path d="M1.531 1.494c-0.025 0 -0.044 0.006 -0.063 0.025 -0.044 0.044 -0.025 0.125 0.031 0.181 0.037 0.037 0.081 0.056 0.125 0.056 0.025 0 0.044 -0.006 0.063 -0.025 0.044 -0.044 0.025 -0.125 -0.031 -0.181 -0.037 -0.037 -0.081 -0.056 -0.125 -0.056"></path>
+                  <path d="M1.356 2.169c-0.031 0 -0.056 0.013 -0.075 0.031 -0.037 0.044 -0.013 0.125 0.056 0.181 0.037 0.031 0.081 0.044 0.113 0.044s0.056 -0.013 0.075 -0.031c0.037 -0.044 0.013 -0.125 -0.056 -0.181 -0.037 -0.025 -0.081 -0.044 -0.113 -0.044"></path>
+                </g>
+              </svg>
+              <p>€5.50 / €6.00</p>
+            </div>
+          </div>
+
+          <!-- Sueño de Mango -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+            <div style="flex: 1;">
+              <h3>Mango Dream (slush)</h3>
+              <p>Jasmine tea, mango, crystal pearls, cheese foam</p>
+              <p>500ml / 700ml</p>
+            </div>
+            <div style="text-align: center; width: 150px;">
+              <svg width="50px" height="50px" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--noto" preserveAspectRatio="xMidYMid meet">
+                <radialGradient id="IconifyId17ecdb2904d178eab13511" cx="75.424" cy="-61.613" r="183.963" gradientUnits="userSpaceOnUse">
+                  <stop offset=".532" stop-color="#ff7f24"></stop>
+                  <stop offset=".615" stop-color="#f86922"></stop>
+                  <stop offset=".696" stop-color="#fd9124"></stop>
+                  <stop offset=".739" stop-color="#ffa025"></stop>
+                  <stop offset=".793" stop-color="#fca025"></stop>
+                  <stop offset=".839" stop-color="#f1a124"></stop>
+                  <stop offset=".883" stop-color="#dfa222"></stop>
+                  <stop offset=".925" stop-color="#c7a41f"></stop>
+                  <stop offset=".962" stop-color="#aaa61c"></stop>
+                </radialGradient>
+                <path d="M0.252 5.589c-0.075 0.376 0.354 1.82 2.591 2.109 1.149 0.148 2.278 -0.26 3.172 -0.944S7.456 5.188 7.644 4.382c0.289 -1.241 -0.043 -3.114 -2.504 -3.224 -2.516 -0.113 -3.362 2.518 -3.889 3.291C0.616 5.38 0.32 5.25 0.252 5.589" fill="url(#IconifyId17ecdb2904d178eab13511)"></path>
+                <path d="M2.618 2.271s0.848 0.431 2.163 0.34c1.064 -0.074 1.483 -0.596 1.483 -0.596s0.468 0.129 0.779 0.046c0.124 -0.033 0.151 -0.101 -0.001 -0.258 -0.229 -0.239 -1.017 -0.681 -2.178 -0.606 -1.453 0.094 -2.246 1.074 -2.246 1.074" fill="#dc0d27"></path>
+                <path d="M1.627 4.789c0.147 0.246 0.584 -0.071 0.892 -0.379 0.444 -0.445 0.646 -0.853 0.764 -1.059s0.278 -0.652 -0.044 -0.724c-0.336 -0.074 -0.435 0.341 -0.608 0.646s-0.412 0.669 -0.605 0.906c-0.204 0.252 -0.486 0.465 -0.399 0.611" fill="#ffebc9"></path>
+                <path d="M6.397 1.561c-0.043 0.186 0.128 0.316 0.246 0.409s0.384 0.128 0.473 0.064c0.089 -0.064 -0.01 -0.251 0.054 -0.364 0.064 -0.113 0.177 -0.251 0.039 -0.345 -0.116 -0.079 -0.271 -0.108 -0.414 -0.079s-0.143 0.138 -0.202 0.168c-0.06 0.03 -0.183 0.084 -0.198 0.148" fill="#6d4c41"></path>
+                <path d="M6.259 1.617c-0.158 0.069 -0.621 0.434 -1.704 0.517 -1.194 0.092 -2.596 -0.05 -2.829 -0.083s-0.632 -0.049 -0.627 -0.149c0.008 -0.15 0.163 -0.102 0.476 -0.192 0.376 -0.109 0.759 -0.259 1.052 -0.434 0.449 -0.269 1.363 -0.943 2.262 -0.96 0.985 -0.018 1.302 0.292 1.544 0.551s0.246 0.53 0.179 0.639c-0.066 0.109 -0.16 0.028 -0.352 0.111" fill="#518e30"></path>
+                <path d="M3.154 1.558c0.023 0.029 0.459 0.045 0.703 0.037 0.555 -0.018 0.994 -0.166 1.541 -0.227s1.024 0 1.042 -0.021c0.033 -0.039 -0.302 -0.495 -1.401 -0.372 -0.404 0.046 -0.924 0.251 -1.283 0.394 -0.229 0.093 -0.624 0.161 -0.602 0.189" fill="#366918"></path>
+              </svg>
+              <p>€5.50 / €6.00</p>
+            </div>
+          </div>
+
+          <!-- TARO COCO -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+            <div style="flex: 1;">
+              <h3>Taro, milk, coconut</h3>
+              <p>Taro, leche, coco</p>
+              <p>500ml / 700ml</p>
+            </div>
+            <div style="text-align: center; width: 150px;">
+              <svg width="50px" height="50px" viewBox="0 0 64 64" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.255 32.145a30.882 30.882 0 1 0 61.764 0 30.882 30.882 0 1 0 -61.764 0" fill="#8D3F07"></path>
+                <path d="M5.149 32.145a26.988 26.988 0 1 0 53.977 0 26.988 26.988 0 1 0 -53.977 0" fill="#D4AC6E"></path>
+                <path d="M32.205 5.16c14.874 0.037 26.921 12.102 26.921 26.985s-12.047 26.948 -26.921 26.985z" fill="#F4C692"></path>
+                <path d="M36.123 14.208a2.054 2.054 0 1 0 4.109 0 2.054 2.054 0 1 0 -4.109 0" fill="#967951"></path>
+                <path d="M36.123 50.081a2.054 2.054 0 1 0 4.109 0 2.054 2.054 0 1 0 -4.109 0" fill="#967951"></path>
+                <path d="M44.513 20.725a2.054 2.054 0 1 0 4.109 0 2.054 2.054 0 1 0 -4.109 0" fill="#967951"></path>
+                <path d="M44.513 42.894a2.054 2.054 0 1 0 4.109 0 2.054 2.054 0 1 0 -4.109 0" fill="#967951"></path>
+                <path d="M47.909 31.327a2.054 2.054 0 1 0 4.109 0 2.054 2.054 0 1 0 -4.109 0" fill="#967951"></path>
+                <path d="M24.111 14.208a2.054 2.054 0 1 0 4.109 0 2.054 2.054 0 1 0 -4.109 0" fill="#967951"></path>
+                <path d="M24.111 50.081a2.054 2.054 0 1 0 4.109 0 2.054 2.054 0 1 0 -4.109 0" fill="#967951"></path>
+                <path d="M15.72 20.725a2.054 2.054 0 1 0 4.109 0 2.054 2.054 0 1 0 -4.109 0" fill="#967951"></path>
+                <path d="M15.72 42.894a2.054 2.054 0 1 0 4.109 0 2.054 2.054 0 1 0 -4.109 0" fill="#967951"></path>
+                <path d="M12.324 31.327a2.054 2.054 0 1 0 4.109 0 2.054 2.054 0 1 0 -4.109 0" fill="#967951"></path>
+              </svg>
+              <svg width="50px" height="50px" viewBox="0 0 2.25 2.25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet">
+                <path fill="#8B5E3C" d="M0.344 1.885c-0.439 -0.439 -0.4 -1.191 0.088 -1.679l1.591 1.591c-0.488 0.488 -1.24 0.528 -1.679 0.088"></path>
+                <path fill="#603913" d="M0.432 0.206c-0.244 0.244 -0.086 0.798 0.353 1.238 0.439 0.439 0.993 0.598 1.237 0.353 0.244 -0.244 0.086 -0.798 -0.354 -1.237C1.231 0.12 0.677 -0.038 0.432 0.206"></path>
+                <path fill="#F5F8FA" d="M1.974 1.514a0.063 0.063 0 0 0 0.105 -0.029c0.004 -0.017 0.098 -0.417 -0.188 -0.704 -0.07 -0.07 -0.174 -0.236 -0.203 -0.284 -0.025 -0.026 -0.046 -0.017 -0.094 -0.065 -0.022 -0.022 -0.088 -0.141 -0.277 0.039a0.062 0.062 0 0 0 -0.007 0.08l0.658 0.954q0.003 0.005 0.007 0.009"></path>
+                <path fill="#603913" d="M1.517 0.473c0.044 0.044 0.091 0.089 0.091 0.089s0.15 0.175 0.239 0.264c0.265 0.265 0.172 0.645 0.172 0.645L1.29 0.49s0.174 -0.065 0.227 -0.017m0.079 -0.085c-0.115 -0.09 -0.299 -0.02 -0.344 0.025 -0.043 0.043 -0.029 0.124 0.005 0.174l0.658 0.954a0.125 0.125 0 0 0 0.224 -0.041c0.004 -0.018 0.107 -0.451 -0.205 -0.763 -0.056 -0.056 -0.121 -0.109 -0.182 -0.182a1.813 1.813 0 0 0 -0.13 -0.145z"></path>
+                <path fill="#F5F8FA" d="M0.521 0.294c-0.195 0.195 -0.037 0.67 0.354 1.061 0.39 0.391 0.865 0.549 1.061 0.354s0.037 -0.67 -0.354 -1.061 -0.865 -0.549 -1.061 -0.353"></path>
+                <path fill="#99AAB5" d="M0.651 0.43c-0.145 0.145 -0.005 0.52 0.312 0.837 0.317 0.317 0.692 0.457 0.837 0.312 0.145 -0.145 0.005 -0.52 -0.312 -0.837 -0.317 -0.317 -0.692 -0.457 -0.837 -0.312"></path>
+                <path fill="#99AAB5" d="m1.262 0.621 0.073 -0.021c0.035 -0.019 0.085 -0.021 0.118 0.01l0.076 0.08c0.036 0.043 0.12 0.134 0.187 0.201 0.238 0.238 0.145 0.545 0.141 0.558a0.031 0.031 0 0 1 -0.056 0.008l-0.55 -0.792a0.031 0.031 0 0 1 0.01 -0.045"></path>
+                <path fill="#F5F8FA" d="M1.485 1.629s-0.201 -0.13 -0.236 -0.236c-0.039 -0.118 -0.291 -0.141 -0.331 -0.259 -0.039 -0.118 -0.105 -0.298 -0.141 -0.37 -0.036 -0.072 -0.079 0 -0.118 -0.118 -0.039 -0.118 -0.118 -0.197 -0.118 -0.197s0 0.55 0.118 0.668c0.118 0.118 0.589 0.589 0.629 0.55 0.039 -0.039 0.196 -0.039 0.196 -0.039"></path>
+                <path fill="#603913" d="M1.427 1.733s-0.233 -0.159 -0.27 -0.268c-0.041 -0.123 -0.331 -0.164 -0.371 -0.286 -0.041 -0.123 -0.1 -0.343 -0.12 -0.368 -0.057 -0.074 -0.082 0 -0.123 -0.123 -0.041 -0.123 -0.123 -0.205 -0.123 -0.205s0 0.573 0.123 0.696 0.614 0.614 0.655 0.573c0.041 -0.041 0.229 -0.018 0.229 -0.018"></path>
+                <path fill="#8B5E3C" d="M1.361 1.841s-0.226 -0.147 -0.265 -0.265c-0.044 -0.133 -0.398 -0.221 -0.442 -0.354s-0.044 -0.309 -0.088 -0.354c-0.044 -0.044 -0.088 0 -0.133 -0.133S0.3 0.515 0.3 0.515s0 0.619 0.133 0.751 0.663 0.663 0.707 0.619 0.221 -0.044 0.221 -0.044"></path>
+                <path fill="#A97C50" d="M0.676 2.053c0.006 -0.018 0.052 -0.004 0.07 0 0.433 0.095 0.729 -0.087 0.732 -0.088 0.017 -0.009 0.036 -0.002 0.043 0.014s-0.002 0.036 -0.018 0.044c-0.014 0.007 -0.3 0.159 -0.758 0.059 -0.006 -0.001 -0.045 -0.008 -0.049 -0.012 -0.008 -0.008 -0.023 -0.005 -0.019 -0.017m-0.523 -0.623c0.007 0.007 0.007 0.013 0.018 0.01 0.018 -0.005 0.019 -0.032 0.016 -0.05 -0.031 -0.2 0.022 -0.406 0.115 -0.647 0.007 -0.018 -0.002 -0.036 -0.018 -0.041 -0.017 -0.005 -0.036 0.005 -0.043 0.023 -0.097 0.252 -0.129 0.477 -0.096 0.688a0.03 0.03 0 0 0 0.008 0.016m0.647 0.574a0.029 0.029 0 0 0 0.017 0.008c0.236 0.027 0.431 -0.071 0.439 -0.075 0.017 -0.009 0.025 -0.029 0.018 -0.045 -0.007 -0.016 -0.026 -0.022 -0.043 -0.014 -0.002 0.001 -0.171 0.115 -0.386 0.091 -0.018 -0.002 -0.052 -0.001 -0.056 0.017 -0.002 0.011 0.003 0.01 0.01 0.017"></path>
+              </svg>
+              <p>€5.00 / €5.50</p>
+            </div>
+          </div>
+
+          <!-- MATCHA LATTE -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+            <div style="flex: 1;">
+              <h3>Matcha Latte</h3>
+              <p>Matcha with milk</p>
+              <p>500ml / 700ml</p>
+            </div>
+            <div style="text-align: center; width: 150px;">
+              <!--?xml version="1.0" encoding="iso-8859-1"?-->
+              <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+              <!-- License: CC0. Made by SVG Repo: https://www.svgrepo.com/svg/230473/milkshake -->
+              <svg width="50px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                <polygon style="fill:#B6D995;" points="388.796,71.713 299.469,71.713 314.287,0 388.796,0 "></polygon>
+                <polygon style="opacity:0.2;fill:#663A00;enable-background:new    ;" points="302.233,58.337 308.24,29.267 388.796,29.267 
+	388.796,58.337 "></polygon>
+                <path style="fill:#B6D995;" d="M333.885,512H182.893c-8.436,0-15.478-6.437-16.233-14.84l-28.306-315.191h240.067L350.116,497.16
+	C349.362,505.563,342.321,512,333.885,512z"></path>
+                <path style="fill:#B6D995;" d="M388.796,121.638H120.573l20.71-50.113c5.403-13.074,18.154-21.601,32.3-21.601h215.213V121.638z"></path>
+                <g>
+                  <path style="fill:#B8FFAA;" d="M398.109,181.969H113.891c-3.138,0-5.683-2.544-5.683-5.683V127.32c0-3.138,2.544-5.683,5.683-5.683
+		h284.217c3.138,0,5.683,2.544,5.683,5.683v48.966C403.791,179.425,401.247,181.969,398.109,181.969z"></path>
+                  <path style="fill:#B6D995;" d="M147.336,275.248l19.929,221.912c0.755,8.402,7.796,14.84,16.233,14.84H334.49
+		c8.436,0,15.478-6.437,16.233-14.84l19.929-221.912H147.336z"></path>
+                </g>
+                <path style="fill:#FFFF;" d="M251.076,256.618c-43.16-12.706-90.036-1.972-105.44,5.498l3.18,35.406
+	c18.234-6.876,63.449-16.93,102.26-3.704c42.597,14.515,98.196-0.269,117.967-6.478l3.308-36.841
+	C360.476,254.015,299.115,270.76,251.076,256.618z"></path>
+                <g style="opacity:0.2;">
+                  <polygon style="fill:#663A00;" points="130.679,96.957 120.479,121.638 388.702,121.638 388.702,96.957 	"></polygon>
+                </g>
+                <g style="opacity:0.24;">
+                  <polygon style="fill:#FFDA44;" points="379.026,181.969 138.96,181.969 142.29,219.062 375.696,219.062 	"></polygon>
+                </g>
+              </svg>
+              <p>€5.50 / €6.00</p>
+            </div>
+          </div>
+
+          <!-- Brown Sugar Milktea -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+            <div style="flex: 1;">
+              <h3>Brown Sugar Milktea</h3>
+              <p>Black tea with milk, brown sugar syrup, tapioca & cheese foam</p>
+              <p>500ml / 700ml</p>
+            </div>
+            <div style="text-align: center; width: 150px;">
+              <!--?xml version="1.0" encoding="iso-8859-1"?-->
+              <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+              <!-- License: CC0. Made by SVG Repo: https://www.svgrepo.com/svg/230473/milkshake -->
+              <svg width="50" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                <polygon style="fill:#A36F40;" points="388.796,71.713 299.469,71.713 314.287,0 388.796,0 "></polygon>
+                <polygon style="opacity:0.2;fill:#663A00;enable-background:new    ;" points="302.233,58.337 308.24,29.267 388.796,29.267 
+	388.796,58.337 "></polygon>
+                <path style="fill:#A36F4F;" d="M333.885,512H182.893c-8.436,0-15.478-6.437-16.233-14.84l-28.306-315.191h240.067L350.116,497.16
+	C349.362,505.563,342.321,512,333.885,512z"></path>
+                <path style="fill:#A36F40;" d="M388.796,121.638H120.573l20.71-50.113c5.403-13.074,18.154-21.601,32.3-21.601h215.213V121.638z"></path>
+                <g>
+                  <path style="fill:#FFFFFA;" d="M398.109,181.969H113.891c-3.138,0-5.683-2.544-5.683-5.683V127.32c0-3.138,2.544-5.683,5.683-5.683
+		h284.217c3.138,0,5.683,2.544,5.683,5.683v48.966C403.791,179.425,401.247,181.969,398.109,181.969z"></path>
+                  <path style="fill:#A36F40;" d="M147.336,275.248l19.929,221.912c0.755,8.402,7.796,14.84,16.233,14.84H334.49
+		c8.436,0,15.478-6.437,16.233-14.84l19.929-221.912H147.336z"></path>
+                </g>
+                <path style="fill:#FFFF;" d="M251.076,256.618c-43.16-12.706-90.036-1.972-105.44,5.498l3.18,35.406
+	c18.234-6.876,63.449-16.93,102.26-3.704c42.597,14.515,98.196-0.269,117.967-6.478l3.308-36.841
+	C360.476,254.015,299.115,270.76,251.076,256.618z"></path>
+                <g style="opacity:0.2;">
+                  <polygon style="fill:#663A00;" points="130.679,96.957 120.479,121.638 388.702,121.638 388.702,96.957 	"></polygon>
+                </g>
+                <g style="opacity:0.24;">
+                  <polygon style="fill:#FFDA44;" points="379.026,181.969 138.96,181.969 142.29,219.062 375.696,219.062 	"></polygon>
+                </g>
+              </svg>
+
+              <p>€5.00 / €5.50</p>
+            </div>
+          </div>
+
+          <!-- Thai Milktea -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+            <div style="flex: 1;">
+              <h3>Thai Milktea</h3>
+              <p></p>
+              <p>500ml / 700ml</p>
+            </div>
+            <div style="text-align: center; width: 150px;">
+              <!--?xml version="1.0" encoding="iso-8859-1"?-->
+              <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+              <!-- License: CC0. Made by SVG Repo: https://www.svgrepo.com/svg/230473/milkshake -->
+              <svg width="50" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                <polygon style="fill:#ff8f40;" points="388.796,71.713 299.469,71.713 314.287,0 388.796,0 "></polygon>
+                <polygon style="opacity:0.2;fill:#663A00;enable-background:new    ;" points="302.233,58.337 308.24,29.267 388.796,29.267 
+	388.796,58.337 "></polygon>
+                <path style="fill:#ff8f40;" d="M333.885,512H182.893c-8.436,0-15.478-6.437-16.233-14.84l-28.306-315.191h240.067L350.116,497.16
+	C349.362,505.563,342.321,512,333.885,512z"></path>
+                <path style="fill:#ff8f40;" d="M388.796,121.638H120.573l20.71-50.113c5.403-13.074,18.154-21.601,32.3-21.601h215.213V121.638z"></path>
+                <g>
+                  <path style="fill:#FFFFFA;" d="M398.109,181.969H113.891c-3.138,0-5.683-2.544-5.683-5.683V127.32c0-3.138,2.544-5.683,5.683-5.683
+		h284.217c3.138,0,5.683,2.544,5.683,5.683v48.966C403.791,179.425,401.247,181.969,398.109,181.969z"></path>
+                  <path style="fill:#ff8f40;" d="M147.336,275.248l19.929,221.912c0.755,8.402,7.796,14.84,16.233,14.84H334.49
+		c8.436,0,15.478-6.437,16.233-14.84l19.929-221.912H147.336z"></path>
+                </g>
+                <path style="fill:#FFFF;" d="M251.076,256.618c-43.16-12.706-90.036-1.972-105.44,5.498l3.18,35.406
+	c18.234-6.876,63.449-16.93,102.26-3.704c42.597,14.515,98.196-0.269,117.967-6.478l3.308-36.841
+	C360.476,254.015,299.115,270.76,251.076,256.618z"></path>
+                <g style="opacity:0.2;">
+                  <polygon style="fill:#663A00;" points="130.679,96.957 120.479,121.638 388.702,121.638 388.702,96.957 	"></polygon>
+                </g>
+                <g style="opacity:0.24;">
+                  <polygon style="fill:#FFDA44;" points="379.026,181.969 138.96,181.969 142.29,219.062 375.696,219.062 	"></polygon>
+                </g>
+              </svg>
+
+              <p>€5.00 / €5.50</p>
+            </div>
+          </div>
+
+        </div>
+
+      </details>
+    </section>
+
+
+    <section id="imagenes">
+
+      <h2 class="titulo">TASTE THE EXPERIENCE</h2>
+
+
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../images/1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../images/2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../images/3.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../images/4.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../images/5.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../images/6.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../images/7.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../images/8.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+
+    <section id="ubicacion">
+      <div id="texto">
+        <h2 class="titulo">FIND US</h2>
+        <svg width="30px" height="30px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <path stroke="#ffff" stroke-width="12"
+            d="M96 22a51.88 51.88 0 0 0-36.77 15.303A52.368 52.368 0 0 0 44 74.246c0 16.596 4.296 28.669 20.811 48.898a163.733 163.733 0 0 1 20.053 28.38C90.852 163.721 90.146 172 96 172c5.854 0 5.148-8.279 11.136-20.476a163.723 163.723 0 0 1 20.053-28.38C143.704 102.915 148 90.841 148 74.246a52.37 52.37 0 0 0-15.23-36.943A51.88 51.88 0 0 0 96 22Z" />
+          <circle cx="96" cy="74" r="20" stroke="#ffff" stroke-width="12" />
+        </svg>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1894.1192373293266!2d-16.253257669855394!3d28.466462593080234!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc41cb6a598f4ff9%3A0xf0b3481014cfa981!2sLa%20T%C3%A9quer%C3%ADa%20Bubble%20Tea!5e0!3m2!1ses!2ses!4v1733755342586!5m2!1ses!2ses"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+
+
+    <footer id="footer">
+      <h3 id="followUs">¡Follow us!</h3>
+      <a href="https://www.instagram.com/latequeriasantacruz/" target="_blank">
+        <svg fill="#ffff" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin"
+          class="jam jam-instagram">
+          <path
+            d='M14.017 0h-8.07A5.954 5.954 0 0 0 0 5.948v8.07a5.954 5.954 0 0 0 5.948 5.947h8.07a5.954 5.954 0 0 0 5.947-5.948v-8.07A5.954 5.954 0 0 0 14.017 0zm3.94 14.017a3.94 3.94 0 0 1-3.94 3.94h-8.07a3.94 3.94 0 0 1-3.939-3.94v-8.07a3.94 3.94 0 0 1 3.94-3.939h8.07a3.94 3.94 0 0 1 3.939 3.94v8.07z' />
+          <path
+            d='M9.982 4.819A5.17 5.17 0 0 0 4.82 9.982a5.17 5.17 0 0 0 5.163 5.164 5.17 5.17 0 0 0 5.164-5.164A5.17 5.17 0 0 0 9.982 4.82zm0 8.319a3.155 3.155 0 1 1 0-6.31 3.155 3.155 0 0 1 0 6.31z' />
+          <circle cx='15.156' cy='4.858' r='1.237' />
+        </svg>
+      </a>
+      <p> Copyright © All rights deserved </p>
+    </footer>
+
+    <button id="toggleButton">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="50" height="50">
+           <path style="fill:#FFDA44;"
+             d="M0 25c0 3.058 0.55 5.987 1.555 8.696L25 35.87l23.445 -2.174C49.45 30.987 50 28.058 50 25s-0.55 -5.987 -1.555 -8.696L25 14.13 1.555 16.304C0.55 19.013 0 21.942 0 25" />
+           <g>
+             <path style="fill:#D80027;" d="M48.445 16.304C44.913 6.784 35.749 0 25 0S5.087 6.784 1.555 16.304z" />
+             <path style="fill:#D80027;" d="M1.555 33.696C5.087 43.216 14.251 50 25 50s19.913 -6.784 23.445 -16.304z" />
+           </g>
+         </svg>
+    </button>
+
+
+    <script src="../scripts/En_TicketCreator.js"></script>
+    <script src="../scripts/infoButton.js"></script>
+    <script src="../scripts/traduccion.js"></script>
+
+    <script>
+      let currentLang = "en"; // idioma de la pagina
+    </script>
+    <script src="../scripts/titleChangeLeave.js"></script>
+
+  </body>
+
+</html>
