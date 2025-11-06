@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   toggleButton.addEventListener("click", () => {
 
-    alert("El idioma de esta pagina es: " + currentLang);
     // Cambiar idioma
     if (currentLang === "es") {
       currentLang = "en";
