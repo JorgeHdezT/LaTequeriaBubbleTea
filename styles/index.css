@@ -51,6 +51,10 @@ body {
   scroll-behavior: smooth;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 @media (prefers-color-scheme: dark) {
   html, body {
     color-scheme: light;
