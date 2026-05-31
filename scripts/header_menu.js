@@ -35,20 +35,20 @@ links.forEach((link) => {
 
 //Cookies
 
-const banner = document.getElementById("cookie-banner");
-const acceptBtn = document.getElementById("cookie-accept");
-const denyBtn = document.getElementById("cookie-deny");
+// const banner = document.getElementById("cookie-banner");
+// const acceptBtn = document.getElementById("cookie-accept");
+// const denyBtn = document.getElementById("cookie-deny");
 
-if (localStorage.getItem("cookieConsent") === null) {
-  banner.classList.remove("hidden");
-}
+// if (localStorage.getItem("cookieConsent") === null) {
+//   banner.classList.remove("hidden");
+// }
 
-acceptBtn.addEventListener("click", () => {
-  localStorage.setItem("cookieConsent", "accepted");
-  banner.classList.add("hidden");
-});
+// acceptBtn.addEventListener("click", () => {
+//   localStorage.setItem("cookieConsent", "accepted");
+//   banner.classList.add("hidden");
+// });
 
-denyBtn.addEventListener("click", () => {
-  localStorage.setItem("cookieConsent", "denied");
-  banner.classList.add("hidden");
-});
+// denyBtn.addEventListener("click", () => {
+//   localStorage.setItem("cookieConsent", "denied");
+//   banner.classList.add("hidden");
+// });
