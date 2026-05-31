@@ -1,8 +1,10 @@
 .cookie-banner {
   position: fixed;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  
   width: 90%;
   max-width: 600px;
   background-color: #ffffff;
@@ -13,13 +15,14 @@
   display: block; 
   opacity: 1;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(0); 
   border: 1px solid #e0aaff;
 }
 
 .cookie-banner.hidden {
   opacity: 0 !important;
   pointer-events: none !important;
-  transform: translate(-50%, 20px) !important;
+  transform: translateY(40px) !important;
 }
 
 .cookie-content {
