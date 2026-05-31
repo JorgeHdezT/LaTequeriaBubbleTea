@@ -1,0 +1,193 @@
+#special-teas {
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.teaDiv {
+  width: 120%;
+  height: 300px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+
+  border-top-left-radius: 15%;
+  border-top-right-radius: 10%;
+
+  h3 {
+    font-family: "Lilita One", sans-serif;
+    width: fit-content;
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+
+  img {
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.teaDiv:nth-child(odd) {
+  transform: rotate(6deg);
+
+  img {
+    left: 0;
+    filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.4));
+  }
+}
+
+.teaDiv:nth-child(even) {
+  transform: rotate(-6deg);
+  img {
+    right: 0;
+    filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.4));
+  }
+}
+
+#tarococo {
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  padding-top: 20px;
+
+  transform: rotate(0);
+  background-color: rgb(211, 154, 234);
+  /* border-top-right-radius: 30%;
+  border-top-left-radius: 30%; */
+  width: 100%;
+  height: 300px;
+  color: rgb(112, 52, 135);
+
+  .tea-img-right {
+    width: 65%;
+    right: -60px;
+    transform: rotate(-7deg);
+  }
+
+  #coco-img {
+    width: 40%;
+    right: 20%;
+    top: 55%;
+    transform: rotate(7deg) scalex(-1);
+  }
+
+  h3 {
+    margin-left: 20px;
+  }
+}
+
+#pinklychee {
+  background-color: rgb(255, 192, 203);
+  color: rgb(180, 92, 106);
+  margin-left: -50px;
+  margin-top: -55px;
+  box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.4);
+
+  .tea-img-left {
+    width: 55%;
+    left: -5%;
+  }
+
+  #lychee-img {
+    width: 40%;
+    left: 15%;
+    top: 55%;
+  }
+
+  h3 {
+    transform: rotate(-6deg);
+    position: absolute;
+    top: 20px;
+    left: 43%;
+  }
+}
+
+#meloncito {
+  background-color: rgb(188, 255, 167);
+  color: rgb(66, 157, 81);
+  margin-left: -50px;
+  margin-top: -55px;
+  box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.4);
+
+  #melon-img {
+    width: 40%;
+    right: 15%;
+    top: 40%;
+    transform: rotate(7deg) scalex(-1);
+  }
+
+  .tea-img-right {
+    width: 55%;
+    top: 30px;
+    right: -30px;
+  }
+
+  h3 {
+    transform: rotate(6deg);
+    position: absolute;
+    top: 20px;
+    left: 80px;
+  }
+}
+
+#lotus {
+  background-color: rgb(255, 209, 168);
+  color: rgb(177, 105, 49);
+  margin-left: -50px;
+  margin-top: -55px;
+  box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.4);
+
+  .tea-img-left {
+    width: 55%;
+    left: -5%;
+  }
+
+  #lotus-img {
+    width: 40%;
+    left: 15%;
+    top: 50%;
+  }
+
+  h3 {
+    transform: rotate(-6deg);
+    width: 50%;
+    position: absolute;
+    top: 20px;
+    left: 37%;
+    text-align: right;
+  }
+}
+
+#sueñodemango {
+  background-color: rgb(250, 182, 104);
+  color: rgb(189, 105, 20);
+  margin-left: -50px;
+  margin-top: -55px;
+  box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.4);
+  transform: rotate(0);
+  height: 250px;
+
+  .tea-img-right {
+    width: 55%;
+    top: 10px;
+    right: -30px;
+    transform: rotate(-7deg);
+  }
+
+  #mango-img {
+    width: 40%;
+    right: 17%;
+    top: 45%;
+    transform: rotate(7deg) scalex(-1);
+  }
+
+  h3 {
+    transform: rotate(0deg);
+    position: absolute;
+    top: 20px;
+    left: 80px;
+    width: 50%;
+    text-align: left;
+  }
+}

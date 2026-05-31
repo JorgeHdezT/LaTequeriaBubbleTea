@@ -1,0 +1,15 @@
+@media only screen and (min-width: 768px) {
+  #recompensas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  #recompensas img {
+    width: 30%;
+  }
+
+}

@@ -1,0 +1,152 @@
+#bubble-menu {
+  background: white;
+  padding: 20px 20px;
+  font-family: var(--text);
+}
+
+.menu-title {
+  text-align: center;
+  font-size: 36px;
+  font-family: var(--title);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* ================= ACCORDION ================= */
+
+.accordion {
+  background: var(--cream-dark);
+  border-radius: 20px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* HEADER */
+.accordion summary {
+  padding: 18px 20px;
+  cursor: pointer;
+
+  font-size: 18px;
+  font-family: var(--title);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  list-style: none;
+
+  color: #3a2b1a;
+}
+
+
+
+/* quitar flecha default */
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+/* animación apertura */
+.accordion[open] {
+  animation: openAcc 0.3s ease;
+}
+
+@keyframes openAcc {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= CONTENT ================= */
+
+.content {
+  padding: 0 20px 20px;
+}
+
+/* ================= GRID ================= */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* ================= CARDS ================= */
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 14px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.card .emoji {
+  font-size: 26px;
+}
+
+.card .name {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.card .sub {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.card .price {
+  margin-top: 8px;
+  color: #7a5c2e;
+  font-weight: bold;
+}
+
+/* bloques */
+.block {
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.block.strong {
+  font-weight: bold;
+}
+
+/* ================= CHIPS ================= */
+
+.chip {
+  background: white;
+  
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 13px;
+  border: 1px solid rgba(0,0,0,0.05);
+  
+}
+
+/* ================= EXTRAS ================= */
+
+.extra {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* hover suave */
+.card:hover,
+.chip:hover,
+.extra:hover {
+  transform: translateY(-3px);
+  transition: 0.2s ease;
+}

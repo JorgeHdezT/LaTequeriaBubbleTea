@@ -1,0 +1,64 @@
+@media only screen and (min-width: 768px) {
+  #hero {
+    height: 92vh;
+
+    h1 {
+      text-transform: uppercase;
+      font-family: var(--title);
+      font-weight: normal;
+      font-size: 70px;
+      margin: 0;
+
+      span {
+        font-size: 100px;
+        font-weight: bolder;
+      }
+    }
+
+    p {
+      font-family: --var(--standard);
+      color: rgb(56, 56, 56);
+      width: 30%;
+      font-size: 35px;
+      margin: 0px 0px 20px;
+    }
+
+    .purple-button {
+      background-color: var(--purple-main);
+      color: white;
+      font-size: 35px;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 50px;
+      text-transform: uppercase;
+    }
+  }
+
+  #hero_bubble_1 {
+    width: 500px;
+    top: 3%;
+    left: 5%;
+    animation: float-bubble1 5s alternate infinite;
+  }
+
+  #hero_bubble_2 {
+    width: 450px;
+    top: 15%;
+    left: 70%;
+    animation: float-bubble2 5s alternate infinite;
+  }
+
+  #hero_bubble_3 {
+    width: 450px;
+    top: 60%;
+    left: 20%;
+    animation: float-bubble3 5s alternate infinite;
+  }
+
+  #hero_bubble_4 {
+    width: 500px;
+    top: 70%;
+    left: 60%;
+    animation: float-bubble4 5s alternate infinite;
+  }
+}

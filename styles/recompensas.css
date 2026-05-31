@@ -1,0 +1,70 @@
+#recompensas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 20px 100px;
+  background-color: var(--cream-main);
+
+  /* Creamos el timeline en el contenedor padre para que sirva de referencia */
+  view-timeline-name: --promos;
+  view-timeline-axis: block;
+
+  transform: translateY(-50px);
+
+
+}
+
+#recompensas img {
+  max-width: 80%;
+  transform: rotate(-5deg);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+  height: auto;
+  margin-bottom: 40px;
+
+  animation: reveal-promo linear both;
+
+  animation-timeline: --promos;
+
+  animation-range-start: cover 10%;
+  animation-range-end: cover 30%;
+
+  /* El clip-path ahora recorta SOLO a la imagen */
+  clip-path: ellipse(140% 100% at 50% 100%);
+}
+
+@keyframes reveal-promo {
+  from {
+    opacity: 0;
+    transform: scale(2) rotate(20deg);
+    filter: blur(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(-5deg);
+    filter: blur(0);
+  }
+}
+
+#recompensas p {
+  text-align: center;
+  width: 90%;
+  font-size: 22px;
+  margin: 0;
+  background: linear-gradient(
+    120deg,
+    #000000 0%,
+    #000000 35%,
+    var(--purple-main) 45%,
+    #000000 55%,
+    #000000 100%
+  );
+
+  background-size: 250% auto;
+
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  animation: shine-text 6s linear infinite;
+}

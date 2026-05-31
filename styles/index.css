@@ -1,192 +1,58 @@
+/*Estilos generales para web */
+
+/* Fuentes */
+
 @font-face {
-  font-family: 'bubbleTea';
-  src: url('../fonts/Michroma.ttf') format('truetype');
+  font-family: "Jua";
+  src: url("/fonts/Jua/Jua-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap; /* IMPRESCINDIBLE */
 }
 
-body * {
-  animation: appear 1s linear;
+@font-face {
+  font-family: "Lilita One";
+  src: url("/fonts/Lilita_One/LilitaOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* IMPRESCINDIBLE */
 }
 
-/* Excluir el modal de la animación global */
-#modal, .PromoModal {
-  animation: none !important;
+@font-face {
+  font-family: "Bangers";
+  src: url("/fonts/Bangers/Bangers-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* IMPRESCINDIBLE */
 }
 
-/* Definición de la animación de aparición */
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
+/* Paleta de colores y fuentes */
+:root {
+  /* Paleta de colores */
+  --purple-main: #9d4edd;
+  --purple-dark: #5a189a;
+  --cream-main: #fff8e6;
+  --cream-dark: #fdf0cd;
+  --text-main: #1f1f1f;
 
-  50% {
-    opacity: 0;
-  }
+  /* Fuentes */
+  --title: "Jua", sans-serif;
+  --standard: "Lilita One", cursive;
+  --accent: "Bangers", cursive;
 
-  100% {
-    opacity: 1;
-  }
+  color-scheme: light;
+
 }
 
 body {
-  background: rgb(85, 88, 211);
-  background: -moz-radial-gradient(circle, rgba(85, 88, 211, 1) 0%, rgba(33, 34, 101, 1) 100%);
-  background: -webkit-radial-gradient(circle, rgba(85, 88, 211, 1) 0%, rgba(33, 34, 101, 1) 100%);
-  background: radial-gradient(circle, rgba(85, 88, 211, 1) 0%, rgba(33, 34, 101, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5558d3", endColorstr="#212265", GradientType=1);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-header {
-
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-
-  #logo {
-    width: 150px;
-    height: 150px;
-    animation: neonSign 1.5s linear infinite;
-  }
-
-  h1,
-  h2 {
-    margin-top: 10px;
-    color: white;
-    font-family: sans-serif;
-    text-align: center;
-    animation: neon-blink 5s linear infinite;
-  }
-
-  h1 {
-    font-size: 30px;
-  }
-
-  h2 {
-    margin-top: -20px;
-    font-family: 'bubbleTea';
-    font-weight: normal;
-    font-size: 30px;
-    text-transform: uppercase;
-  }
-
-}
-
-#separador {
-
-  width: 100%;
-  /* Mantén el 80% del ancho de su contenedor */
-  height: auto;
-  /* Asegúrate de que tenga una altura definida */
-  filter: drop-shadow(0 0 10px #00ff40);
-  /* Intensificamos el brillo */
-  margin-top: -10px;
-  /* Centrado y margen para separarlo */
-}
-
-@keyframes neon-blink {
-
-  0%,
-  100% {
-    text-shadow: 0 0 5px #ff0;
-  }
-
-  50% {
-    text-shadow: 0 0 10px #ff0;
-  }
-}
-
-@keyframes neonSign {
-
-  0%,
-  100% {
-    filter: brightness(1.5) saturate(2) drop-shadow(0 0 10px #9d00ff) drop-shadow(0 0 20px #FF00FB);
-  }
-
-  50% {
-    filter: brightness(0.8) saturate(1.5) drop-shadow(0 0 5px #9d00ff) drop-shadow(0 0 10px #FF00FB);
-  }
-
-
-}
-
-#ubicacion {
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 50px;
-  
-  #texto {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    h2 {
-      text-shadow: 0 0 10px red;
-    }
-
-    svg {
-      margin-bottom: 20px;
-      filter: drop-shadow(0 0 5px red);
-      width: 40px;
-      height: 40px;
-
-    }
-  }
-
-  iframe {
-    width: 95%;
-    height: 200px;
-    border-radius: 10px;
-    border: 4px solid rgba(255, 255, 255, 0.609);
-    box-shadow: 0px 0px 20px white;
-  }
-}
-
-footer {
-
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  margin: 0;
   font-family: sans-serif;
-  width: 100%;
-
-
-  svg {
-    width: 40px;
-    height: 40px;
-
-  }
-
-  p {
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-  }
-
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-#toggleButton {
-  background: transparent;
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  padding: 10px;
-  cursor: pointer;
-  border: none;
+@media (prefers-color-scheme: dark) {
+  html, body {
+    color-scheme: light;
+  }
 }
