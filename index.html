@@ -29,13 +29,13 @@
       href="images/icons/tequeriaIcon-192.png"
     />
 
-    <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/index.css" />
-    <link rel="stylesheet" href="styles/hero.css" />
-    <link rel="stylesheet" href="styles/promociones.css" />
-    <link rel="stylesheet" href="styles/menu.css" />
-    <link rel="stylesheet" href="styles/footer.css" />
-    <link rel="stylesheet" href="styles/specialTeas.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/hero.css" />
+    <link rel="stylesheet" href="../styles/promociones.css" />
+    <link rel="stylesheet" href="../styles/menu.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/specialTeas.css" />
     <link rel="stylesheet" href="styles/encuentranos.css" />
     <link rel="stylesheet" href="styles/cookieBanner.css" />
     <link rel="stylesheet" href="styles/recompensas.css" />
@@ -48,6 +48,41 @@
     <link rel="stylesheet" href="styles/desktop/recompensas.css" />
 
     <script src="/scripts/header_menu.js" defer></script>
+    <style>
+      .lang-switch {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 1000;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: block;
+        border: 0;
+        padding: 0;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .lang-switch:hover,
+      .lang-switch:focus-visible {
+        transform: scale(1.08);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      }
+      .lang-switch > svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      @media (max-width: 768px) {
+        .lang-switch {
+          width: 48px;
+          height: 48px;
+          right: 16px;
+          bottom: 16px;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="navbar">
@@ -97,7 +132,7 @@
           Ven a disfrutar del mejor bubble tea en el centro de Santa Cruz de
           Tenerife
         </p>
-        <button class="purple-button">Visitanos</button>
+        <button class="purple-button" onclick="location.href='#encuentranos'">Visitanos</button>
 
         <img
           class="hero-bubbles"
@@ -108,19 +143,19 @@
         <img
           class="hero-bubbles"
           id="hero_bubble_2"
-          src="/images/bubble_circles/bubble-circle-2.webp"
+          src="../../images/bubble_circles/bubble-circle-2.webp"
           alt="bubble en circulo flotando en el hero 2"
         />
         <img
           class="hero-bubbles"
           id="hero_bubble_3"
-          src="/images/bubble_circles/bubble-circle-3.webp"
+          src="../../images/bubble_circles/bubble-circle-3.webp"
           alt="bubble en circulo flotando en el hero 3"
         />
         <img
           class="hero-bubbles"
           id="hero_bubble_4"
-          src="/images/bubble_circles/bubble-circle-4.webp"
+          src="../../images/bubble_circles/bubble-circle-4.webp"
           alt="bubble en circulo flotando en el hero 4"
         />
       </section>
@@ -130,12 +165,12 @@
 
         <div id="thursday-promo">
           <img
-            src="/images/bubbles_png/2.webp"
+            src="../../images/bubbles_png/2.webp"
             id="bubble-tea-1"
             alt="Bubble tea de leche con tapioca"
           />
           <img
-            src="/images/bubbles_png/3.webp"
+            src="../../images/bubbles_png/3.webp"
             id="bubble-tea-2"
             alt="Bubble tea de té con perlas de cristal"
           />
@@ -163,13 +198,13 @@
             <div class="card">
               <div class="emoji">500ml</div>
               <div class="name">Medium</div>
-              <div class="price">5,00€</div>
+              <div class="price">5.50€</div>
             </div>
 
             <div class="card">
               <div class="emoji">700ml</div>
               <div class="name">Large</div>
-              <div class="price">5,50€</div>
+              <div class="price">6.00€</div>
             </div>
           </div>
         </details>
@@ -497,5 +532,25 @@
         </p>
       </div>
     </footer>
+    <a
+      class="lang-switch"
+      id="lang-switch"
+      href="./pages/en/index.html"
+      aria-label="View this page in English"
+      title="English"
+    >
+      <svg
+        viewBox="0 0 60 30"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid slice"
+        aria-hidden="true"
+      >
+        <rect width="60" height="30" fill="#012169" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="2" />
+        <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10" />
+        <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6" />
+      </svg>
+    </a>
   </body>
 </html>
