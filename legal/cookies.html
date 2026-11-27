@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Política de Cookies - La Téquería Bubble Tea</title>
     <meta name="description" content="Política de cookies de La Téquería Bubble Tea." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href="https://latequeriabubbletea.es/legal/cookies.html" />
     <meta property="og:type" content="website" />
@@ -18,15 +19,28 @@
     <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/icons/icon-192.png" />
     <link rel="apple-touch-icon" href="../assets/img/icons/apple-touch-icon.png" />
     <link rel="preload" href="../assets/fonts/jua-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="color-scheme" content="only light" />
+    <meta name="darkreader-lock" />
+    <script>(function(d){d.classList.add("js");try{if(sessionStorage.getItem("tq-theme")==="dark")d.dataset.tqTheme="dark"}catch(e){}})(document.documentElement);</script>
     <link rel="stylesheet" href="../assets/css/styles.css" />
-    <script>document.documentElement.classList.add("js");</script>
     <script src="../assets/js/main.js" defer></script>
   </head>  <body>
     <a class="skip-link" href="#main">Saltar al contenido</a>
     <header class="navbar">
       <a class="logo" href="../" aria-label="La Téquería Bubble Tea">
-        <img src="../assets/img/icons/logo-480.webp" srcset="../assets/img/icons/logo-240.webp 240w, ../assets/img/icons/logo-480.webp 480w" sizes="100px" width="480" height="217" alt="" />
+        <img class="logo-light" src="../assets/img/icons/logo-480.webp" srcset="../assets/img/icons/logo-240.webp 240w, ../assets/img/icons/logo-480.webp 480w" sizes="100px" width="480" height="217" alt="" />
+        <img class="logo-dark" src="../assets/img/icons/logo-dark-480.webp" srcset="../assets/img/icons/logo-dark-240.webp 240w, ../assets/img/icons/logo-dark-480.webp 480w" sizes="100px" width="480" height="217" alt="" loading="lazy" />
       </a>
+      <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Modo noche" title="Modo noche">
+        <span class="track">
+          <svg class="t-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 14.5A9 9 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5z"/></svg>
+          <svg class="t-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="knob">
+            <svg class="k-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg class="k-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 14.5A9 9 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5z"/></svg>
+          </span>
+        </span>
+      </button>
       <button class="hamburger" id="hamburger" type="button" aria-expanded="false" aria-controls="fullScreenMenu" aria-label="Abrir menú de navegación" data-open="Abrir menú de navegación" data-close="Cerrar menú de navegación">
         <span></span><span></span><span></span>
       </button>
@@ -87,7 +101,8 @@
     <footer id="site-footer">
       <div class="footer-container">
         <div class="footer-brand reveal">
-          <img id="logo-footer" src="../assets/img/icons/logo-480.webp" srcset="../assets/img/icons/logo-240.webp 240w, ../assets/img/icons/logo-480.webp 480w" sizes="130px" width="480" height="217" alt="Logo de la tequeria" loading="lazy" decoding="async" />
+          <img id="logo-footer" class="logo-light" src="../assets/img/icons/logo-480.webp" srcset="../assets/img/icons/logo-240.webp 240w, ../assets/img/icons/logo-480.webp 480w" sizes="130px" width="480" height="217" alt="Logo de la tequeria" loading="lazy" decoding="async" />
+          <img class="logo-dark" src="../assets/img/icons/logo-dark-480.webp" srcset="../assets/img/icons/logo-dark-240.webp 240w, ../assets/img/icons/logo-dark-480.webp 480w" sizes="130px" width="480" height="217" alt="Logo de la tequeria" loading="lazy" decoding="async" />
           <p>Bubble tea artesanal hecho con cariño. ¡Ven a probar la auténtica experiencia del bubble tea en Santa Cruz de Tenerife!</p>
         </div>
         <div class="footer-section reveal">
@@ -98,6 +113,7 @@
         <div class="footer-section reveal" style="--d: 0.08s">
           <h3>Información</h3>
           <a href="../#horarios">Horarios</a>
+          <a href="../#faq">Preguntas frecuentes</a>
           <a href="../#ubicacion">Ubicación</a>
           <a href="../#contacto">Contacto</a>
         </div>

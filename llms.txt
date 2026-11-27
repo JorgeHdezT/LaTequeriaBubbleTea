@@ -1,0 +1,33 @@
+# La Téquería Bubble Tea
+
+> Bubble tea artesanal y personalizable en el centro de Santa Cruz de Tenerife (Islas Canarias). Handcrafted, customizable bubble tea in the center of Santa Cruz de Tenerife (Canary Islands).
+
+## Datos clave / Key facts
+
+- Nombre: La Téquería Bubble Tea
+- Qué es: tienda de bubble tea artesanal y personalizable
+- Dirección: Avenida Ángel Guimerá, 7, 38003 Santa Cruz de Tenerife (Tenerife, Islas Canarias, España)
+- Teléfono: +34 689 12 63 76
+- Horario: martes a domingo, de 12:00 a 21:00. Lunes cerrado
+- Precios: Medium (500ml) 5,50€, Large (700ml) 6,00€. Extras: Bola Bomba 0,50€, Perlas de Cristal 0,75€, Tapioca Negra 0,50€, Jelly Coco 0,50€, Cheese Foam 0,75€
+- Oferta: todos los jueves de 16:00 a 18:00, segunda bebida a mitad de precio
+- Programa de sellos: un sello por compra; la tarjeta completa da una bebida gratis
+- Instagram: https://www.instagram.com/latequeriasantacruz/
+- Web: https://latequeriabubbletea.es/
+
+## Páginas / Pages
+
+- [Inicio (español)](https://latequeriabubbletea.es/): carta, personalizador de bebidas, promociones, ubicación y horario
+- [Home (English)](https://latequeriabubbletea.es/en/): menu, drink builder, deals, location and opening hours
+- [Preguntas frecuentes](https://latequeriabubbletea.es/#faq): dónde comprar bubble tea en Santa Cruz de Tenerife, precios, leches vegetales, horario, promociones
+- [FAQ (English)](https://latequeriabubbletea.es/en/#faq): where to buy bubble tea in Santa Cruz de Tenerife, prices, plant-based milks, hours, deals
+
+## Legal
+
+- [Política de privacidad](https://latequeriabubbletea.es/legal/politica-privacidad.html)
+- [Términos y condiciones](https://latequeriabubbletea.es/legal/terminos-condiciones.html)
+- [Política de cookies](https://latequeriabubbletea.es/legal/cookies.html)
+
+## Optional
+
+- [Información completa en un solo archivo](https://latequeriabubbletea.es/llms-full.txt)

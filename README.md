@@ -15,6 +15,19 @@ assets/
 manifest.json · robots.txt · sitemap.xml · CNAME
 ```
 
+## Modo noche
+- Interruptor en la cabecera (`#theme-toggle`, `role="switch"`). **Por defecto la web siempre es clara**, aunque el dispositivo esté en modo oscuro (`color-scheme: only light`).
+- Al activarlo se añade `data-tq-theme="dark"` al `<html>`; solo se recuerda durante la sesión (sessionStorage), así que una visita nueva vuelve a empezar en claro.
+- Los colores del tema oscuro están al final de `assets/css/styles.css` (sección 13). Los claros no se tocan.
+- El logo tiene versión oscura: `assets/img/icons/logo-dark-*.webp`.
+
+## Preguntas frecuentes, SEO e IA
+- La sección `#faq` está en `index.html` y `en/index.html` (entre "Top Especiales" y "Encuéntranos"). Son elementos `<details>`: el texto está siempre en el HTML, sin necesitar JavaScript.
+- Los mismos textos están repetidos como datos estructurados (JSON-LD `FAQPage`, junto a `CafeOrCoffeeShop` y `WebSite`) en el `<head>`. **Si cambias una pregunta o una respuesta, cámbiala también ahí** (deben coincidir con lo visible).
+- `robots.txt` permite explícitamente a los rastreadores de buscadores y de asistentes de IA.
+- `llms.txt` y `llms-full.txt` resumen el negocio (datos, precios, carta, horario y FAQ) en texto plano para que las IA lo lean de un vistazo.
+- **Cuando cambien los precios, el horario o el teléfono**, actualízalos en: la carta y la FAQ de `index.html` y `en/index.html`, el JSON-LD de cada uno, `llms.txt`, `llms-full.txt` y los textos legales.
+
 ## Cosas a tener en cuenta
 - **Idiomas:** cada cambio de texto hay que hacerlo en `index.html` y en `en/index.html`.
 - **Imágenes:** cada una tiene dos tamaños (`-480`/`-960`, etc.). Mantén los atributos `width`/`height` del HTML: evitan saltos de diseño.

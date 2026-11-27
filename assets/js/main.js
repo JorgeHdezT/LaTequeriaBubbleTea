@@ -1,11 +1,39 @@
 /* La Téquería Bubble Tea — main.js
    Un único script (defer). Cada bloque se activa solo si existen sus elementos.
-   1. Año del copyright   2. Menú móvil   3. Cabecera y scroll-spy
+   0. Modo noche   1. Año del copyright   2. Menú móvil   3. Cabecera y scroll-spy
    4. Animaciones de scroll   5. "Crea tu bubble tea" interactivo */
 (() => {
   "use strict";
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+  /* 0. Modo noche (interruptor) ---------------------------------------- */
+  // La web es SIEMPRE clara por defecto. Solo se oscurece si la persona activa el
+  // interruptor; la elección se guarda únicamente durante la sesión (sessionStorage).
+  const themeBtn = $("#theme-toggle");
+  if (themeBtn) {
+    const html = document.documentElement;
+    const metaScheme = $('meta[name="color-scheme"]');
+    const metaColor = $('meta[name="theme-color"]');
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+    const applyTheme = (dark, animate) => {
+      if (animate && !reduce.matches) {
+        html.classList.add("theme-anim");
+        setTimeout(() => html.classList.remove("theme-anim"), 450);
+      }
+      if (dark) html.dataset.tqTheme = "dark";
+      else delete html.dataset.tqTheme;
+      themeBtn.setAttribute("aria-checked", String(dark));
+      if (metaScheme) metaScheme.content = dark ? "dark" : "only light";
+      if (metaColor) metaColor.content = dark ? "#150c20" : "#ffffff";
+      try {
+        if (dark) sessionStorage.setItem("tq-theme", "dark");
+        else sessionStorage.removeItem("tq-theme");
+      } catch {}
+    };
+    applyTheme(html.dataset.tqTheme === "dark", false);
+    themeBtn.addEventListener("click", () => applyTheme(html.dataset.tqTheme !== "dark", true));
+  }
 
   /* 1. Año ------------------------------------------------------------- */
   const year = $("#year");
@@ -60,7 +88,7 @@
         }),
       { rootMargin: "-40% 0px -55% 0px" },
     );
-    $$("#promociones, #recompensas, #bubble-menu, #special-teas, #encuentranos").forEach((s) => spy.observe(s));
+    $$("#promociones, #recompensas, #bubble-menu, #special-teas, #faq, #encuentranos").forEach((s) => spy.observe(s));
   }
 
   /* 4. Animaciones de scroll ------------------------------------------- */
